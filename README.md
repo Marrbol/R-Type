@@ -18,7 +18,14 @@ Navigate to the root of the project and run the following commands:
 ```bash
 ./build/bin/r-type_server [-p/--port <port>] [-h/--help | -c/--client | -s/--server]
 ```
-The default port is 4242.
+
+### Options
+    -p, --port    Set the port to listen on (default: 4242)
+
+### Modes
+    -h, --help    Display the help menu
+    -c, --client  Run as client
+    -s, --server  Run as server
 
 ## Notes : current state of the project
 
