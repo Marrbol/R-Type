@@ -15,12 +15,12 @@ ECS::ECS::ECS(const Program::Params &params)
 {
     m_registry = new Registry;
 
-    if (params.runMode == Program::RunMode::CLIENT) {
-        m_network = new Network::Client(params.port);
+    if (params.runMode == Program::RunMode::CLIENT) { // Client mode
+        m_network = new Network::Client(params.ip, params.port);
         m_gui = new GUI::GUI;
         m_systemHandler = new SystemHandler(*m_registry, *m_gui);
 
-    } else if (params.runMode == Program::RunMode::SERVER) {
+    } else if (params.runMode == Program::RunMode::SERVER) { // Server mode
         m_network = new Network::Server(params.port);
         m_systemHandler = new SystemHandler(*m_registry);
     }
@@ -29,7 +29,8 @@ ECS::ECS::ECS(const Program::Params &params)
 ECS::ECS::~ECS()
 {
     delete m_registry;
-    delete m_gui;
+    if (m_gui)
+        delete m_gui;
     delete m_systemHandler;
     delete m_network;
 }

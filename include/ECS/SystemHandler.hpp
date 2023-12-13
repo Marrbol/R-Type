@@ -13,7 +13,7 @@
 
 class SystemHandler {
 public:
-    SystemHandler(Registry &registry, GUI::GUI &gui);
+    SystemHandler(Registry &registry, GUI::IGUI &gui);
     SystemHandler(Registry &registry);
     ~SystemHandler() = default;
     void run();
@@ -21,6 +21,6 @@ public:
 private:
 
     Registry &m_registry;
-    std::optional<std::reference_wrapper<GUI::GUI>> m_gui;
+    std::optional<std::reference_wrapper<GUI::IGUI>> m_gui;
 
 };

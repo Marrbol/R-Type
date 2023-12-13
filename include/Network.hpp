@@ -40,7 +40,7 @@ namespace Network {
 
     class Client : public INetwork {
     public:
-        Client(short port);
+        Client(const std::string &ip, short port);
         ~Client();
         void run();
     private:

@@ -16,11 +16,12 @@ cmake --build .
 Navigate to the root of the project and run the following commands:
 
 ```bash
-./build/bin/r-type_server [-p/--port <port>] [-h/--help | -c/--client | -s/--server]
+./build/bin/r-type_server [-h/--help | -c/--client | -s/--server] [--ip <ip>] [-p/--port <port>]
 ```
 
 ### Options
     -p, --port    Set the port to listen on (default: 4242)
+    --ip          Set the ip to connect to (default: 127.0.0.1) - client only
 
 ### Modes
     -h, --help    Display the help menu

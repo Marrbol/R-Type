@@ -30,7 +30,7 @@ namespace ECS {
     private:
 
         Registry *m_registry = nullptr;
-        GUI::GUI *m_gui = nullptr;
+        GUI::IGUI *m_gui = nullptr;
         SystemHandler *m_systemHandler = nullptr;
         Network::INetwork *m_network = nullptr;
     };

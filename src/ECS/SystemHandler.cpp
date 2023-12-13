@@ -15,15 +15,15 @@ void position_system(
     sparse_array<component::Velocity> &velocities,
     sparse_array<component::Controllable> &controllables);
 
-void control_system(GUI::GUI &gui, sparse_array<component::Controllable> &controllables,
+void control_system(GUI::IGUI &gui, sparse_array<component::Controllable> &controllables,
     sparse_array<component::Velocity> &velocities);
 
-void draw_system(GUI::GUI &gui, sparse_array<component::Position> &positions,
+void draw_system(GUI::IGUI &gui, sparse_array<component::Position> &positions,
     sparse_array<component::Drawable> &drawables);
 
 // Constructors ---------------------------------------------------------------
 
-SystemHandler::SystemHandler(Registry &registry, GUI::GUI &gui):
+SystemHandler::SystemHandler(Registry &registry, GUI::IGUI &gui):
     m_registry(registry),
     m_gui(gui)
 {
@@ -45,7 +45,7 @@ void SystemHandler::run()
     sparse_array<component::HitBox> &hitboxes = m_registry.get_components<component::HitBox>();
 
     if (m_gui) {
-        GUI::GUI &gui = m_gui.value().get();
+        GUI::IGUI &gui = m_gui.value().get();
         while (true) {
             position_system(positions, velocities, controllables);
             control_system(gui, controllables, velocities);
@@ -80,7 +80,7 @@ void position_system(
     }
 }
 
-void control_system(GUI::GUI &gui, sparse_array<component::Controllable> &controllables,
+void control_system(GUI::IGUI &gui, sparse_array<component::Controllable> &controllables,
     sparse_array<component::Velocity> &velocities)
 {
     std::vector<GUI::Input> inputs = gui.getInputs();
@@ -113,7 +113,7 @@ void control_system(GUI::GUI &gui, sparse_array<component::Controllable> &contro
     }
 }
 
-void draw_system(GUI::GUI &gui, sparse_array<component::Position> &positions,
+void draw_system(GUI::IGUI &gui, sparse_array<component::Position> &positions,
     sparse_array<component::Drawable> &drawables)
 {
     gui.clear();

@@ -19,7 +19,8 @@ namespace Program {
     inline const int exitSuccess = 0;
     inline const int exitError = 84;
     inline const char *help =
-        "USAGE: ./r-type_server [-h/--help | -c/--client | -s/--server] [-p/--port <port>]\n\n"
+        "USAGE: ./r-type_server [-h/--help | -c/--client | -s/--server] [-p/--port <port>]\n"
+        "\n"
         "DESCRIPTION:\n"
         "\t-h/--help\tdisplay this help and exit\n"
         "\t-c/--client\trun as a client\n"
@@ -40,6 +41,7 @@ namespace Program {
 
         RunMode runMode = RunMode::NONE;
         short port = 4242;
+        string ip = "127.0.0.1";
     };
 
     class InvalidParamsException : public exception {

@@ -36,7 +36,17 @@ namespace GUI {
     struct SpriteData;
     class Sprite;
 
-    class GUI {
+    class IGUI {
+    public:
+        virtual ~IGUI() = default;
+        virtual void clear() = 0;
+        virtual void draw(float x, float y, Appearance appearance) = 0;
+        virtual void display() = 0;
+        virtual std::vector<Input> getInputs() = 0;
+        virtual bool isOpen() = 0;
+    };
+
+    class GUI : public IGUI {
     public:
         GUI();
         void clear();

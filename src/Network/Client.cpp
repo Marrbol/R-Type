@@ -9,9 +9,12 @@
 
 #include <thread>
 
-Network::Client::Client(short port):
-    m_socket(m_io_context, udp::endpoint(udp::v4(), port))
+Network::Client::Client(const std::string &ip, short port)
+    : m_socket(m_io_context, udp::endpoint(udp::v4(), 0))
 {
+    udp::resolver resolver(m_io_context);
+    udp::resolver::query query(udp::v4(), ip, std::to_string(port));
+    m_sender_endpoint = *resolver.resolve(query);
 }
 
 void Network::Client::do_receive()
