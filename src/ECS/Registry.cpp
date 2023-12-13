@@ -18,12 +18,14 @@ Registry::Registry()
     register_component<component::Velocity>();
     register_component<component::Drawable>();
     register_component<component::Controllable>();
+    register_component<component::HitBox>();
 
     entity e = spawn_entity();
     add_component(e, component::Position{400, 300});
     add_component(e, component::Velocity{0, 0});
     add_component(e, component::Drawable{GUI::Appearance::PLAYER_IDLE});
     add_component(e, component::Controllable{10, 0.9});
+    add_component(e, component::HitBox{100, 100});
 }
 
 Registry::~Registry()

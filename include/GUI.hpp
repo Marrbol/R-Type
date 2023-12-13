@@ -70,4 +70,10 @@ namespace GUI {
         };
     };
 
+    class Audio {
+    public:
+        Audio();
+        ~Audio();
+    };
+
 }

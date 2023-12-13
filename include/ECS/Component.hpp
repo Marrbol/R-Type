@@ -35,4 +35,10 @@ namespace component {
         float shoot_cooldown;
     };
 
+    struct HitBox
+    {
+        float x;
+        float y;
+    };
+
 }

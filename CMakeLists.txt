@@ -26,7 +26,8 @@ set(SOURCES
     ${CMAKE_SOURCE_DIR}/src/ECS/SystemHandler.cpp
     ${CMAKE_SOURCE_DIR}/src/GUI/GUI.cpp
     ${CMAKE_SOURCE_DIR}/src/GUI/Sprite.cpp
-    ${CMAKE_SOURCE_DIR}/src/Network/NetworkServer.cpp
+    ${CMAKE_SOURCE_DIR}/src/Network/Server.cpp
+    ${CMAKE_SOURCE_DIR}/src/Network/Client.cpp
 )
 
 add_executable(r-type-server ${SOURCES})

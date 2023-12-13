@@ -8,6 +8,19 @@
 #include "ECS/SystemHandler.hpp"
 #include "GUI.hpp"
 
+// Forward declarations -------------------------------------------------------
+
+void position_system(
+    sparse_array<component::Position> &positions,
+    sparse_array<component::Velocity> &velocities,
+    sparse_array<component::Controllable> &controllables);
+
+void control_system(GUI::GUI &gui, sparse_array<component::Controllable> &controllables,
+    sparse_array<component::Velocity> &velocities);
+
+void draw_system(GUI::GUI &gui, sparse_array<component::Position> &positions,
+    sparse_array<component::Drawable> &drawables);
+
 // Constructors ---------------------------------------------------------------
 
 SystemHandler::SystemHandler(Registry &registry, GUI::GUI &gui):
@@ -21,7 +34,7 @@ SystemHandler::SystemHandler(Registry &registry):
 {
 }
 
-// Main loop ------------------------------------------------------------------
+// Methods --------------------------------------------------------------------
 
 void SystemHandler::run()
 {
@@ -29,22 +42,29 @@ void SystemHandler::run()
     sparse_array<component::Velocity> &velocities = m_registry.get_components<component::Velocity>();
     sparse_array<component::Controllable> &controllables = m_registry.get_components<component::Controllable>();
     sparse_array<component::Drawable> &drawables = m_registry.get_components<component::Drawable>();
+    sparse_array<component::HitBox> &hitboxes = m_registry.get_components<component::HitBox>();
 
-    while (true) {
-        GUI::GUI& gui = m_gui.value().get();
-        position_system(positions, velocities, controllables);
-        control_system(controllables, velocities, gui);
-        draw_system(positions, drawables, gui);
+    if (m_gui) {
+        GUI::GUI &gui = m_gui.value().get();
+        while (true) {
+            position_system(positions, velocities, controllables);
+            control_system(gui, controllables, velocities);
+            draw_system(gui, positions, drawables);
+        }
+    } else {
+        while (true) {
+            position_system(positions, velocities, controllables);
+        }
     }
 }
 
 // Systems --------------------------------------------------------------------
 
-void SystemHandler::position_system(sparse_array<component::Position> &positions,
+void position_system(
+    sparse_array<component::Position> &positions,
     sparse_array<component::Velocity> &velocities,
     sparse_array<component::Controllable> &controllables)
 {
-
     for (size_t i = 0; i < positions.size() && i < velocities.size(); ++i) {
         auto &pos = positions[i];
         auto &vel = velocities[i];
@@ -60,10 +80,9 @@ void SystemHandler::position_system(sparse_array<component::Position> &positions
     }
 }
 
-void SystemHandler::control_system(sparse_array<component::Controllable> &controllables,
-    sparse_array<component::Velocity> &velocities, GUI::GUI &gui)
+void control_system(GUI::GUI &gui, sparse_array<component::Controllable> &controllables,
+    sparse_array<component::Velocity> &velocities)
 {
-
     std::vector<GUI::Input> inputs = gui.getInputs();
     for (size_t i = 0; i < controllables.size() && i < velocities.size(); ++i) {
         auto &cont = controllables[i];
@@ -94,8 +113,8 @@ void SystemHandler::control_system(sparse_array<component::Controllable> &contro
     }
 }
 
-void SystemHandler::draw_system(sparse_array<component::Position> &positions,
-    sparse_array<component::Drawable> &drawables, GUI::GUI &gui)
+void draw_system(GUI::GUI &gui, sparse_array<component::Position> &positions,
+    sparse_array<component::Drawable> &drawables)
 {
     gui.clear();
     for (size_t i = 0; i < positions.size() && i < drawables.size(); ++i) {

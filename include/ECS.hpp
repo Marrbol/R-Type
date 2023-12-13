@@ -17,8 +17,7 @@
 #include "ECS/Component.hpp"
 #include "ECS/SystemHandler.hpp"
 
-#include "NetworkServer.hpp"
-
+#include "Network.hpp"
 #include "GUI.hpp"
 
 namespace ECS {
@@ -33,7 +32,7 @@ namespace ECS {
         Registry *m_registry = nullptr;
         GUI::GUI *m_gui = nullptr;
         SystemHandler *m_systemHandler = nullptr;
-        Network::NetworkServer *m_network = nullptr;
+        Network::INetwork *m_network = nullptr;
     };
 
     class RuntimeException : public std::exception {

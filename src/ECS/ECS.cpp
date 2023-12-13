@@ -13,10 +13,17 @@
 
 ECS::ECS::ECS(const Program::Params &params)
 {
-    m_registry = new Registry; // Holds all the entities and components
-    m_gui = new GUI::GUI; // Receives elements to draw and gives inputs
-    m_systemHandler = new SystemHandler(*m_registry, *m_gui); // Runs the systems
-    m_network = new Network::NetworkServer(params.port); // Manages the network
+    m_registry = new Registry;
+
+    if (params.runMode == Program::RunMode::CLIENT) {
+        m_network = new Network::Client(params.port);
+        m_gui = new GUI::GUI;
+        m_systemHandler = new SystemHandler(*m_registry, *m_gui);
+
+    } else if (params.runMode == Program::RunMode::SERVER) {
+        m_network = new Network::Server(params.port);
+        m_systemHandler = new SystemHandler(*m_registry);
+    }
 }
 
 ECS::ECS::~ECS()
@@ -31,7 +38,7 @@ ECS::ECS::~ECS()
 
 void ECS::ECS::run()
 {
-    std::thread network_thread(&Network::NetworkServer::run, m_network);
+    std::thread network_thread(&Network::INetwork::run, m_network);
     std::thread system_thread(&SystemHandler::run, m_systemHandler);
 
     system_thread.join();

@@ -12,7 +12,17 @@ Program::Params::Params(const vector<string> args)
 {
     for (size_t i = 0; i < args.size(); i++) {
         if (args[i] == "-h" || args[i] == "--help") {
+            if (runMode != RunMode::NONE)
+                throw InvalidParamsException("Cannot run with several modes");
             runMode = RunMode::HELP;
+        } else if (args[i] == "-s" || args[i] == "--server") {
+            if (runMode != RunMode::NONE)
+                throw InvalidParamsException("Cannot run with several modes");
+            runMode = RunMode::SERVER;
+        } else if (args[i] == "-c" || args[i] == "--client") {
+            if (runMode != RunMode::NONE)
+                throw InvalidParamsException("Cannot run with several modes");
+            runMode = RunMode::CLIENT;
         } else if (args[i] == "-p" || args[i] == "--port") {
             if (i + 1 >= args.size())
                 throw InvalidParamsException(args[i] + " requires an argument");
@@ -27,8 +37,9 @@ Program::Params::Params(const vector<string> args)
         } else
             throw InvalidParamsException(args[i] + " not recognized");
     }
-    if (runMode == RunMode::HELP)
-        return;
+    if (runMode == RunMode::NONE)
+        runMode = RunMode::CLIENT;
+        // throw InvalidParamsException("No mode specified");
 }
 
 int main(const int argc, const char *argv[])

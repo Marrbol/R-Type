@@ -19,13 +19,18 @@ namespace Program {
     inline const int exitSuccess = 0;
     inline const int exitError = 84;
     inline const char *help =
-        "USAGE: ./r-type_server [-h/--help] [-p/--port <port>]\n\n"
+        "USAGE: ./r-type_server [-h/--help | -c/--client | -s/--server] [-p/--port <port>]\n\n"
         "DESCRIPTION:\n"
-        "\tport\tport of the server (1024 < port < 65535) - 4242 by default\n";
+        "\t-h/--help\tdisplay this help and exit\n"
+        "\t-c/--client\trun as a client\n"
+        "\t-s/--server\trun as a server\n"
+        "\tport\tport to connect with (1024 < port < 65535) - 4242 by default\n";
 
     enum class RunMode {
         HELP = 0,
-        RUN = 1,
+        SERVER = 1,
+        CLIENT = 2,
+        NONE = 3
     };
 
     class Params {
@@ -33,7 +38,7 @@ namespace Program {
         Params(const vector<string> args);
         ~Params() = default;
 
-        RunMode runMode = RunMode::RUN;
+        RunMode runMode = RunMode::NONE;
         short port = 4242;
     };
 
