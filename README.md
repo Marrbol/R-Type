@@ -16,7 +16,7 @@ cmake --build .
 Navigate to the root of the project and run the following commands:
 
 ```bash
-./build/bin/r-type_server [-p/--port <port>] [-h/--help]
+./build/bin/r-type_server [-p/--port <port>] [-h/--help | -c/--client | -s/--server]
 ```
 The default port is 4242.
 

@@ -54,11 +54,11 @@ namespace GUI {
         std::unordered_map<Appearance, Sprite *> m_sprites;
 
         std::unordered_map<Appearance, SpriteData> m_sprites_data = {
-            {Appearance::PLAYER_IDLE, {"../assets/player_idle.png", 100, 100, 1}},
-            {Appearance::PLAYER_SHOOT, {"../assets/player_shoot.png", 100, 100, 1}},
-            {Appearance::ENEMY_IDLE, {"../assets/enemy_idle.png", 100, 100, 1}},
-            {Appearance::ENEMY_SHOOT, {"../assets/enemy_shoot.png", 100, 100, 1}},
-            {Appearance::BULLET, {"../assets/bullet.png", 100, 100, 1}}
+            {Appearance::PLAYER_IDLE, {"../assets/images/player_idle.png", 100, 100, 1}},
+            {Appearance::PLAYER_SHOOT, {"../assets/images/player_shoot.png", 100, 100, 1}},
+            {Appearance::ENEMY_IDLE, {"../assets/images/enemy_idle.png", 100, 100, 1}},
+            {Appearance::ENEMY_SHOOT, {"../assets/images/enemy_shoot.png", 100, 100, 1}},
+            {Appearance::BULLET, {"../assets/images/bullet.png", 100, 100, 1}}
         };
 
         std::vector<Appearance> m_appearances = {
