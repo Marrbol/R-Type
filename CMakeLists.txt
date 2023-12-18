@@ -21,16 +21,12 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 set(SOURCES
     ${CMAKE_SOURCE_DIR}/src/Main.cpp
 
-    ${CMAKE_SOURCE_DIR}/src/ECS/ECS.cpp
-    ${CMAKE_SOURCE_DIR}/src/ECS/Registry.cpp
-    ${CMAKE_SOURCE_DIR}/src/ECS/SparseArray.cpp
-    ${CMAKE_SOURCE_DIR}/src/ECS/SystemHandler.cpp
+    ${CMAKE_SOURCE_DIR}/src/Core/Core.cpp
+    ${CMAKE_SOURCE_DIR}/src/Core/Registry.cpp
+    ${CMAKE_SOURCE_DIR}/src/Core/SparseArray.cpp
 
     ${CMAKE_SOURCE_DIR}/src/GUI/GUI.cpp
     ${CMAKE_SOURCE_DIR}/src/GUI/Sprite.cpp
-
-    ${CMAKE_SOURCE_DIR}/src/Network/Server.cpp
-    ${CMAKE_SOURCE_DIR}/src/Network/Client.cpp
 )
 
 add_executable(r-type ${SOURCES})

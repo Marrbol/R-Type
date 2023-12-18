@@ -19,7 +19,7 @@ namespace Program {
     inline const int exitSuccess = 0;
     inline const int exitError = 84;
     inline const char *help =
-        "USAGE: ./r-type_server [-h/--help | -c/--client | -s/--server] [-p/--port <port>]\n"
+        "USAGE: ./r-type_server [-h/--help | -c/--client | -s/--server] [-i/--ip <ip>] [-p/--port <port>]\n"
         "\n"
         "DESCRIPTION:\n"
         "\t-h/--help\tdisplay this help and exit\n"
@@ -29,9 +29,8 @@ namespace Program {
 
     enum class RunMode {
         HELP = 0,
-        SERVER = 1,
-        CLIENT = 2,
-        NONE = 3
+        RUN = 1,
+        NONE = 2
     };
 
     class Params {
@@ -40,8 +39,6 @@ namespace Program {
         ~Params() = default;
 
         RunMode runMode = RunMode::NONE;
-        short port = 4242;
-        string ip = "127.0.0.1";
     };
 
     class InvalidParamsException : public exception {

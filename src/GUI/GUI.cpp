@@ -7,19 +7,25 @@
 
 #include "GUI.hpp"
 
-GUI::GUI::GUI()
+GUI::GUI::GUI():
+    m_window({800, 600}, "R-Type")
 {
-    m_window = new sf::RenderWindow(sf::VideoMode(800, 600), "R-Type");
-    m_window->setFramerateLimit(60);
-    m_window->setKeyRepeatEnabled(true);
-    m_event = new sf::Event;
+    m_window.setFramerateLimit(60);
+    m_window.setKeyRepeatEnabled(true);
 
     loadSprites();
 }
 
+GUI::GUI::~GUI()
+{
+    for (auto sprite : m_sprites)
+        delete sprite.second;
+}
+
 void GUI::GUI::loadSprites()
 {
-    for (auto appearance : m_appearances) {
+    for (int i = 0; i < static_cast<int>(Appearance::COUNT); ++i) {
+        Appearance appearance = static_cast<Appearance>(i);
         m_sprites[appearance] = new Sprite(m_sprites_data[appearance]);
     }
 }
@@ -27,38 +33,38 @@ void GUI::GUI::loadSprites()
 void GUI::GUI::draw(float x, float y, Appearance appearance)
 {
     m_sprites[appearance]->setPosition(x, y);
-    m_window->draw(m_sprites[appearance]->sprite());
+    m_window.draw(m_sprites[appearance]->sprite());
 }
 
 void GUI::GUI::clear()
 {
-    m_window->clear();
+    m_window.clear();
 }
 
 void GUI::GUI::display()
 {
-    m_window->display();
+    m_window.display();
 }
 
 std::vector<GUI::Input> GUI::GUI::getInputs()
 {
     std::vector<Input> inputs;
 
-    while (m_window->pollEvent(*m_event)) {
-        if (m_event->type == sf::Event::Closed)
-            m_window->close();
-        if (!m_window->hasFocus())
+    while (m_window.pollEvent(m_event)) {
+        if (m_event.type == sf::Event::Closed)
+            m_window.close();
+        if (!m_window.hasFocus())
             continue;
-        if (m_event->type == sf::Event::KeyPressed) {
-            if (m_event->key.code == sf::Keyboard::Up)
+        if (m_event.type == sf::Event::KeyPressed) {
+            if (m_event.key.code == sf::Keyboard::Up)
                 inputs.push_back(Input::UP);
-            if (m_event->key.code == sf::Keyboard::Down)
+            if (m_event.key.code == sf::Keyboard::Down)
                 inputs.push_back(Input::DOWN);
-            if (m_event->key.code == sf::Keyboard::Left)
+            if (m_event.key.code == sf::Keyboard::Left)
                 inputs.push_back(Input::LEFT);
-            if (m_event->key.code == sf::Keyboard::Right)
+            if (m_event.key.code == sf::Keyboard::Right)
                 inputs.push_back(Input::RIGHT);
-            if (m_event->key.code == sf::Keyboard::Space)
+            if (m_event.key.code == sf::Keyboard::Space)
                 inputs.push_back(Input::SHOOT);
         }
     }
@@ -67,13 +73,5 @@ std::vector<GUI::Input> GUI::GUI::getInputs()
 
 bool GUI::GUI::isOpen()
 {
-    return m_window->isOpen();
-}
-
-GUI::GUI::~GUI()
-{
-    for (auto sprite : m_sprites)
-        delete sprite.second;
-    delete m_window;
-    delete m_event;
+    return m_window.isOpen();
 }

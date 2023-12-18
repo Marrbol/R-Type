@@ -1,5 +1,8 @@
 # R-Type
 
+This is an Epitech project made by students of the 2026 promotion.
+This project aims at creating a network game engine and a game using this engine.
+
 ## How to compile the project
 
 Navigate to the root of the project and run the following commands:
@@ -8,7 +11,7 @@ Navigate to the root of the project and run the following commands:
 mkdir build
 cd build
 cmake ..
-cmake --build .
+make
 ```
 
 ## How to run the project
@@ -16,17 +19,11 @@ cmake --build .
 Navigate to the root of the project and run the following commands:
 
 ```bash
-./build/bin/r-type_server [-h/--help | -c/--client | -s/--server] [--ip <ip>] [-p/--port <port>]
+./build/bin/r-type_server [-h/--help]
 ```
 
 ### Options
-    -p, --port    Set the port to listen on (default: 4242)
-    --ip          Set the ip to connect to (default: 127.0.0.1) - client only
-
-### Modes
     -h, --help    Display the help menu
-    -c, --client  Run as client
-    -s, --server  Run as server
 
 ## Notes : current state of the project
 

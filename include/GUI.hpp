@@ -11,26 +11,28 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
+#include <unordered_map>
+
 #include "GUI/Sprite.hpp"
 
 namespace GUI {
 
-    enum class Input {
+    enum class Input : int {
         UP,
         DOWN,
         LEFT,
         RIGHT,
         SHOOT,
-        NONE
+        COUNT
     };
 
-    enum class Appearance {
+    enum class Appearance : int {
         PLAYER_IDLE,
         PLAYER_SHOOT,
         ENEMY_IDLE,
         ENEMY_SHOOT,
         BULLET,
-        NONE
+        COUNT
     };
 
     struct SpriteData;
@@ -58,8 +60,8 @@ namespace GUI {
     private:
         void loadSprites();
 
-        sf::RenderWindow *m_window;
-        sf::Event *m_event;
+        sf::RenderWindow m_window;
+        sf::Event m_event;
 
         std::unordered_map<Appearance, Sprite *> m_sprites;
 
@@ -70,20 +72,6 @@ namespace GUI {
             {Appearance::ENEMY_SHOOT, {"../assets/images/enemy_shoot.png", 100, 100, 1}},
             {Appearance::BULLET, {"../assets/images/bullet.png", 100, 100, 1}}
         };
-
-        std::vector<Appearance> m_appearances = {
-            Appearance::PLAYER_IDLE,
-            Appearance::PLAYER_SHOOT,
-            Appearance::ENEMY_IDLE,
-            Appearance::ENEMY_SHOOT,
-            Appearance::BULLET
-        };
-    };
-
-    class Audio {
-    public:
-        Audio();
-        ~Audio();
     };
 
 }

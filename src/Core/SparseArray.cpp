@@ -5,8 +5,4 @@
 ** sparse array
 */
 
-#include <cstddef>
-
-#include "ECS/SparseArray.hpp"
-
 // Everything was moved to the header file, because of the templates

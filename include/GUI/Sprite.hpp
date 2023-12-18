@@ -32,9 +32,9 @@ namespace GUI {
         ~Sprite();
 
     private:
-        sf::Sprite m_sprite;
-        sf::Texture m_texture;
-        SpriteData m_data;
+        sf::Sprite _sprite;
+        sf::Texture _texture;
+        SpriteData _data;
         bool _isTextureLoaded = false;
     };
 
