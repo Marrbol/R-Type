@@ -1,0 +1,12 @@
+{
+    "name": "RType",
+    "version": "0.1.0",
+    "dependencies": [
+        "sfml"
+    ],
+    "build": {
+        "options": [
+            "sfml:shared"
+        ]
+    }
+}

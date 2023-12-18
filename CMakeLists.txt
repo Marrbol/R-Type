@@ -4,32 +4,39 @@
 ## Root CMakeLists.txt
 ##
 
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.10)
 
 project(RType)
 
+# Vcpkg
+include(${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake)
+
+# Minimum C++ standard required
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+# Vcpkg toolchain file
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+
+# Output directories
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "cmake/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-find_package(SFML 2.5 COMPONENTS graphics window system audio REQUIRED)
-
-include_directories(${CMAKE_SOURCE_DIR}/include)
+find_package(SFML 2.5 REQUIRED COMPONENTS graphics window system audio)
 
 set(SOURCES
-    ${CMAKE_SOURCE_DIR}/src/Main.cpp
+    src/Main.cpp
 
-    ${CMAKE_SOURCE_DIR}/src/Core/Core.cpp
-    ${CMAKE_SOURCE_DIR}/src/Core/Registry.cpp
-    ${CMAKE_SOURCE_DIR}/src/Core/SparseArray.cpp
+    src/Core/Core.cpp
+    src/Core/Registry.cpp
+    src/Core/SparseArray.cpp
 
-    ${CMAKE_SOURCE_DIR}/src/GUI/GUI.cpp
-    ${CMAKE_SOURCE_DIR}/src/GUI/Sprite.cpp
+    src/GUI/GUI.cpp
+    src/GUI/Sprite.cpp
 )
 
 add_executable(r-type ${SOURCES})
 
-target_link_libraries(r-type sfml-graphics sfml-window sfml-system sfml-audio)
-target_link_libraries(r-type pthread)
+target_include_directories(r-type PRIVATE include)
+
+target_link_libraries(r-type PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
