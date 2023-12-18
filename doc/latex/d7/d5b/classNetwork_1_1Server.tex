@@ -1,0 +1,99 @@
+\hypertarget{classNetwork_1_1Server}{}\doxysection{Network\+::Server Class Reference}
+\label{classNetwork_1_1Server}\index{Network::Server@{Network::Server}}
+
+
+{\ttfamily \#include $<$Network.\+hpp$>$}
+
+
+
+Inheritance diagram for Network\+::Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{d0/d67/classNetwork_1_1Server__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Network\+::Server\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{df/d69/classNetwork_1_1Server__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNetwork_1_1Server_a9cae3109f58ee101e8cd5cdbfc03f72c}{Server}} (short port)
+\item 
+\mbox{\hyperlink{classNetwork_1_1Server_a4d7379b3c5eb2ab3567776b8ab348217}{$\sim$\+Server}} ()
+\item 
+void \mbox{\hyperlink{classNetwork_1_1Server_a03728c4e7e169b3d57164b02e49feffc}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classNetwork_1_1INetwork}{Network\+::\+INetwork}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classNetwork_1_1INetwork_ae88c1a3764d9a078d5bf8ebc248d8d2e}{$\sim$\+INetwork}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad448309bf}{run}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNetwork_1_1Server_a9cae3109f58ee101e8cd5cdbfc03f72c}\label{classNetwork_1_1Server_a9cae3109f58ee101e8cd5cdbfc03f72c}} 
+\index{Network::Server@{Network::Server}!Server@{Server}}
+\index{Server@{Server}!Network::Server@{Network::Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Network\+::\+Server\+::\+Server (\begin{DoxyParamCaption}\item[{short}]{port }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00013\ \ \ \ \ m\_socket(m\_io\_context,\ udp::endpoint(udp::v4(),\ port))}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNetwork_1_1Server_a4d7379b3c5eb2ab3567776b8ab348217}\label{classNetwork_1_1Server_a4d7379b3c5eb2ab3567776b8ab348217}} 
+\index{Network::Server@{Network::Server}!````~Server@{$\sim$Server}}
+\index{````~Server@{$\sim$Server}!Network::Server@{Network::Server}}
+\doxysubsubsection{\texorpdfstring{$\sim$Server()}{~Server()}}
+{\footnotesize\ttfamily Network\+::\+Server\+::$\sim$\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNetwork_1_1Server_a03728c4e7e169b3d57164b02e49feffc}\label{classNetwork_1_1Server_a03728c4e7e169b3d57164b02e49feffc}} 
+\index{Network::Server@{Network::Server}!run@{run}}
+\index{run@{run}!Network::Server@{Network::Server}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Network\+::\+Server\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad448309bf}{Network\+::\+INetwork}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ do\_receive();}
+\DoxyCodeLine{00050\ \ \ \ \ std::thread\ t([\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ m\_io\_context.run();}
+\DoxyCodeLine{00052\ \ \ \ \ \});}
+\DoxyCodeLine{00053\ \ \ \ \ t.join();}
+\DoxyCodeLine{00054\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{Network_8hpp}{Network.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+Network/\mbox{\hyperlink{Server_8cpp}{Server.\+cpp}}\end{DoxyCompactItemize}

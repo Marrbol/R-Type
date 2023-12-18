@@ -1,0 +1,94 @@
+\hypertarget{classSystemHandler}{}\doxysection{System\+Handler Class Reference}
+\label{classSystemHandler}\index{SystemHandler@{SystemHandler}}
+
+
+{\ttfamily \#include $<$System\+Handler.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSystemHandler_ac7abce14872ab2bf63c024b71fa5701a}{System\+Handler}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry, \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}} \&gui)
+\item 
+\mbox{\hyperlink{classSystemHandler_a3f258ce24ddfcbec34584f38e0fa6644}{System\+Handler}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry)
+\item 
+\mbox{\hyperlink{classSystemHandler_afdca8863c92b8c9b28be388b55dee16f}{$\sim$\+System\+Handler}} ()=default
+\item 
+void \mbox{\hyperlink{classSystemHandler_a968fe8e841a63c6a580acec7ed1186a2}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSystemHandler_ac7abce14872ab2bf63c024b71fa5701a}\label{classSystemHandler_ac7abce14872ab2bf63c024b71fa5701a}} 
+\index{SystemHandler@{SystemHandler}!SystemHandler@{SystemHandler}}
+\index{SystemHandler@{SystemHandler}!SystemHandler@{SystemHandler}}
+\doxysubsubsection{\texorpdfstring{SystemHandler()}{SystemHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily System\+Handler\+::\+System\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{registry,  }\item[{\mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}} \&}]{gui }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00027\ \ \ \ \ m\_registry(registry),}
+\DoxyCodeLine{00028\ \ \ \ \ m\_gui(gui)}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSystemHandler_a3f258ce24ddfcbec34584f38e0fa6644}\label{classSystemHandler_a3f258ce24ddfcbec34584f38e0fa6644}} 
+\index{SystemHandler@{SystemHandler}!SystemHandler@{SystemHandler}}
+\index{SystemHandler@{SystemHandler}!SystemHandler@{SystemHandler}}
+\doxysubsubsection{\texorpdfstring{SystemHandler()}{SystemHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily System\+Handler\+::\+System\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{registry }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00033\ \ \ \ \ m\_registry(registry)}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSystemHandler_afdca8863c92b8c9b28be388b55dee16f}\label{classSystemHandler_afdca8863c92b8c9b28be388b55dee16f}} 
+\index{SystemHandler@{SystemHandler}!````~SystemHandler@{$\sim$SystemHandler}}
+\index{````~SystemHandler@{$\sim$SystemHandler}!SystemHandler@{SystemHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$SystemHandler()}{~SystemHandler()}}
+{\footnotesize\ttfamily System\+Handler\+::$\sim$\+System\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSystemHandler_a968fe8e841a63c6a580acec7ed1186a2}\label{classSystemHandler_a968fe8e841a63c6a580acec7ed1186a2}} 
+\index{SystemHandler@{SystemHandler}!run@{run}}
+\index{run@{run}!SystemHandler@{SystemHandler}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void System\+Handler\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classsparse__array}{sparse\_array<component::Position>}}\ \&positions\ =\ m\_registry.\mbox{\hyperlink{classRegistry_a9bd59de84cb86995d3dddf31f706938b}{get\_components}}<\mbox{\hyperlink{structcomponent_1_1Position}{component::Position}}>();}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classsparse__array}{sparse\_array<component::Velocity>}}\ \&velocities\ =\ m\_registry.\mbox{\hyperlink{classRegistry_a9bd59de84cb86995d3dddf31f706938b}{get\_components}}<\mbox{\hyperlink{structcomponent_1_1Velocity}{component::Velocity}}>();}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classsparse__array}{sparse\_array<component::Controllable>}}\ \&controllables\ =\ m\_registry.\mbox{\hyperlink{classRegistry_a9bd59de84cb86995d3dddf31f706938b}{get\_components}}<\mbox{\hyperlink{structcomponent_1_1Controllable}{component::Controllable}}>();}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classsparse__array}{sparse\_array<component::Drawable>}}\ \&drawables\ =\ m\_registry.\mbox{\hyperlink{classRegistry_a9bd59de84cb86995d3dddf31f706938b}{get\_components}}<\mbox{\hyperlink{structcomponent_1_1Drawable}{component::Drawable}}>();}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classsparse__array}{sparse\_array<component::HitBox>}}\ \&hitboxes\ =\ m\_registry.\mbox{\hyperlink{classRegistry_a9bd59de84cb86995d3dddf31f706938b}{get\_components}}<\mbox{\hyperlink{structcomponent_1_1HitBox}{component::HitBox}}>();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_gui)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1IGUI}{GUI::IGUI}}\ \&gui\ =\ m\_gui.value().get();}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{SystemHandler_8cpp_a59625c1927c92e786902726d117d3440}{position\_system}}(positions,\ velocities,\ controllables);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{SystemHandler_8cpp_ab9c41bc120d7b1704cb0e45221c2c666}{control\_system}}(gui,\ controllables,\ velocities);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{SystemHandler_8cpp_a630b30556c0e79a529f2d3aa4b561e7f}{draw\_system}}(gui,\ positions,\ drawables);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{SystemHandler_8cpp_a59625c1927c92e786902726d117d3440}{position\_system}}(positions,\ velocities,\ controllables);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\+ECS/\mbox{\hyperlink{SystemHandler_8hpp}{System\+Handler.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+ECS/\mbox{\hyperlink{SystemHandler_8cpp}{System\+Handler.\+cpp}}\end{DoxyCompactItemize}
