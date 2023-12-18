@@ -1,0 +1,84 @@
+\hypertarget{classECS_1_1ECS}{}\doxysection{ECS\+::ECS Class Reference}
+\label{classECS_1_1ECS}\index{ECS::ECS@{ECS::ECS}}
+
+
+{\ttfamily \#include $<$ECS.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1ECS_a157dfcc6bdbedc91ddd2dcc3a4396e66}{ECS}} (const \mbox{\hyperlink{classProgram_1_1Params}{Program\+::\+Params}} \&params)
+\item 
+\mbox{\hyperlink{classECS_1_1ECS_a459431e3ea9115d701248357268214e5}{$\sim$\+ECS}} ()
+\item 
+void \mbox{\hyperlink{classECS_1_1ECS_ae5a594d15b1486d044b5ebd7267a3e24}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classECS_1_1ECS_a157dfcc6bdbedc91ddd2dcc3a4396e66}\label{classECS_1_1ECS_a157dfcc6bdbedc91ddd2dcc3a4396e66}} 
+\index{ECS::ECS@{ECS::ECS}!ECS@{ECS}}
+\index{ECS@{ECS}!ECS::ECS@{ECS::ECS}}
+\doxysubsubsection{\texorpdfstring{ECS()}{ECS()}}
+{\footnotesize\ttfamily ECS\+::\+ECS\+::\+ECS (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classProgram_1_1Params}{Program\+::\+Params}} \&}]{params }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ m\_registry\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classRegistry}{Registry}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (params.\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ ==\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aaef10c650df47bffd6399e5e78da2a9b1}{Program::RunMode::CLIENT}})\ \{\ \textcolor{comment}{//\ Client\ mode}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ m\_network\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classNetwork_1_1Client}{Network::Client}}(params.\mbox{\hyperlink{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56}{ip}},\ params.\mbox{\hyperlink{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}{port}});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ m\_gui\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classGUI_1_1GUI}{GUI::GUI}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ m\_systemHandler\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSystemHandler}{SystemHandler}}(*m\_registry,\ *m\_gui);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (params.\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ ==\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa3d27c95bfdbea691b250894d96852844}{Program::RunMode::SERVER}})\ \{\ \textcolor{comment}{//\ Server\ mode}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ m\_network\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classNetwork_1_1Server}{Network::Server}}(params.\mbox{\hyperlink{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}{port}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ m\_systemHandler\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSystemHandler}{SystemHandler}}(*m\_registry);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_1_1ECS_a459431e3ea9115d701248357268214e5}\label{classECS_1_1ECS_a459431e3ea9115d701248357268214e5}} 
+\index{ECS::ECS@{ECS::ECS}!````~ECS@{$\sim$ECS}}
+\index{````~ECS@{$\sim$ECS}!ECS::ECS@{ECS::ECS}}
+\doxysubsubsection{\texorpdfstring{$\sim$ECS()}{~ECS()}}
+{\footnotesize\ttfamily ECS\+::\+ECS\+::$\sim$\+ECS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{delete}\ m\_registry;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_gui)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ m\_gui;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{delete}\ m\_systemHandler;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{delete}\ m\_network;}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classECS_1_1ECS_ae5a594d15b1486d044b5ebd7267a3e24}\label{classECS_1_1ECS_ae5a594d15b1486d044b5ebd7267a3e24}} 
+\index{ECS::ECS@{ECS::ECS}!run@{run}}
+\index{run@{run}!ECS::ECS@{ECS::ECS}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void ECS\+::\+ECS\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ std::thread\ network\_thread(\&\mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad448309bf}{Network::INetwork::run}},\ m\_network);}
+\DoxyCodeLine{00043\ \ \ \ \ std::thread\ system\_thread(\&\mbox{\hyperlink{classSystemHandler_a968fe8e841a63c6a580acec7ed1186a2}{SystemHandler::run}},\ m\_systemHandler);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ system\_thread.join();}
+\DoxyCodeLine{00046\ \ \ \ \ network\_thread.join();}
+\DoxyCodeLine{00047\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{ECS_8hpp}{ECS.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+ECS/\mbox{\hyperlink{ECS_8cpp}{ECS.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,208 @@
+\hypertarget{classGUI_1_1GUI}{}\doxysection{GUI\+::GUI Class Reference}
+\label{classGUI_1_1GUI}\index{GUI::GUI@{GUI::GUI}}
+
+
+{\ttfamily \#include $<$GUI.\+hpp$>$}
+
+
+
+Inheritance diagram for GUI\+::GUI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{d3/d44/classGUI_1_1GUI__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for GUI\+::GUI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{d5/da5/classGUI_1_1GUI__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1GUI_a4302a202f6ac35e748d04ce652baff04}{GUI}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1GUI_a054664a7a3521e3c5b834b9a8c4a0176}{clear}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1GUI_a31d9314d042a609f8c68297fa9c48157}{draw}} (float x, float y, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}} appearance)
+\item 
+void \mbox{\hyperlink{classGUI_1_1GUI_ae96589c6d461df1329767879527d7f37}{display}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{Input}} $>$ \mbox{\hyperlink{classGUI_1_1GUI_a3f0b06802a30938107d1402323c2664b}{get\+Inputs}} ()
+\item 
+bool \mbox{\hyperlink{classGUI_1_1GUI_afdae8ef3f3f015ec3730d40310082d3e}{is\+Open}} ()
+\item 
+\mbox{\hyperlink{classGUI_1_1GUI_a6b0334243064c49a0be62b16f1f61cfa}{$\sim$\+GUI}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{$\sim$\+IGUI}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a390c9a96a2e41f5133418fca9a42f1bb}{clear}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a0a7ab043e55556f9ed20594b173fafe9}{draw}} (float x, float y, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}} appearance)=0
+\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{display}} ()=0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{Input}} $>$ \mbox{\hyperlink{classGUI_1_1IGUI_a268e1a73d264446b54471e95f8c4de3e}{get\+Inputs}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classGUI_1_1IGUI_a0bf40dfb4c7170e8e223fba8d47e257c}{is\+Open}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGUI_1_1GUI_a4302a202f6ac35e748d04ce652baff04}\label{classGUI_1_1GUI_a4302a202f6ac35e748d04ce652baff04}} 
+\index{GUI::GUI@{GUI::GUI}!GUI@{GUI}}
+\index{GUI@{GUI}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{GUI()}{GUI()}}
+{\footnotesize\ttfamily GUI\+::\+GUI\+::\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ m\_window\ =\ \textcolor{keyword}{new}\ sf::RenderWindow(sf::VideoMode(800,\ 600),\ \textcolor{stringliteral}{"{}R-\/Type"{}});}
+\DoxyCodeLine{00013\ \ \ \ \ m\_window-\/>setFramerateLimit(60);}
+\DoxyCodeLine{00014\ \ \ \ \ m\_window-\/>setKeyRepeatEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00015\ \ \ \ \ m\_event\ =\ \textcolor{keyword}{new}\ sf::Event;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ loadSprites();}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1GUI_a6b0334243064c49a0be62b16f1f61cfa}\label{classGUI_1_1GUI_a6b0334243064c49a0be62b16f1f61cfa}} 
+\index{GUI::GUI@{GUI::GUI}!````~GUI@{$\sim$GUI}}
+\index{````~GUI@{$\sim$GUI}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{$\sim$GUI()}{~GUI()}}
+{\footnotesize\ttfamily GUI\+::\+GUI\+::$\sim$\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ sprite\ :\ m\_sprites)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ delete\ sprite.second;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{delete}\ m\_window;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{delete}\ m\_event;}
+\DoxyCodeLine{00079\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGUI_1_1GUI_a054664a7a3521e3c5b834b9a8c4a0176}\label{classGUI_1_1GUI_a054664a7a3521e3c5b834b9a8c4a0176}} 
+\index{GUI::GUI@{GUI::GUI}!clear@{clear}}
+\index{clear@{clear}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void GUI\+::\+GUI\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a390c9a96a2e41f5133418fca9a42f1bb}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ m\_window-\/>clear();}
+\DoxyCodeLine{00036\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1GUI_ae96589c6d461df1329767879527d7f37}\label{classGUI_1_1GUI_ae96589c6d461df1329767879527d7f37}} 
+\index{GUI::GUI@{GUI::GUI}!display@{display}}
+\index{display@{display}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void GUI\+::\+GUI\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ m\_window-\/>display();}
+\DoxyCodeLine{00041\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1GUI_a31d9314d042a609f8c68297fa9c48157}\label{classGUI_1_1GUI_a31d9314d042a609f8c68297fa9c48157}} 
+\index{GUI::GUI@{GUI::GUI}!draw@{draw}}
+\index{draw@{draw}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void GUI\+::\+GUI\+::draw (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}}}]{appearance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a0a7ab043e55556f9ed20594b173fafe9}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ m\_sprites[appearance]-\/>setPosition(x,\ y);}
+\DoxyCodeLine{00030\ \ \ \ \ m\_window-\/>draw(m\_sprites[appearance]-\/>sprite());}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1GUI_a3f0b06802a30938107d1402323c2664b}\label{classGUI_1_1GUI_a3f0b06802a30938107d1402323c2664b}} 
+\index{GUI::GUI@{GUI::GUI}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{GUI\+::\+Input}} $>$ GUI\+::\+GUI\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a268e1a73d264446b54471e95f8c4de3e}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ std::vector<Input>\ inputs;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{while}\ (m\_window-\/>pollEvent(*m\_event))\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>type\ ==\ sf::Event::Closed)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ m\_window-\/>close();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!m\_window-\/>hasFocus())}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>type\ ==\ sf::Event::KeyPressed)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>key.code\ ==\ sf::Keyboard::Up)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}{Input::UP}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>key.code\ ==\ sf::Keyboard::Down)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}{Input::DOWN}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>key.code\ ==\ sf::Keyboard::Left)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}{Input::LEFT}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>key.code\ ==\ sf::Keyboard::Right)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}{Input::RIGHT}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_event-\/>key.code\ ==\ sf::Keyboard::Space)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}{Input::SHOOT}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordflow}{return}\ inputs;}
+\DoxyCodeLine{00066\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1GUI_afdae8ef3f3f015ec3730d40310082d3e}\label{classGUI_1_1GUI_afdae8ef3f3f015ec3730d40310082d3e}} 
+\index{GUI::GUI@{GUI::GUI}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!GUI::GUI@{GUI::GUI}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool GUI\+::\+GUI\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a0bf40dfb4c7170e8e223fba8d47e257c}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_window-\/>isOpen();}
+\DoxyCodeLine{00071\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{GUI_8hpp}{GUI.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+GUI/\mbox{\hyperlink{GUI_8cpp}{GUI.\+cpp}}\end{DoxyCompactItemize}
