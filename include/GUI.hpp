@@ -11,6 +11,8 @@
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
 
+#include <unordered_map>
+
 #include "GUI/Sprite.hpp"
 
 namespace GUI {
