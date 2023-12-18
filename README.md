@@ -27,6 +27,5 @@ Navigate to the root of the project and run the following commands:
 
 ## Notes : current state of the project
 
-Right now you need to have SFML and Boost installed on your computer to compile
+Right now you need to have SFML installed on your computer to compile
 the project. Windows compatibility has not been tested yet.
-The only way to stop the game engine is to kill the process (Ctrl+C).
