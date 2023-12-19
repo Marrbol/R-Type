@@ -19,7 +19,7 @@ make
 Navigate to the root of the project and run the following commands:
 
 ```bash
-./build/bin/r-type_server [-h/--help]
+./build/bin/r-type [-h/--help]
 ```
 
 ### Options
