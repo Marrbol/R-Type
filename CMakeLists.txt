@@ -9,20 +9,21 @@ cmake_minimum_required(VERSION 3.10)
 
 # Project name
 project(RType)
+include(FetchContent)
 
-# Minimum C++ standard required
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Output directories
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "cmake/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# Find SFML
-find_package(SFML 2.5 REQUIRED COMPONENTS graphics window system audio)
+FetchContent_Declare(SFML GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 2.5.1)
+FetchContent_MakeAvailable(SFML)
+
+include_directories(${CMAKE_SOURCE_DIR}/include)
 
 set(SOURCES
-    src/Main.cpp
+    ${CMAKE_SOURCE_DIR}/src/Main.cpp
 
     src/Core/Core.cpp
     src/Core/Registry.cpp
