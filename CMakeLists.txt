@@ -8,15 +8,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(RType)
 
-# Vcpkg
-include(${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake)
-
 # Minimum C++ standard required
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Vcpkg toolchain file
-set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
 
 # Output directories
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "cmake/")
