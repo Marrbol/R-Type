@@ -7,71 +7,68 @@
 
 #include "GUI.hpp"
 
-GUI::GUI::GUI():
-    m_window({800, 600}, "R-Type")
+GUI::SfmlGUI::SfmlGUI():
+    _window({800, 600}, "R-Type")
 {
-    m_window.setFramerateLimit(60);
-    m_window.setKeyRepeatEnabled(true);
-
-    loadSprites();
+    _window.setFramerateLimit(60);
+    _window.setKeyRepeatEnabled(true);
 }
 
-GUI::GUI::~GUI()
+GUI::SfmlGUI::~SfmlGUI()
 {
-    for (auto sprite : m_sprites)
-        delete sprite.second;
 }
 
-void GUI::GUI::loadSprites()
+void GUI::SfmlGUI::draw(sf::Sprite &sprite)
 {
-    for (int i = 0; i < static_cast<int>(Appearance::COUNT); ++i) {
-        Appearance appearance = static_cast<Appearance>(i);
-        m_sprites[appearance] = new Sprite(m_sprites_data[appearance]);
-    }
+    _window.draw(sprite);
 }
 
-void GUI::GUI::draw(float x, float y, Appearance appearance)
+void GUI::SfmlGUI::clear()
 {
-    m_sprites[appearance]->setPosition(x, y);
-    m_window.draw(m_sprites[appearance]->sprite());
+    _window.clear();
 }
 
-void GUI::GUI::clear()
+void GUI::SfmlGUI::display()
 {
-    m_window.clear();
+    _window.display();
 }
 
-void GUI::GUI::display()
+size_t GUI::SfmlGUI::get_width() const
 {
-    m_window.display();
+    return _window.getSize().x;
 }
 
-std::vector<GUI::Input> GUI::GUI::getInputs()
+size_t GUI::SfmlGUI::get_height() const
+{
+    return _window.getSize().y;
+}
+
+std::vector<GUI::Input> GUI::SfmlGUI::getInputs()
 {
     std::vector<Input> inputs;
 
-    while (m_window.pollEvent(m_event)) {
-        if (m_event.type == sf::Event::Closed)
-            m_window.close();
-        if (!m_window.hasFocus())
+    while (_window.pollEvent(_event)) {
+        if (_event.type == sf::Event::Closed)
+            _window.close();
+        if (!_window.hasFocus())
             continue;
-        if (m_event.type == sf::Event::KeyPressed) {
-            if (m_event.key.code == sf::Keyboard::Up)
+        if (_event.type == sf::Event::KeyPressed) {
+            if (_event.key.code == sf::Keyboard::Up)
                 inputs.push_back(Input::UP);
-            if (m_event.key.code == sf::Keyboard::Down)
+            if (_event.key.code == sf::Keyboard::Down)
                 inputs.push_back(Input::DOWN);
-            if (m_event.key.code == sf::Keyboard::Left)
+            if (_event.key.code == sf::Keyboard::Left)
                 inputs.push_back(Input::LEFT);
-            if (m_event.key.code == sf::Keyboard::Right)
+            if (_event.key.code == sf::Keyboard::Right)
                 inputs.push_back(Input::RIGHT);
-            if (m_event.key.code == sf::Keyboard::Space)
+            if (_event.key.code == sf::Keyboard::Space)
                 inputs.push_back(Input::SHOOT);
         }
     }
     return inputs;
 }
 
-bool GUI::GUI::isOpen()
+bool GUI::SfmlGUI::isOpen()
 {
-    return m_window.isOpen();
+    return _window.isOpen();
 }

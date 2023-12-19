@@ -19,13 +19,10 @@ namespace Program {
     inline const int exitSuccess = 0;
     inline const int exitError = 84;
     inline const char *help =
-        "USAGE: ./r-type_server [-h/--help | -c/--client | -s/--server] [-i/--ip <ip>] [-p/--port <port>]\n"
+        "USAGE: ./r-type [-h/--help]\n"
         "\n"
         "DESCRIPTION:\n"
-        "\t-h/--help\tdisplay this help and exit\n"
-        "\t-c/--client\trun as a client\n"
-        "\t-s/--server\trun as a server\n"
-        "\tport\tport to connect with (1024 < port < 65535) - 4242 by default\n";
+        "\t-h/--help\tdisplay this help and exit\n";
 
     enum class RunMode {
         HELP = 0,

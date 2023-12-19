@@ -31,7 +31,7 @@ int main(const int argc, const char *argv[])
         if (params.runMode == Program::RunMode::HELP) {
             cout << Program::help << endl;
         } else if (params.runMode == Program::RunMode::RUN) {
-            GUI::GUI gui;
+            GUI::SfmlGUI gui;
             ECS::Core core(gui);
             ECS::SystemHandler systemHandler(core);
 

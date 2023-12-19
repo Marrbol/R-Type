@@ -13,8 +13,6 @@
 
 #include <unordered_map>
 
-#include "GUI/Sprite.hpp"
-
 namespace GUI {
 
     enum class Input : int {
@@ -26,52 +24,32 @@ namespace GUI {
         COUNT
     };
 
-    enum class Appearance : int {
-        PLAYER_IDLE,
-        PLAYER_SHOOT,
-        ENEMY_IDLE,
-        ENEMY_SHOOT,
-        BULLET,
-        COUNT
-    };
-
-    struct SpriteData;
-    class Sprite;
-
     class IGUI {
     public:
         virtual ~IGUI() = default;
         virtual void clear() = 0;
-        virtual void draw(float x, float y, Appearance appearance) = 0;
+        virtual void draw(sf::Sprite &sprite) = 0;
         virtual void display() = 0;
         virtual std::vector<Input> getInputs() = 0;
         virtual bool isOpen() = 0;
+        virtual size_t get_width() const = 0;
+        virtual size_t get_height() const = 0;
     };
 
-    class GUI : public IGUI {
+    class SfmlGUI : public IGUI {
     public:
-        GUI();
+        SfmlGUI();
         void clear();
-        void draw(float x, float y, Appearance appearance);
+        void draw(sf::Sprite &sprite);
         void display();
         std::vector<Input> getInputs();
         bool isOpen();
-        ~GUI();
+        size_t get_width() const;
+        size_t get_height() const;
+        ~SfmlGUI();
     private:
-        void loadSprites();
-
-        sf::RenderWindow m_window;
-        sf::Event m_event;
-
-        std::unordered_map<Appearance, Sprite *> m_sprites;
-
-        std::unordered_map<Appearance, SpriteData> m_sprites_data = {
-            {Appearance::PLAYER_IDLE, {"../assets/images/player_idle.png", 100, 100, 1}},
-            {Appearance::PLAYER_SHOOT, {"../assets/images/player_shoot.png", 100, 100, 1}},
-            {Appearance::ENEMY_IDLE, {"../assets/images/enemy_idle.png", 100, 100, 1}},
-            {Appearance::ENEMY_SHOOT, {"../assets/images/enemy_shoot.png", 100, 100, 1}},
-            {Appearance::BULLET, {"../assets/images/bullet.png", 100, 100, 1}}
-        };
+        sf::RenderWindow _window;
+        sf::Event _event;
     };
 
 }

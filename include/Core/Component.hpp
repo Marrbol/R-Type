@@ -11,8 +11,7 @@
 
 namespace component {
 
-    struct Position
-    {
+    struct Position {
         float x;
         float y;
     };
@@ -23,9 +22,10 @@ namespace component {
         float y;
     };
 
-    struct Drawable
+    struct Drawable // Check if this is a good idea
     {
-        GUI::Appearance appearance;
+        sf::Sprite sprite;
+        sf::Texture texture;
     };
 
     struct Controllable
