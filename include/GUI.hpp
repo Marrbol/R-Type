@@ -20,7 +20,7 @@ namespace GUI {
         DOWN,
         LEFT,
         RIGHT,
-        SHOOT,
+        SPACE,
         COUNT
     };
 
@@ -28,7 +28,7 @@ namespace GUI {
     public:
         virtual ~IGUI() = default;
         virtual void clear() = 0;
-        virtual void draw(sf::Sprite &sprite) = 0;
+        virtual void draw(sf::Sprite &sprite, size_t x, size_t y) = 0;
         virtual void display() = 0;
         virtual std::vector<Input> getInputs() = 0;
         virtual bool isOpen() = 0;
@@ -40,7 +40,7 @@ namespace GUI {
     public:
         SfmlGUI();
         void clear();
-        void draw(sf::Sprite &sprite);
+        void draw(sf::Sprite &sprite, size_t x, size_t y);
         void display();
         std::vector<Input> getInputs();
         bool isOpen();

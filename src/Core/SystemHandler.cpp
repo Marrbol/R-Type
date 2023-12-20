@@ -98,6 +98,13 @@ void control_system(ECS::Core &c)
     }
 }
 
+struct Sprite {
+    sf::Sprite sprite;
+    size_t x;
+    size_t y;
+    size_t draw_order;
+};
+
 void draw_system(ECS::Core &c)
 {
     auto &registry = c.get_registry();
@@ -106,6 +113,8 @@ void draw_system(ECS::Core &c)
     auto &positions = registry.get_components<component::Position>();
     auto &drawables = registry.get_components<component::Drawable>();
 
+    std::vector<std::shared_ptr<Sprite>> sprites;
+
     gui.clear();
 
     for (size_t i = 0; i < positions.size() && i < drawables.size(); ++i) {
@@ -113,8 +122,21 @@ void draw_system(ECS::Core &c)
         auto &draw = drawables[i];
 
         if (pos && draw) {
-            gui.draw(draw->sprite);
+            std::shared_ptr<Sprite> sprite = std::make_shared<Sprite>();
+            sprite->sprite = draw->sprite;
+            sprite->x = pos->x;
+            sprite->y = pos->y;
+            sprite->draw_order = draw->draw_order;
+            sprites.push_back(sprite);
         }
+    }
+
+    std::sort(sprites.begin(), sprites.end(), [](const std::shared_ptr<Sprite> &a, const std::shared_ptr<Sprite> &b) {
+        return a->draw_order < b->draw_order;
+    });
+
+    for (auto sprite : sprites) {
+        gui.draw(sprite->sprite, sprite->x, sprite->y);
     }
 
     gui.display();

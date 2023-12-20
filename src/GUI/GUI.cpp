@@ -18,8 +18,9 @@ GUI::SfmlGUI::~SfmlGUI()
 {
 }
 
-void GUI::SfmlGUI::draw(sf::Sprite &sprite)
+void GUI::SfmlGUI::draw(sf::Sprite &sprite, size_t x, size_t y)
 {
+    sprite.setPosition(x, y);
     _window.draw(sprite);
 }
 
@@ -53,16 +54,25 @@ std::vector<GUI::Input> GUI::SfmlGUI::getInputs()
         if (!_window.hasFocus())
             continue;
         if (_event.type == sf::Event::KeyPressed) {
-            if (_event.key.code == sf::Keyboard::Up)
-                inputs.push_back(Input::UP);
-            if (_event.key.code == sf::Keyboard::Down)
-                inputs.push_back(Input::DOWN);
-            if (_event.key.code == sf::Keyboard::Left)
-                inputs.push_back(Input::LEFT);
-            if (_event.key.code == sf::Keyboard::Right)
-                inputs.push_back(Input::RIGHT);
-            if (_event.key.code == sf::Keyboard::Space)
-                inputs.push_back(Input::SHOOT);
+            switch (_event.key.code) {
+                case sf::Keyboard::Up:
+                    inputs.push_back(Input::UP);
+                    break;
+                case sf::Keyboard::Down:
+                    inputs.push_back(Input::DOWN);
+                    break;
+                case sf::Keyboard::Left:
+                    inputs.push_back(Input::LEFT);
+                    break;
+                case sf::Keyboard::Right:
+                    inputs.push_back(Input::RIGHT);
+                    break;
+                case sf::Keyboard::Space:
+                    inputs.push_back(Input::SPACE);
+                    break;
+                default:
+                    break;
+            }
         }
     }
     return inputs;

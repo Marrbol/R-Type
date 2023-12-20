@@ -22,7 +22,11 @@ ECS::Core::Core(GUI::IGUI &gui): _gui(gui)
     entity e = registry.spawn_entity();
     registry.add_component(e, component::Position{0, 0});
     registry.add_component(e, component::Velocity{0, 0});
-    // registry.add_component(e, component::Drawable{???});
+    sf::Texture texture;
+    texture.loadFromFile("../assets/images/player_idle.png");
+    sf::Sprite sprite;
+    sprite.setTexture(texture);
+    registry.add_component(e, component::Drawable{sprite, texture, 0});
     registry.add_component(e, component::Controllable{10, 0.9});
     registry.add_component(e, component::HitBox{100, 100});
 }

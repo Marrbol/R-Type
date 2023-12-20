@@ -26,6 +26,7 @@ namespace component {
     {
         sf::Sprite sprite;
         sf::Texture texture;
+        size_t draw_order;
     };
 
     struct Controllable
