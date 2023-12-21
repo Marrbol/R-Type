@@ -78,7 +78,7 @@ void control_system(ECS::Core &c)
     auto &velocities = registry.get_components<component::Velocity>();
     auto &controllables = registry.get_components<component::Controllable>();
 
-    for (size_t i = 0; i < velocities.size() && i < controllables.size(); ++i) {
+    for (size_t i = 0; i < velocities.size() || i < controllables.size(); ++i) {
         auto &vel = velocities[i];
         auto &cont = controllables[i];
 
@@ -117,7 +117,7 @@ void draw_system(ECS::Core &c)
 
     gui.clear();
 
-    for (size_t i = 0; i < positions.size() && i < drawables.size(); ++i) {
+    for (size_t i = 0; i < positions.size() || i < drawables.size(); ++i) {
         auto &pos = positions[i];
         auto &draw = drawables[i];
 
@@ -152,7 +152,7 @@ void physics_system(ECS::Core &c)
     auto &controllables = registry.get_components<component::Controllable>();
     auto &hitboxes = registry.get_components<component::HitBox>();
 
-    for (size_t i = 0; i < positions.size() && i < velocities.size() && i < controllables.size() && i < hitboxes.size(); i++) {
+    for (size_t i = 0; i < positions.size() || i < velocities.size() || i < controllables.size() || i < hitboxes.size(); i++) {
         auto &pos = positions[i];
         auto &vel = velocities[i];
         auto &cont = controllables[i];
