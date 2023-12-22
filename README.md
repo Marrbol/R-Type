@@ -53,10 +53,6 @@ If you have a problem with the textures, make sure you are running CMake from th
 build directory under the root of the project. If you are running CMake from the
 root of the project or elsewhere, the textures will not be loaded properly.
 
-## Documentation
-
-[![Documentation](https://img.shields.io/badge/documentation-GitBook-blue)](https://app.gitbook.com/o/zJbvl7clfpSsXLZnLPmj/s/YUsbJ3dVld8mFFYihmst/)
-
 ### Contributors
 
 - www.github.com/awisemanoncesaid

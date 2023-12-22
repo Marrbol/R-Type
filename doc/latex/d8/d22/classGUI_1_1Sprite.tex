@@ -1,0 +1,101 @@
+\hypertarget{classGUI_1_1Sprite}{}\doxysection{GUI\+::Sprite Class Reference}
+\label{classGUI_1_1Sprite}\index{GUI::Sprite@{GUI::Sprite}}
+
+
+{\ttfamily \#include $<$Sprite.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1Sprite_aa9750379ad9afb35b96012693c91cbee}{Sprite}} (const \mbox{\hyperlink{structGUI_1_1SpriteData}{Sprite\+Data}} data)
+\item 
+void \mbox{\hyperlink{classGUI_1_1Sprite_a786893afe106adeedac8c7c541bfa1a9}{set\+Position}} (float x, float y)
+\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{classGUI_1_1Sprite_aded1c3f3674a49c389053312d88d6d3b}{sprite}} ()
+\item 
+bool \mbox{\hyperlink{classGUI_1_1Sprite_afa0afe20a9aedcacf6418c2f953a4719}{is\+Texture\+Loaded}} () const
+\item 
+\mbox{\hyperlink{classGUI_1_1Sprite_a456ce4d5bfaf842fa7feba413e40b0b9}{$\sim$\+Sprite}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGUI_1_1Sprite_aa9750379ad9afb35b96012693c91cbee}\label{classGUI_1_1Sprite_aa9750379ad9afb35b96012693c91cbee}} 
+\index{GUI::Sprite@{GUI::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!GUI::Sprite@{GUI::Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}}
+{\footnotesize\ttfamily GUI\+::\+Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGUI_1_1SpriteData}{Sprite\+Data}}}]{data }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00011\ \ \ \ \ m\_data(data)}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_texture.loadFromFile(data.path))\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \_isTextureLoaded\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \ \ \ \ m\_sprite.setTexture(m\_texture);}
+\DoxyCodeLine{00017\ \ \ \ \ m\_sprite.setTextureRect(sf::IntRect(0,\ 0,\ data.frame\_width,\ data.frame\_height));}
+\DoxyCodeLine{00018\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1Sprite_a456ce4d5bfaf842fa7feba413e40b0b9}\label{classGUI_1_1Sprite_a456ce4d5bfaf842fa7feba413e40b0b9}} 
+\index{GUI::Sprite@{GUI::Sprite}!````~Sprite@{$\sim$Sprite}}
+\index{````~Sprite@{$\sim$Sprite}!GUI::Sprite@{GUI::Sprite}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sprite()}{~Sprite()}}
+{\footnotesize\ttfamily GUI\+::\+Sprite\+::$\sim$\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGUI_1_1Sprite_afa0afe20a9aedcacf6418c2f953a4719}\label{classGUI_1_1Sprite_afa0afe20a9aedcacf6418c2f953a4719}} 
+\index{GUI::Sprite@{GUI::Sprite}!isTextureLoaded@{isTextureLoaded}}
+\index{isTextureLoaded@{isTextureLoaded}!GUI::Sprite@{GUI::Sprite}}
+\doxysubsubsection{\texorpdfstring{isTextureLoaded()}{isTextureLoaded()}}
+{\footnotesize\ttfamily bool GUI\+::\+Sprite\+::is\+Texture\+Loaded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ \_isTextureLoaded;}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1Sprite_a786893afe106adeedac8c7c541bfa1a9}\label{classGUI_1_1Sprite_a786893afe106adeedac8c7c541bfa1a9}} 
+\index{GUI::Sprite@{GUI::Sprite}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!GUI::Sprite@{GUI::Sprite}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void GUI\+::\+Sprite\+::set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ m\_sprite.setPosition(x,\ y);}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1Sprite_aded1c3f3674a49c389053312d88d6d3b}\label{classGUI_1_1Sprite_aded1c3f3674a49c389053312d88d6d3b}} 
+\index{GUI::Sprite@{GUI::Sprite}!sprite@{sprite}}
+\index{sprite@{sprite}!GUI::Sprite@{GUI::Sprite}}
+\doxysubsubsection{\texorpdfstring{sprite()}{sprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite \& GUI\+::\+Sprite\+::sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_sprite;}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\+GUI/\mbox{\hyperlink{Sprite_8hpp}{Sprite.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+GUI/\mbox{\hyperlink{Sprite_8cpp}{Sprite.\+cpp}}\end{DoxyCompactItemize}
