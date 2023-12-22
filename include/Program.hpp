@@ -2,8 +2,8 @@
 ** EPITECH PROJECT, 2023
 ** RType - ECS
 ** File description:
-** Program namespace - manage everything related to the program separately from
-** the ECS.
+** Program
+** Manage everything related to the program separately from the ECS.
 */
 
 #pragma once

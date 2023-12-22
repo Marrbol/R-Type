@@ -27,8 +27,8 @@ Navigate to the root of the project and run the following commands:
 
 ## Notes : current state of the project
 
-Right now you need to have SFML installed on your computer to compile
-the project. Windows compatibility has not been tested yet.
+Project is currently in development. The engine is not finished yet, and the
+game is not started. The Network module is not present yet.
 
 ### License
 
@@ -38,6 +38,15 @@ See the [LICENSE](LICENSE) file for license rights.
 
 ## Compilation errors
 
+- If you are having trouble compiling the project, make sure you have the
+  following dependencies installed:
+  - CMake 3.10 or higher
+  - C++ build tool
+
+- If you are having trouble running the project, make sure you are running the
+  executable from a build directory under the root of the project. See above
+  for more details.
+
 ## Textures not loading, or not loading properly (white squares)
 
 If you have a problem with the textures, make sure you are running CMake from the
@@ -45,3 +54,7 @@ build directory under the root of the project. If you are running CMake from the
 root of the project or elsewhere, the textures will not be loaded properly.
 
 ### Contributors
+
+- www.github.com/awisemanoncesaid
+- www.github.com/mbonnet2
+- www.github.com/Marrbol

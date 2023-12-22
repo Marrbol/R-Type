@@ -38,6 +38,14 @@ add_executable(r-type ${SOURCES})
 
 # Include directories
 target_include_directories(r-type PRIVATE include)
+target_include_directories(r-type PRIVATE lib)
+
+# Add subdirectories
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Physics)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Render)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Control)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/DestroyOutOfBounds)
+
 
 # Link libraries
 target_link_libraries(r-type PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
@@ -45,9 +53,7 @@ if (UNIX)
     target_link_libraries(r-type PRIVATE dl)
 endif (UNIX)
 
-# Include subdirectories
-#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Physics)
-#set_target_properties(PhysicsModule PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-
-#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Render)
-#set_target_properties(RenderModule PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+target_link_libraries(r-type PRIVATE PhysicsModule)
+target_link_libraries(r-type PRIVATE RenderModule)
+target_link_libraries(r-type PRIVATE ControlModule)
+target_link_libraries(r-type PRIVATE DestroyOutOfBoundsModule)

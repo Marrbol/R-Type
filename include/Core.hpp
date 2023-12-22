@@ -3,6 +3,11 @@
 ** RType
 ** File description:
 ** Core
+** Core stores the most important objects of the ECS:
+** - The GUI
+** - The Registry
+** - The SystemHandler
+** unlike the systems they are not optional to the user.
 */
 
 #pragma once

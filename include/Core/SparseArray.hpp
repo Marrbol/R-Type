@@ -3,6 +3,8 @@
 ** RType
 ** File description:
 ** sparse array
+** A sparse array is made of a vector of optional components. It behaves
+** like the table of a database. It is used to store components of entities.
 */
 
 #pragma once

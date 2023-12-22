@@ -8,6 +8,8 @@
 #include "Program.hpp"
 #include "Core.hpp"
 
+// Parameters parsing ---------------------------------------------------------
+
 Program::Params::Params(const vector<string> args)
 {
     for (size_t i = 0; i < args.size(); i++) {
@@ -22,6 +24,8 @@ Program::Params::Params(const vector<string> args)
         runMode = RunMode::RUN;
         // throw InvalidParamsException("No mode specified");
 }
+
+// Program --------------------------------------------------------------------
 
 int main(const int argc, const char *argv[])
 {

@@ -3,9 +3,14 @@
 ** RType
 ** File description:
 ** GUI
+** This is the GUI class, it is used to display the game. Its only goal is to
+** behave as a render window and encapsulate anything SFML related. Feel free
+** to implement your own GUI class, relying on whatever library you want.
 */
 
 #include "GUI.hpp"
+
+// Constructors ---------------------------------------------------------------
 
 GUI::SfmlGUI::SfmlGUI():
     _window({800, 600}, "R-Type")
@@ -18,9 +23,12 @@ GUI::SfmlGUI::~SfmlGUI()
 {
 }
 
-void GUI::SfmlGUI::draw(sf::Sprite &sprite, size_t x, size_t y)
+// Methods --------------------------------------------------------------------
+
+void GUI::SfmlGUI::draw(sf::Sprite &sprite, float x, float y, float width, float height)
 {
     sprite.setPosition(x, y);
+    sprite.setScale(width / sprite.getTexture()->getSize().x, height / sprite.getTexture()->getSize().y);
     _window.draw(sprite);
 }
 

@@ -3,6 +3,8 @@
 ** RType
 ** File description:
 ** entity
+** Entities are just a size_t, they are just abstract. They represent an
+** index in the sparse array.
 */
 
 #pragma once

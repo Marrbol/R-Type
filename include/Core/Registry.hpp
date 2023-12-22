@@ -3,6 +3,8 @@
 ** RType
 ** File description:
 ** Registry
+** The registry is responsible for storing all the components and entities, as
+** a database would behave.
 */
 
 #pragma once
