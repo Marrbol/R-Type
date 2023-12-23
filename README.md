@@ -62,3 +62,4 @@ root of the project or elsewhere, the textures will not be loaded properly.
 - www.github.com/mbonnet2
 - www.github.com/Marrbol
 - www.github.com/Oce78
+- www.github.com/AmalfitanoJV
