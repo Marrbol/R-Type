@@ -45,6 +45,7 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Physics)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Render)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Control)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/DestroyOutOfBounds)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Collision)
 
 
 # Link libraries
@@ -57,3 +58,4 @@ target_link_libraries(r-type PRIVATE PhysicsModule)
 target_link_libraries(r-type PRIVATE RenderModule)
 target_link_libraries(r-type PRIVATE ControlModule)
 target_link_libraries(r-type PRIVATE DestroyOutOfBoundsModule)
+target_link_libraries(r-type PRIVATE CollisionModule)
