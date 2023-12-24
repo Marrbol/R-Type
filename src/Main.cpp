@@ -10,7 +10,7 @@
 
 // Parameters parsing ---------------------------------------------------------
 
-Program::Params::Params(const vector<string> args)
+Program::Params::Params(const std::vector<std::string> args)
 {
     for (size_t i = 0; i < args.size(); i++) {
         if (args[i] == "-h" || args[i] == "--help") {
@@ -31,9 +31,9 @@ int main(const int argc, const char *argv[])
 {
     try {
         // Parsing parameters, instantiating the ECS and running it
-        const Program::Params params(vector<string>(argv + 1, argv + argc));
+        const Program::Params params(std::vector<std::string>(argv + 1, argv + argc));
         if (params.runMode == Program::RunMode::HELP) {
-            cout << Program::help << endl;
+            std::cout << Program::help << std::endl;
         } else if (params.runMode == Program::RunMode::RUN) {
             GUI::SfmlGUI gui;
             ECS::Core core(gui);
@@ -46,16 +46,16 @@ int main(const int argc, const char *argv[])
 
     // Specifying any error the most precisely possible
     } catch (const Program::InvalidParamsException &e) {
-        cerr << "Invalid parameters: \"" << e.what() << "\". Run with -h or --help for more details." << endl;
+        std::cerr << "Invalid parameters: \"" << e.what() << "\". Run with -h or --help for more details." << std::endl;
         return Program::exitError;
     } catch (const ECS::RuntimeException &e) {
-        cerr << "Runtime error: \"" << e.what() << "\"." << endl;
+        std::cerr << "Runtime error: \"" << e.what() << "\"." << std::endl;
         return Program::exitError;
-    } catch (const exception &e) {
-        cerr << "Error: \"" << e.what() << "\"." << endl;
+    } catch (const std::exception &e) {
+        std::cerr << "Error: \"" << e.what() << "\"." << std::endl;
         return Program::exitError;
     } catch (...) {
-        cerr << "Unknown error occured." << endl;
+        std::cerr << "Unknown error occured." << std::endl;
         return Program::exitError;
     }
     return Program::exitSuccess;

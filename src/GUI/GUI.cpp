@@ -90,3 +90,79 @@ bool GUI::SfmlGUI::isOpen()
 {
     return _window.isOpen();
 }
+
+bool GUI::SfmlGUI::openFromFile(const std::string &filename)
+{
+    return _music.openFromFile(filename);
+}
+
+bool GUI::SfmlGUI::getLoop()
+{
+    return _music.getLoop();
+}
+
+void GUI::SfmlGUI::setLoop(bool loop)
+{
+    _music.setLoop(loop);
+}
+
+float GUI::SfmlGUI::getAttenuation()
+{
+    return _music.getAttenuation();
+}
+
+void GUI::SfmlGUI::setAttenuation(float attenuation)
+{
+    _music.setAttenuation(attenuation);
+}
+
+float GUI::SfmlGUI::getPitch()
+{
+    return _music.getPitch();
+}
+
+void GUI::SfmlGUI::setPitch(float pitch)
+{
+    _music.setPitch(pitch);
+}
+
+float GUI::SfmlGUI::getVolume()
+{
+    return _music.getVolume();
+}
+
+void GUI::SfmlGUI::setVolume(float volume)
+{
+    _music.setVolume(volume);
+}
+
+GUI::state GUI::SfmlGUI::getStatus()
+{
+    sf::Sound::Status res = _music.getStatus();
+
+    switch (res) {
+    case sf::Sound::Status::Stopped:
+        return GUI::state::Stopped;
+        break;
+    case sf::Sound::Status::Paused:
+        return GUI::state::Paused;
+        break;
+    case sf::Sound::Status::Playing:
+        return GUI::state::Playing;
+        break;
+    default:
+        return GUI::state::Undefined;
+        break;
+    }
+}
+
+void GUI::SfmlGUI::pause()
+{
+    _music.pause();
+}
+
+void GUI::SfmlGUI::play()
+{
+    _music.play();
+}
+

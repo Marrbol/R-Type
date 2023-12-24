@@ -21,3 +21,6 @@ add_library(RenderModule STATIC ${LIBRARY_SOURCES})
 
 # Specify include directories for the library
 target_include_directories(RenderModule PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../include)
+
+# Link SFML libraries from the root project
+target_link_libraries(RenderModule PUBLIC sfml-graphics sfml-window sfml-system)

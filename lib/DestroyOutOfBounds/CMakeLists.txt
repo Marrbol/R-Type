@@ -22,3 +22,5 @@ add_library(DestroyOutOfBoundsModule STATIC ${LIBRARY_SOURCES})
 # Specify include directories for the library
 target_include_directories(DestroyOutOfBoundsModule PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 
+# Link SFML libraries from the root project
+target_link_libraries(DestroyOutOfBoundsModule PUBLIC sfml-graphics sfml-window sfml-system)

@@ -22,3 +22,5 @@ add_library(PhysicsModule STATIC ${LIBRARY_SOURCES})
 # Specify include directories for the library
 target_include_directories(PhysicsModule PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 
+# Link SFML libraries from the root project
+target_link_libraries(PhysicsModule PUBLIC sfml-graphics sfml-window sfml-system)
