@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['register_5fcomponent_0',['register_component',['../db/d0d/classRegistry.html#a5397b38d1643c5dee4114d20190baf50',1,'Registry']]],
-  ['registry_1',['Registry',['../db/d0d/classRegistry.html#acb15d8aa051bf36ea92a86ee6c00bc3c',1,'Registry']]],
-  ['remove_5fcomponent_2',['remove_component',['../db/d0d/classRegistry.html#a8d01930a8523759d8fc0bb844519d264',1,'Registry']]],
-  ['run_3',['run',['../d6/d84/classECS_1_1ECS.html#ae5a594d15b1486d044b5ebd7267a3e24',1,'ECS::ECS::run()'],['../d7/ddc/classSystemHandler.html#a968fe8e841a63c6a580acec7ed1186a2',1,'SystemHandler::run()'],['../d7/d22/classNetwork_1_1INetwork.html#ae986b31a921364be235a33ad448309bf',1,'Network::INetwork::run()'],['../d7/d5b/classNetwork_1_1Server.html#a03728c4e7e169b3d57164b02e49feffc',1,'Network::Server::run()'],['../d7/d28/classNetwork_1_1Client.html#aa71486f3ef1e60542448331fa035f72d',1,'Network::Client::run()']]],
-  ['runtimeexception_4',['RuntimeException',['../de/d59/classECS_1_1RuntimeException.html#a421d931fcfd8b401c20b7bb13056b788',1,'ECS::RuntimeException']]]
+  ['openfromfile_0',['openFromFile',['../da/d8d/classGUI_1_1SfmlGUI.html#a67d6d0b48c71f37ae134341b75ba637b',1,'GUI::SfmlGUI']]],
+  ['operator_3d_1',['operator=',['../d6/d51/classsparse__array.html#af5e17f6790053457e97eec83074d27f1',1,'sparse_array::operator=(sparse_array const &amp;)'],['../d6/d51/classsparse__array.html#a906d95183f72cface47b360947b8e2ca',1,'sparse_array::operator=(sparse_array &amp;&amp;) noexcept']]],
+  ['operator_5b_5d_2',['operator[]',['../d6/d51/classsparse__array.html#a40a68a4b56f36a07cf13aa8415a1aa94',1,'sparse_array::operator[](size_t idx)'],['../d6/d51/classsparse__array.html#a599a4e0fb72515b2160ca0d7a5f8902e',1,'sparse_array::operator[](size_t idx) const']]],
+  ['size_5ft_3',['size_t',['../d2/d6b/classentity.html#a9034d2529b4a35eb88dae2f51fc628a3',1,'entity']]]
 ];

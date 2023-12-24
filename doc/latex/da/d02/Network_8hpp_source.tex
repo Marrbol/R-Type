@@ -1,5 +1,5 @@
 \hypertarget{Network_8hpp_source}{}\doxysection{Network.\+hpp}
-\label{Network_8hpp_source}\index{/home/mbonnet/TEK3/B-\/CPP-\/500-\/REN-\/5-\/2-\/rtype-\/oceane.krull/include/Network.hpp@{/home/mbonnet/TEK3/B-\/CPP-\/500-\/REN-\/5-\/2-\/rtype-\/oceane.krull/include/Network.hpp}}
+\label{Network_8hpp_source}\index{/home/mbonnet/TEK3/B-\/CPP-\/500-\/REN-\/5-\/2-\/rtype-\/oceane.krull/old/Network.hpp@{/home/mbonnet/TEK3/B-\/CPP-\/500-\/REN-\/5-\/2-\/rtype-\/oceane.krull/old/Network.hpp}}
 \mbox{\hyperlink{Network_8hpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{/*}}
@@ -13,49 +13,111 @@
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <boost/asio.hpp>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <boost/bind.hpp>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }boost::asio;}
-\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }ip::udp;}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceNetwork}{Network}}\ \{}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetwork_1_1INetwork}{INetwork}}\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNetwork_1_1INetwork_ae88c1a3764d9a078d5bf8ebc248d8d2e}{\string~INetwork}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad448309bf}{run}}()\ =\ 0;}
-\DoxyCodeLine{00023\ \ \ \ \ \};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetwork_1_1Server}{Server}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNetwork_1_1INetwork}{INetwork}}\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Server}{Server}}(\textcolor{keywordtype}{short}\ port);}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Server_a4d7379b3c5eb2ab3567776b8ab348217}{\string~Server}}();}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_a03728c4e7e169b3d57164b02e49feffc}{run}}();}
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ do\_receive();}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_received\_data(std::size\_t\ length);}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ io\_context\ m\_io\_context;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ udp::endpoint\ m\_sender\_endpoint;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ udp::socket\ m\_socket;}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \{\ max\_length\ =\ 1024\ \};}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ m\_data[max\_length];}
-\DoxyCodeLine{00038\ \ \ \ \ \};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetwork_1_1Client}{Client}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNetwork_1_1INetwork}{INetwork}}\ \{}
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Client}{Client}}(\textcolor{keyword}{const}\ std::string\ \&ip,\ \textcolor{keywordtype}{short}\ port);}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Client_a4e8e5fe86070c5996e49e02bea3abd02}{\string~Client}}();}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Client_aa71486f3ef1e60542448331fa035f72d}{run}}();}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ do\_receive();}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_received\_data(std::size\_t\ length);}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ io\_context\ m\_io\_context;}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ udp::endpoint\ m\_sender\_endpoint;}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ udp::socket\ m\_socket;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \{\ max\_length\ =\ 1024\ \};}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ m\_data[max\_length];}
-\DoxyCodeLine{00053\ \ \ \ \ \};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }boost::asio;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }ip::udp;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceNetwork}{Network}}\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ :\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dba1b8a180a49f9ff2d01e75cca71c52844}{CONNECTED}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dba04ce7a7b636fbf377e871c5093a42859}{DISCONNECTED}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dbac9a5a951f1f60849a78788f492eb7bc3}{MOVE\_UP}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dbafd548f667974921d6f411fcfbe91c851}{MOVE\_DOWN}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dba0abd8704658103f138083f9f64cdced9}{MOVE\_LEFT}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dbaeb9b52d7252f92bd452f9e3506e18651}{MOVE\_RIGHT}},}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dba88cb8c244ad3f3ace8c0268328326b5c}{SHOOT}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7dbaa7a9fc5e692ec7eb0c1479be51c80000}{COUNT}}}
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetwork_1_1INetwork}{INetwork}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNetwork_1_1INetwork_ae88c1a3764d9a078d5bf8ebc248d8d2e}{\string~INetwork}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad448309bf}{run}}()\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetwork_1_1Server}{Server}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNetwork_1_1INetwork}{INetwork}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classNetwork_1_1Server_ae587b66ad20c657b106c4ce09204e836}{Callback}}\ =\ std::function<void(udp::endpoint\ \&,\ Args...)>;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Server}{Server}}(\textcolor{keywordtype}{short}\ port);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Server_a4d7379b3c5eb2ab3567776b8ab348217}{\string~Server}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_a03728c4e7e169b3d57164b02e49feffc}{run}}();\ \textcolor{comment}{//\ Launches\ the\ server}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_a74f5212480dbd440b6bba05acba3cf54}{send\_to}}(udp::endpoint\ \&endpoint,\ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ event,\ Args...\ args);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_a74f5212480dbd440b6bba05acba3cf54}{send\_to}}(udp::endpoint\ \&endpoint,\ \mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ event);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_abf591b211748b4158bb470dd045cd0a2}{send\_to\_all}}(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ event,\ Args...\ args);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_abf591b211748b4158bb470dd045cd0a2}{send\_to\_all}}(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ event);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Server_a377d9cd5f20a9c3b21f09eeb7984a8c0}{connect}}(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ type,\ \mbox{\hyperlink{classNetwork_1_1Server_ae587b66ad20c657b106c4ce09204e836}{Callback<Args...>}}\ callback);\ \textcolor{comment}{//\ connects\ a\ callback\ to\ an\ event}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ startReceiving();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handleReceivedData(std::size\_t\ length);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ trigger(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ eventType,\ Args\&\&...\ args);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ std::unordered\_map<Event,\ std::vector<Callback<>>>\ \_callbacks;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ io\_context\ \_io\_context;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ udp::endpoint\ \_sender\_endpoint;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ udp::socket\ \_socket;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ std::unordered\_set<udp::endpoint\ *>\ \_clients;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \{\ max\_length\ =\ 1024\ \};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \_data[max\_length];}
+\DoxyCodeLine{00078\ \ \ \ \ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNetwork_1_1Client}{Client}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNetwork_1_1INetwork}{INetwork}}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}{Callback}}\ =\ std::function<void(Args...)>;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Client}{Client}}(\textcolor{keyword}{const}\ std::string\ \&ip,\ \textcolor{keywordtype}{short}\ port);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classNetwork_1_1Client_a4e8e5fe86070c5996e49e02bea3abd02}{\string~Client}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Client_aa71486f3ef1e60542448331fa035f72d}{run}}();\ \textcolor{comment}{//\ Launches\ the\ client}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Client_adb9f71c5e3c25a2d96681479f795fd9e}{send}}(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ type,\ Args...\ args);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Client_adb9f71c5e3c25a2d96681479f795fd9e}{send}}(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ type);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNetwork_1_1Client_a2515709e0d3cfa6ba82c5dbd4b382c13}{connect}}(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ type,\ \mbox{\hyperlink{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}{Callback<Args...>}}\ callback);\ \textcolor{comment}{//\ connects\ a\ callback\ to\ an\ event}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ startReceiving();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ handleReceivedData(std::size\_t\ length);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ trigger(\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}\ eventType,\ Args\&\&...\ args);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ std::unordered\_map<Event,\ std::vector<Callback<>>>\ \_callbacks;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ io\_context\ \_io\_context;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ udp::endpoint\ \_sender\_endpoint;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ udp::socket\ \_socket;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \{\ max\_length\ =\ 1024\ \};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \_data[max\_length];}
+\DoxyCodeLine{00115\ \ \ \ \ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \}}
 
 \end{DoxyCode}

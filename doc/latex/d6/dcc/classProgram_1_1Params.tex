@@ -7,7 +7,7 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classProgram_1_1Params_a861199e73f77f69bee6e2eb7ec45354e}{Params}} (const vector$<$ string $>$ args)
+\mbox{\hyperlink{classProgram_1_1Params_a28a2d570573a17ff57b874cec76d85d2}{Params}} (const std\+::vector$<$ std\+::string $>$ args)
 \item 
 \mbox{\hyperlink{classProgram_1_1Params_aeb17d9a109b4945a5e45348e6c8120f5}{$\sim$\+Params}} ()=default
 \end{DoxyCompactItemize}
@@ -15,65 +15,31 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42a}{Run\+Mode}} \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{run\+Mode}} = \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{Run\+Mode\+::\+NONE}}
-\item 
-short \mbox{\hyperlink{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}{port}} = 4242
-\item 
-string \mbox{\hyperlink{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56}{ip}} = \char`\"{}127.\+0.\+0.\+1\char`\"{}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classProgram_1_1Params_a861199e73f77f69bee6e2eb7ec45354e}\label{classProgram_1_1Params_a861199e73f77f69bee6e2eb7ec45354e}} 
+\mbox{\Hypertarget{classProgram_1_1Params_a28a2d570573a17ff57b874cec76d85d2}\label{classProgram_1_1Params_a28a2d570573a17ff57b874cec76d85d2}} 
 \index{Program::Params@{Program::Params}!Params@{Params}}
 \index{Params@{Params}!Program::Params@{Program::Params}}
 \doxysubsubsection{\texorpdfstring{Params()}{Params()}}
-{\footnotesize\ttfamily Program\+::\+Params\+::\+Params (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Program\+::\+Params\+::\+Params (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$}]{args }\end{DoxyParamCaption})}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ args.size();\ i++)\ \{}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Modes}}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (args[i]\ ==\ \textcolor{stringliteral}{"{}-\/h"{}}\ ||\ args[i]\ ==\ \textcolor{stringliteral}{"{}-\/-\/help"{}})\ \{\ \textcolor{comment}{//\ Help\ mode}}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ !=\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}})}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(\textcolor{stringliteral}{"{}Cannot\ run\ with\ several\ modes"{}});}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa4fc963e213bba362778f5c175eb4d5ff}{RunMode::HELP}};}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (args[i]\ ==\ \textcolor{stringliteral}{"{}-\/s"{}}\ ||\ args[i]\ ==\ \textcolor{stringliteral}{"{}-\/-\/server"{}})\ \{\ \textcolor{comment}{//\ Server\ mode}}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ !=\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}})}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(\textcolor{stringliteral}{"{}Cannot\ run\ with\ several\ modes"{}});}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa3d27c95bfdbea691b250894d96852844}{RunMode::SERVER}};}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (args[i]\ ==\ \textcolor{stringliteral}{"{}-\/c"{}}\ ||\ args[i]\ ==\ \textcolor{stringliteral}{"{}-\/-\/client"{}})\ \{\ \textcolor{comment}{//\ Client\ mode}}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ !=\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}})}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(\textcolor{stringliteral}{"{}Cannot\ run\ with\ several\ modes"{}});}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aaef10c650df47bffd6399e5e78da2a9b1}{RunMode::CLIENT}};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Options}}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (args[i]\ ==\ \textcolor{stringliteral}{"{}-\/p"{}}\ ||\ args[i]\ ==\ \textcolor{stringliteral}{"{}-\/-\/port"{}})\ \{\ \textcolor{comment}{//\ Port\ option}}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ +\ 1\ >=\ args.size())}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(args[i]\ +\ \textcolor{stringliteral}{"{}\ requires\ an\ argument"{}});}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}{port}}\ =\ stoi(args[i\ +\ 1]);}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ exception\ \&e)\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(args[i]\ +\ \textcolor{stringliteral}{"{}\ requires\ an\ integer\ argument"{}});}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (port\ <\ 1024\ ||\ port\ >\ 65535)}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(args[i]\ +\ \textcolor{stringliteral}{"{}\ requires\ an\ integer\ argument\ between\ 1024\ and\ 65535"{}});}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 1;}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (args[i]\ ==\ \textcolor{stringliteral}{"{}-\/i"{}}\ ||\ args[i]\ ==\ \textcolor{stringliteral}{"{}-\/-\/ip"{}})\ \{\ \textcolor{comment}{//\ IP\ option}}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ +\ 1\ >=\ args.size())}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(args[i]\ +\ \textcolor{stringliteral}{"{}\ requires\ an\ argument"{}});}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56}{ip}}\ =\ args[i\ +\ 1];}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ i\ +=\ 1;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(args[i]\ +\ \textcolor{stringliteral}{"{}\ not\ recognized"{}});}
-\DoxyCodeLine{00050\ \ \ \ \ \}}
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ ==\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}})}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aaef10c650df47bffd6399e5e78da2a9b1}{RunMode::CLIENT}};}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ throw\ InvalidParamsException("{}No\ mode\ specified"{});}}
-\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ args.size();\ i++)\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (args[i]\ ==\ \textcolor{stringliteral}{"{}-\/h"{}}\ ||\ args[i]\ ==\ \textcolor{stringliteral}{"{}-\/-\/help"{}})\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ !=\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}})}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(\textcolor{stringliteral}{"{}Cannot\ run\ with\ several\ modes"{}});}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa4fc963e213bba362778f5c175eb4d5ff}{RunMode::HELP}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ InvalidParamsException(args[i]\ +\ \textcolor{stringliteral}{"{}\ not\ recognized"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ ==\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa855520d2a5b0b1a64b939e7e30889e2a}{RunMode::RUN}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ throw\ InvalidParamsException("{}No\ mode\ specified"{});}}
+\DoxyCodeLine{00026\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classProgram_1_1Params_aeb17d9a109b4945a5e45348e6c8120f5}\label{classProgram_1_1Params_aeb17d9a109b4945a5e45348e6c8120f5}} 
@@ -85,18 +51,6 @@ string \mbox{\hyperlink{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56}\label{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56}} 
-\index{Program::Params@{Program::Params}!ip@{ip}}
-\index{ip@{ip}!Program::Params@{Program::Params}}
-\doxysubsubsection{\texorpdfstring{ip}{ip}}
-{\footnotesize\ttfamily string Program\+::\+Params\+::ip = \char`\"{}127.\+0.\+0.\+1\char`\"{}}
-
-\mbox{\Hypertarget{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}\label{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}} 
-\index{Program::Params@{Program::Params}!port@{port}}
-\index{port@{port}!Program::Params@{Program::Params}}
-\doxysubsubsection{\texorpdfstring{port}{port}}
-{\footnotesize\ttfamily short Program\+::\+Params\+::port = 4242}
-
 \mbox{\Hypertarget{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}\label{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}} 
 \index{Program::Params@{Program::Params}!runMode@{runMode}}
 \index{runMode@{runMode}!Program::Params@{Program::Params}}

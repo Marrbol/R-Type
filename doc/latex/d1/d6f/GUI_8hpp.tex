@@ -3,8 +3,8 @@
 {\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
 {\ttfamily \#include $<$SFML/\+Window.\+hpp$>$}\newline
 {\ttfamily \#include $<$SFML/\+System.\+hpp$>$}\newline
+{\ttfamily \#include $<$SFML/\+Audio.\+hpp$>$}\newline
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
-{\ttfamily \#include \char`\"{}GUI/\+Sprite.\+hpp\char`\"{}}\newline
 Include dependency graph for GUI.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -12,7 +12,8 @@ Include dependency graph for GUI.\+hpp\+:\nopagebreak
 \includegraphics[width=350pt]{db/d12/GUI_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,9 +25,7 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \item 
 class \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}
 \item 
-class \mbox{\hyperlink{classGUI_1_1GUI}{GUI\+::\+GUI}}
-\item 
-class \mbox{\hyperlink{classGUI_1_1Audio}{GUI\+::\+Audio}}
+class \mbox{\hyperlink{classGUI_1_1SfmlGUI}{GUI\+::\+Sfml\+GUI}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
@@ -36,23 +35,19 @@ namespace \mbox{\hyperlink{namespaceGUI}{GUI}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{GUI\+::\+Input}} \{ \newline
-\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}{GUI\+::\+UP}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}{GUI\+::\+DOWN}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}{GUI\+::\+LEFT}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}{GUI\+::\+RIGHT}}
+enum class \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{GUI\+::\+Input}} \+: int \{ \newline
+\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}{GUI\+::\+UP}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}{GUI\+::\+DOWN}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}{GUI\+::\+LEFT}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}{GUI\+::\+RIGHT}}
 , \newline
-\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}{GUI\+::\+SHOOT}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}{GUI\+::\+NONE}}
+\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}{GUI\+::\+SPACE}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa4905ac9d6a22bdfc1ae096094ce6248d}{GUI\+::\+COUNT}}
  \}
 \item 
-enum class \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{GUI\+::\+Appearance}} \{ \newline
-\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{GUI\+::\+PLAYER\+\_\+\+IDLE}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}{GUI\+::\+PLAYER\+\_\+\+SHOOT}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}{GUI\+::\+ENEMY\+\_\+\+IDLE}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}{GUI\+::\+ENEMY\+\_\+\+SHOOT}}
-, \newline
-\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}{GUI\+::\+BULLET}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ab50339a10e1de285ac99d4c3990b8693}{GUI\+::\+NONE}}
+enum \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{GUI\+::state}} \{ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}{GUI\+::\+Stopped}}
+, \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}{GUI\+::\+Paused}}
+, \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}{GUI\+::\+Playing}}
+, \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}{GUI\+::\+Undefined}}
  \}
 \end{DoxyCompactItemize}

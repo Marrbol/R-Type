@@ -1,6 +1,6 @@
 \label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md0}%
 \Hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md0}%
- \hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md1}{}\doxysection{How to compile the project}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md1}
+ This is an Epitech project made by students of the 2026 promotion. This project aims at creating a network game engine and a game using this engine.\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md1}{}\doxysection{How to compile the project}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md1}
 Navigate to the root of the project and run the following commands\+:
 
 
@@ -8,7 +8,7 @@ Navigate to the root of the project and run the following commands\+:
 \DoxyCodeLine{mkdir\ build}
 \DoxyCodeLine{cd\ build}
 \DoxyCodeLine{cmake\ ..}
-\DoxyCodeLine{cmake\ -\/-\/build\ .}
+\DoxyCodeLine{make}
 
 \end{DoxyCode}
 \hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md2}{}\doxysection{How to run the project}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md2}
@@ -16,10 +16,30 @@ Navigate to the root of the project and run the following commands\+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{./build/bin/r-\/type\_server\ [-\/h/-\/-\/help\ |\ -\/c/-\/-\/client\ |\ -\/s/-\/-\/server]\ [-\/-\/ip\ <ip>]\ [-\/p/-\/-\/port\ <port>]}
+\DoxyCodeLine{./build/bin/r-\/type\ [-\/h/-\/-\/help]}
 
 \end{DoxyCode}
 \hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md3}{}\doxysubsection{Options}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md3}
--\/p, --port Set the port to listen on (default\+: 4242) --ip Set the ip to connect to (default\+: 127.\+0.\+0.\+1) -\/ client only\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md4}{}\doxysubsection{Modes}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md4}
--\/h, --help Display the help menu -\/c, --client Run as client -\/s, --server Run as server\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md5}{}\doxysection{Notes \+: current state of the project}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md5}
-Right now you need to have SFML and Boost installed on your computer to compile the project. Windows compatibility has not been tested yet. The only way to stop the game engine is to kill the process (Ctrl+C). 
+-\/h, --help Display the help menu\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md4}{}\doxysection{Notes \+: current state of the project}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md4}
+Project is currently in development. The engine is not finished yet, and the game is not started. The Network module is not present yet.\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md5}{}\doxysubsection{License}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md5}
+See the \mbox{[}LICENSE\mbox{]}(LICENSE) file for license rights.\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md6}{}\doxysubsection{Troubleshooting}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md6}
+\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md7}{}\doxysection{Compilation errors}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md7}
+
+\begin{DoxyItemize}
+\item If you are having trouble compiling the project, make sure you have the following dependencies installed\+:
+\begin{DoxyItemize}
+\item CMake 3.\+10 or higher
+\item C++ build tool
+\end{DoxyItemize}
+\item If you are having trouble running the project, make sure you are running the executable from a build directory under the root of the project. See above for more details.
+\end{DoxyItemize}\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md8}{}\doxysection{Textures not loading, or not loading properly (white squares)}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md8}
+If you have a problem with the textures, make sure you are running CMake from the build directory under the root of the project. If you are running CMake from the root of the project or elsewhere, the textures will not be loaded properly.\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md9}{}\doxysection{Documentation}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md9}
+\href{https://app.gitbook.com/o/zJbvl7clfpSsXLZnLPmj/s/YUsbJ3dVld8mFFYihmst/}{\texttt{ }}\hypertarget{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md10}{}\doxysubsection{Contributors}\label{md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README_autotoc_md10}
+
+\begin{DoxyItemize}
+\item www.\+github.\+com/awisemanoncesaid
+\item www.\+github.\+com/mbonnet2
+\item www.\+github.\+com/\+Marrbol
+\item www.\+github.\+com/\+Oce78
+\item www.\+github.\+com/\+Amalfitano\+JV 
+\end{DoxyItemize}

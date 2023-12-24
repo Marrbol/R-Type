@@ -42,19 +42,14 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00016\ \{}
-\DoxyCodeLine{00017\ \ \ \ \ register\_component<component::Position>();}
-\DoxyCodeLine{00018\ \ \ \ \ register\_component<component::Velocity>();}
-\DoxyCodeLine{00019\ \ \ \ \ register\_component<component::Drawable>();}
-\DoxyCodeLine{00020\ \ \ \ \ register\_component<component::Controllable>();}
-\DoxyCodeLine{00021\ \ \ \ \ register\_component<component::HitBox>();}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e\ =\ \mbox{\hyperlink{classRegistry_ae170f7a8063f259454c5f32c96380009}{spawn\_entity}}();}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{structcomponent_1_1Position}{component::Position}}\{400,\ 300\});}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{structcomponent_1_1Velocity}{component::Velocity}}\{0,\ 0\});}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{structcomponent_1_1Drawable}{component::Drawable}}\{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{GUI::Appearance::PLAYER\_IDLE}}\});}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{structcomponent_1_1Controllable}{component::Controllable}}\{10,\ 0.9\});}
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{structcomponent_1_1HitBox}{component::HitBox}}\{100,\ 100\});}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ register\_component<component::Position>();}
+\DoxyCodeLine{00023\ \ \ \ \ register\_component<component::Velocity>();}
+\DoxyCodeLine{00024\ \ \ \ \ register\_component<component::Drawable>();}
+\DoxyCodeLine{00025\ \ \ \ \ register\_component<component::Controllable>();}
+\DoxyCodeLine{00026\ \ \ \ \ register\_component<component::HitBox>();}
+\DoxyCodeLine{00027\ \ \ \ \ register\_component<component::BoundsLimit>();}
+\DoxyCodeLine{00028\ \ \ \ \ register\_component<component::Respawnable>();}
 \DoxyCodeLine{00029\ \}}
 
 \end{DoxyCode}
@@ -82,10 +77,10 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00087\ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{auto}\ \&components\ =\ get\_components<Component>();}
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{return}\ components.insert\_at(to,\ std::forward<Component>(c));}
-\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{auto}\ \&components\ =\ get\_components<Component>();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ components.insert\_at(to,\ std::forward<Component>(c));}
+\DoxyCodeLine{00092\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a6a9acd83cae3a056532d227eeee1fce2}\label{classRegistry_a6a9acd83cae3a056532d227eeee1fce2}} 
@@ -97,10 +92,10 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00094\ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{auto}\ \&components\ =\ get\_components<Component>();}
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ components.emplace\_at(to,\ std::forward<Params>(p)...);}
-\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{auto}\ \&components\ =\ get\_components<Component>();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ components.emplace\_at(to,\ std::forward<Params>(p)...);}
+\DoxyCodeLine{00099\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a1750b455d798bd3b824fbb1c10c12236}\label{classRegistry_a1750b455d798bd3b824fbb1c10c12236}} 
@@ -111,10 +106,10 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00042\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e(idx);}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
-\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e(idx);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{00047\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a9bd59de84cb86995d3dddf31f706938b}\label{classRegistry_a9bd59de84cb86995d3dddf31f706938b}} 
@@ -126,10 +121,10 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00073\ \{}
-\DoxyCodeLine{00074\ \ \ \ \ std::any\ \&components\ =\ \_components\_arrays.at(std::type\_index(\textcolor{keyword}{typeid}(Component)));}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<sparse\_array<Component>\ \&>(components);}
-\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ std::any\ \&components\ =\ \_components\_arrays.at(std::type\_index(\textcolor{keyword}{typeid}(Component)));}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<sparse\_array<Component>\ \&>(components);}
+\DoxyCodeLine{00078\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a1f50b10ce2be1e45a8657bd7eb7bae63}\label{classRegistry_a1f50b10ce2be1e45a8657bd7eb7bae63}} 
@@ -148,10 +143,10 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00080\ \{}
-\DoxyCodeLine{00081\ \ \ \ \ std::any\ \textcolor{keyword}{const}\ \&components\ =\ \_components\_arrays.at(std::type\_index(\textcolor{keyword}{typeid}(Component)));}
-\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<sparse\_array<Component>\ \textcolor{keyword}{const}\ \&>(components);}
-\DoxyCodeLine{00083\ \}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ std::any\ \textcolor{keyword}{const}\ \&components\ =\ \_components\_arrays.at(std::type\_index(\textcolor{keyword}{typeid}(Component)));}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ std::any\_cast<sparse\_array<Component>\ \textcolor{keyword}{const}\ \&>(components);}
+\DoxyCodeLine{00085\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}\label{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}} 
@@ -162,12 +157,12 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00048\ \{}
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&components\ :\ \_components\_arrays)\ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&on\_kill\ =\ \_on\_kill\_callbacks.at(components.first);}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ on\_kill(*\textcolor{keyword}{this},\ e);}
-\DoxyCodeLine{00052\ \ \ \ \ \}}
-\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&components\ :\ \_components\_arrays)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&on\_kill\ =\ \_on\_kill\_callbacks.at(components.first);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ on\_kill(*\textcolor{keyword}{this},\ e);}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a5397b38d1643c5dee4114d20190baf50}\label{classRegistry_a5397b38d1643c5dee4114d20190baf50}} 
@@ -179,13 +174,13 @@ void \mbox{\hyperlink{classRegistry_a292cb005f5a50e8ea901754d0fd1d37b}{kill\+\_\
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00063\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \_components\_arrays[std::type\_index(\textcolor{keyword}{typeid}(Component))]\ =\ \mbox{\hyperlink{classsparse__array}{sparse\_array<Component>}}();}
-\DoxyCodeLine{00065\ \ \ \ \ \_on\_kill\_callbacks[std::type\_index(\textcolor{keyword}{typeid}(Component))]\ =\ [](\mbox{\hyperlink{classRegistry}{Registry}}\ \&r,\ \mbox{\hyperlink{classentity}{entity}}\ \textcolor{keyword}{const}\ \&e)\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{classRegistry_a8d01930a8523759d8fc0bb844519d264}{remove\_component}}<Component>(e);}
-\DoxyCodeLine{00067\ \ \ \ \ \};}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ get\_components<Component>();}
-\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \_components\_arrays[std::type\_index(\textcolor{keyword}{typeid}(Component))]\ =\ \mbox{\hyperlink{classsparse__array}{sparse\_array<Component>}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \_on\_kill\_callbacks[std::type\_index(\textcolor{keyword}{typeid}(Component))]\ =\ [](\mbox{\hyperlink{classRegistry}{Registry}}\ \&r,\ \mbox{\hyperlink{classentity}{entity}}\ \textcolor{keyword}{const}\ \&e)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ r.\mbox{\hyperlink{classRegistry_a8d01930a8523759d8fc0bb844519d264}{remove\_component}}<Component>(e);}
+\DoxyCodeLine{00069\ \ \ \ \ \};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{return}\ get\_components<Component>();}
+\DoxyCodeLine{00071\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_a8d01930a8523759d8fc0bb844519d264}\label{classRegistry_a8d01930a8523759d8fc0bb844519d264}} 
@@ -197,12 +192,12 @@ void Registry\+::remove\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hy
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00101\ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{auto}\ \&components\ =\ get\_components<Component>();}
-\DoxyCodeLine{00103\ \ \ \ \ components.erase(from);}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ \&on\_kill\ =\ \_on\_kill\_callbacks.at(std::type\_index(\textcolor{keyword}{typeid}(Component)));}
-\DoxyCodeLine{00105\ \ \ \ \ on\_kill(*\textcolor{keyword}{this},\ from);}
-\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{auto}\ \&components\ =\ get\_components<Component>();}
+\DoxyCodeLine{00105\ \ \ \ \ components.erase(from);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{auto}\ \&on\_kill\ =\ \_on\_kill\_callbacks.at(std::type\_index(\textcolor{keyword}{typeid}(Component)));}
+\DoxyCodeLine{00107\ \ \ \ \ on\_kill(*\textcolor{keyword}{this},\ from);}
+\DoxyCodeLine{00108\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classRegistry_ae170f7a8063f259454c5f32c96380009}\label{classRegistry_ae170f7a8063f259454c5f32c96380009}} 
@@ -213,15 +208,15 @@ void Registry\+::remove\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hy
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00036\ \{}
-\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e(\_next\_entity\_idx++);}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
-\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e(\_next\_entity\_idx++);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{00041\ \}}
 
 \end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\+ECS/\mbox{\hyperlink{Registry_8hpp}{Registry.\+hpp}}\item 
-/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+ECS/\mbox{\hyperlink{Registry_8cpp}{Registry.\+cpp}}\end{DoxyCompactItemize}
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\+Core/\mbox{\hyperlink{Registry_8hpp}{Registry.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+Core/\mbox{\hyperlink{Registry_8cpp}{Registry.\+cpp}}\end{DoxyCompactItemize}

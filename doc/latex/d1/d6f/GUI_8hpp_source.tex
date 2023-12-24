@@ -7,91 +7,86 @@
 \DoxyCodeLine{00003\ \textcolor{comment}{**\ RType}}
 \DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
 \DoxyCodeLine{00005\ \textcolor{comment}{**\ GUI}}
-\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <SFML/Window.hpp>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <SFML/System.hpp>}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Sprite_8hpp}{GUI/Sprite.hpp}}"{}}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceGUI}{GUI}}\ \{}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{Input}}\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}{UP}},}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}{DOWN}},}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}{LEFT}},}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}{RIGHT}},}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}{SHOOT}},}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}{NONE}}}
-\DoxyCodeLine{00027\ \ \ \ \ \};}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}}\ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{PLAYER\_IDLE}},}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}{PLAYER\_SHOOT}},}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}{ENEMY\_IDLE}},}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}{ENEMY\_SHOOT}},}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}{BULLET}},}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}{NONE}}}
-\DoxyCodeLine{00036\ \ \ \ \ \};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{struct\ }SpriteData;}
-\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }Sprite;}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}}\ \{}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\string~IGUI}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1IGUI_a390c9a96a2e41f5133418fca9a42f1bb}{clear}}()\ =\ 0;}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1IGUI_a0a7ab043e55556f9ed20594b173fafe9}{draw}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}}\ appearance)\ =\ 0;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{display}}()\ =\ 0;}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<Input>\ \mbox{\hyperlink{classGUI_1_1IGUI_a268e1a73d264446b54471e95f8c4de3e}{getInputs}}()\ =\ 0;}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1IGUI_a0bf40dfb4c7170e8e223fba8d47e257c}{isOpen}}()\ =\ 0;}
-\DoxyCodeLine{00049\ \ \ \ \ \};}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespaceGUI}{GUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}}\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI}{GUI}}();}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ draw(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}}\ appearance);}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ display();}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::vector<Input>\ getInputs();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isOpen();}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI}{\string~GUI}}();}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ loadSprites();}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ sf::RenderWindow\ *m\_window;}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ sf::Event\ *m\_event;}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ std::unordered\_map<Appearance,\ Sprite\ *>\ m\_sprites;}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ std::unordered\_map<Appearance,\ SpriteData>\ m\_sprites\_data\ =\ \{}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{Appearance::PLAYER\_IDLE}},\ \{\textcolor{stringliteral}{"{}../assets/images/player\_idle.png"{}},\ 100,\ 100,\ 1\}\},}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}{Appearance::PLAYER\_SHOOT}},\ \{\textcolor{stringliteral}{"{}../assets/images/player\_shoot.png"{}},\ 100,\ 100,\ 1\}\},}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}{Appearance::ENEMY\_IDLE}},\ \{\textcolor{stringliteral}{"{}../assets/images/enemy\_idle.png"{}},\ 100,\ 100,\ 1\}\},}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}{Appearance::ENEMY\_SHOOT}},\ \{\textcolor{stringliteral}{"{}../assets/images/enemy\_shoot.png"{}},\ 100,\ 100,\ 1\}\},}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}{Appearance::BULLET}},\ \{\textcolor{stringliteral}{"{}../assets/images/bullet.png"{}},\ 100,\ 100,\ 1\}\}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ std::vector<Appearance>\ m\_appearances\ =\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{Appearance::PLAYER\_IDLE}},}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}{Appearance::PLAYER\_SHOOT}},}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}{Appearance::ENEMY\_IDLE}},}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}{Appearance::ENEMY\_SHOOT}},}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}{Appearance::BULLET}}}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00083\ \ \ \ \ \};}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1Audio}{Audio}}\ \{}
-\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1Audio_a70cdfad23aa2bcbefc095ac0292e72d3}{Audio}}();}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1Audio_ad024ffd97d871377b0c3cf85e93d5e89}{\string~Audio}}();}
-\DoxyCodeLine{00089\ \ \ \ \ \};}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ This\ is\ the\ GUI\ class,\ it\ is\ used\ to\ display\ the\ game.\ Its\ only\ goal\ is\ to}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ behave\ as\ a\ render\ window\ and\ encapsulate\ anything\ SFML\ related.\ Feel\ free}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ to\ implement\ your\ own\ GUI\ class,\ relying\ on\ whatever\ library\ you\ want.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <SFML/Window.hpp>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <SFML/System.hpp>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <SFML/Audio.hpp>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceGUI}{GUI}}\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ **\ An\ Appearance\ enum\ was\ considered\ to\ avoid\ spreading\ sf\ elements\ into}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ **\ the\ register\ so\ IGUI\ would\ completely\ encapsulate\ anything}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ **\ library-\/related,\ and\ IGUI::draw\ would\ take\ this\ enum\ as\ parameter.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ **\ Just\ keeping\ it\ here\ for\ the\ record.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{Input}}\ :\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}{UP}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}{DOWN}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}{LEFT}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}{RIGHT}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}{SPACE}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa4905ac9d6a22bdfc1ae096094ce6248d}{COUNT}}}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{state}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}{Stopped}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}{Paused}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}{Playing}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}{Undefined}}}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\string~IGUI}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1IGUI_a390c9a96a2e41f5133418fca9a42f1bb}{clear}}()\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1IGUI_ac8e48424c162c6a8a9ac71af803913df}{draw}}(sf::Sprite\ \&sprite,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height)\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{display}}()\ =\ 0;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<Input>\ \mbox{\hyperlink{classGUI_1_1IGUI_a268e1a73d264446b54471e95f8c4de3e}{getInputs}}()\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1IGUI_a0bf40dfb4c7170e8e223fba8d47e257c}{isOpen}}()\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classGUI_1_1IGUI_a30e247f686c383806e2b9480f8adfe2a}{get\_width}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classGUI_1_1IGUI_a386c91fe1bd86da107a630c30578447f}{get\_height}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1SfmlGUI}{SfmlGUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1SfmlGUI_aa8455576d5345914fae9399fe886a3b8}{SfmlGUI}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a7fd0b0e32c43c3411538b0495277acf6}{clear}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a050ef9c5fdb28c64978b5b57e75036c9}{draw}}(sf::Sprite\ \&sprite,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a4f93729d8072d3ed6fb16af6a3ca876e}{display}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::vector<Input>\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a1c234d1ad067c26e72fa475b9aa918f9}{getInputs}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_aea31b84d0962d3b10e3550521e4c24a3}{isOpen}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a4768edb3def0863a96ae812ae616c94d}{get\_width}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_ad0ff36e7b31b089fe447b4f230468aa4}{get\_height}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a3c961033c771e5cc1c525816140447af}{\string~SfmlGUI}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a67d6d0b48c71f37ae134341b75ba637b}{openFromFile}}(\textcolor{keyword}{const}\ std::string\ \&filename);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a4c17df0decd8354680f87bdbb18011bb}{getLoop}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_ae036d739b365116e19f09772be19864e}{setLoop}}(\textcolor{keywordtype}{bool}\ loop);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a5861d20a420312ee5b015aeb04eeec82}{getAttenuation}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_aa8b6e1239297d360efe591368dd4fb0a}{setAttenuation}}(\textcolor{keywordtype}{float}\ attenuation);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_af7cf49f04a71a054a7553086d157bc9f}{getPitch}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_ac5149c591930169d0aecd3b0d0dc95b0}{setPitch}}(\textcolor{keywordtype}{float}\ pitch);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_aef6622a691c38e0b0b9f8a9f57fd845e}{getVolume}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_aa86e0dfe81ad19c4288eb63bf30f2e20}{setVolume}}(\textcolor{keywordtype}{float}\ volume);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{state}}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a1e065e09352be936af3e91d01da09e53}{getStatus}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a0730d40af13964347ac38ce834579e05}{pause}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a77b682eb675e6f634a527207bffdbf78}{play}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ sf::RenderWindow\ \_window;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ sf::Event\ \_event;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ sf::Music\ \_music;}
+\DoxyCodeLine{00084\ \ \ \ \ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \}}
 
 \end{DoxyCode}

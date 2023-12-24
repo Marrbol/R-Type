@@ -3,127 +3,107 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classGUI_1_1Audio}{Audio}}
-\item 
-class \mbox{\hyperlink{classGUI_1_1GUI}{GUI}}
-\item 
 class \mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}}
 \item 
-class \mbox{\hyperlink{classGUI_1_1Sprite}{Sprite}}
-\item 
-struct \mbox{\hyperlink{structGUI_1_1SpriteData}{Sprite\+Data}}
+class \mbox{\hyperlink{classGUI_1_1SfmlGUI}{Sfml\+GUI}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{Input}} \{ \newline
-\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}{UP}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}{DOWN}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}{LEFT}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}{RIGHT}}
+enum class \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{Input}} \+: int \{ \newline
+\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}{UP}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}{DOWN}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}{LEFT}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}{RIGHT}}
 , \newline
-\mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}{SHOOT}}
-, \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}{NONE}}
+\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}{SPACE}}
+, \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa4905ac9d6a22bdfc1ae096094ce6248d}{COUNT}}
  \}
 \item 
-enum class \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{Appearance}} \{ \newline
-\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{PLAYER\+\_\+\+IDLE}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}{PLAYER\+\_\+\+SHOOT}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}{ENEMY\+\_\+\+IDLE}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}{ENEMY\+\_\+\+SHOOT}}
-, \newline
-\mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}{BULLET}}
-, \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ab50339a10e1de285ac99d4c3990b8693}{NONE}}
+enum \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{state}} \{ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}{Stopped}}
+, \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}{Paused}}
+, \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}{Playing}}
+, \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}{Undefined}}
  \}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}} 
-\index{GUI@{GUI}!Appearance@{Appearance}}
-\index{Appearance@{Appearance}!GUI@{GUI}}
-\doxysubsubsection{\texorpdfstring{Appearance}{Appearance}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099}{GUI\+::\+Appearance}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER\_IDLE@{PLAYER\_IDLE}!GUI@{GUI}}\index{GUI@{GUI}!PLAYER\_IDLE@{PLAYER\_IDLE}}}\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}} 
-PLAYER\+\_\+\+IDLE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER\_SHOOT@{PLAYER\_SHOOT}!GUI@{GUI}}\index{GUI@{GUI}!PLAYER\_SHOOT@{PLAYER\_SHOOT}}}\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}} 
-PLAYER\+\_\+\+SHOOT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_IDLE@{ENEMY\_IDLE}!GUI@{GUI}}\index{GUI@{GUI}!ENEMY\_IDLE@{ENEMY\_IDLE}}}\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}} 
-ENEMY\+\_\+\+IDLE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_SHOOT@{ENEMY\_SHOOT}!GUI@{GUI}}\index{GUI@{GUI}!ENEMY\_SHOOT@{ENEMY\_SHOOT}}}\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}} 
-ENEMY\+\_\+\+SHOOT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BULLET@{BULLET}!GUI@{GUI}}\index{GUI@{GUI}!BULLET@{BULLET}}}\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}} 
-BULLET&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!GUI@{GUI}}\index{GUI@{GUI}!NONE@{NONE}}}\mbox{\Hypertarget{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ab50339a10e1de285ac99d4c3990b8693}\label{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ab50339a10e1de285ac99d4c3990b8693}} 
-NONE&\\
-\hline
-
-\end{DoxyEnumFields}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6}{PLAYER\_IDLE}},}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a}{PLAYER\_SHOOT}},}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099ac49834d1f8967691b252f9284950b669}{ENEMY\_IDLE}},}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099acbb06b732fdd7245afe64cf9a045d7b3}{ENEMY\_SHOOT}},}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_ae629138f39b92d39229e5a31b54ea099a5fb9dc502beb6f75a2175f0ea535437d}{BULLET}},}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}{NONE}}}
-\DoxyCodeLine{00036\ \ \ \ \ \};}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}} 
+\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}} 
 \index{GUI@{GUI}!Input@{Input}}
 \index{Input@{Input}!GUI@{GUI}}
 \doxysubsubsection{\texorpdfstring{Input}{Input}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97}{GUI\+::\+Input}}\hspace{0.3cm}{\ttfamily [strong]}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{GUI\+::\+Input}} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!GUI@{GUI}}\index{GUI@{GUI}!UP@{UP}}}\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!GUI@{GUI}}\index{GUI@{GUI}!UP@{UP}}}\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}} 
 UP&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!GUI@{GUI}}\index{GUI@{GUI}!DOWN@{DOWN}}}\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!GUI@{GUI}}\index{GUI@{GUI}!DOWN@{DOWN}}}\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}} 
 DOWN&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!GUI@{GUI}}\index{GUI@{GUI}!LEFT@{LEFT}}}\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!GUI@{GUI}}\index{GUI@{GUI}!LEFT@{LEFT}}}\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}} 
 LEFT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!GUI@{GUI}}\index{GUI@{GUI}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!GUI@{GUI}}\index{GUI@{GUI}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}} 
 RIGHT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SHOOT@{SHOOT}!GUI@{GUI}}\index{GUI@{GUI}!SHOOT@{SHOOT}}}\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}} 
-SHOOT&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPACE@{SPACE}!GUI@{GUI}}\index{GUI@{GUI}!SPACE@{SPACE}}}\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}} 
+SPACE&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!GUI@{GUI}}\index{GUI@{GUI}!NONE@{NONE}}}\mbox{\Hypertarget{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}\label{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}} 
-NONE&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COUNT@{COUNT}!GUI@{GUI}}\index{GUI@{GUI}!COUNT@{COUNT}}}\mbox{\Hypertarget{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa4905ac9d6a22bdfc1ae096094ce6248d}\label{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa4905ac9d6a22bdfc1ae096094ce6248d}} 
+COUNT&\\
 \hline
 
 \end{DoxyEnumFields}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1}{UP}},}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ac4e0e4e3118472beeb2ae75827450f1f}{DOWN}},}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758}{LEFT}},}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403}{RIGHT}},}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97a0504ea30baff7b670a10cb44f8e5cca2}{SHOOT}},}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693}{NONE}}}
-\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}{UP}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}{DOWN}},}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}{LEFT}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}{RIGHT}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}{SPACE}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa4905ac9d6a22bdfc1ae096094ce6248d}{COUNT}}}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}\label{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}} 
+\index{GUI@{GUI}!state@{state}}
+\index{state@{state}!GUI@{GUI}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{GUI\+::state}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stopped@{Stopped}!GUI@{GUI}}\index{GUI@{GUI}!Stopped@{Stopped}}}\mbox{\Hypertarget{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}\label{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}} 
+Stopped&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Paused@{Paused}!GUI@{GUI}}\index{GUI@{GUI}!Paused@{Paused}}}\mbox{\Hypertarget{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}\label{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}} 
+Paused&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Playing@{Playing}!GUI@{GUI}}\index{GUI@{GUI}!Playing@{Playing}}}\mbox{\Hypertarget{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}\label{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}} 
+Playing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!GUI@{GUI}}\index{GUI@{GUI}!Undefined@{Undefined}}}\mbox{\Hypertarget{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}\label{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}} 
+Undefined&\\
+\hline
+
+\end{DoxyEnumFields}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}{Stopped}},}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}{Paused}},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}{Playing}},}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}{Undefined}}}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
 
 \end{DoxyCode}

@@ -1,0 +1,58 @@
+\hypertarget{namespaceControl}{}\doxysection{Control Namespace Reference}
+\label{namespaceControl}\index{Control@{Control}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceControl_a3803eea2d90d0995de4709737bb94269}{run}} (\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceControl_a3803eea2d90d0995de4709737bb94269}\label{namespaceControl_a3803eea2d90d0995de4709737bb94269}} 
+\index{Control@{Control}!run@{run}}
+\index{run@{run}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Control\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{auto}\ \&registry\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}{get\_registry}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ \&gui\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}{get\_gui}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{auto}\ \&velocities\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Velocity}{component::Velocity}}>();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{auto}\ \&controllables\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Controllable}{component::Controllable}}>();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{auto}\ \&hitboxes\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1HitBox}{component::HitBox}}>();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{auto}\ \&positions\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Position}{component::Position}}>();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ velocities.size()\ ||\ i\ <\ controllables.size()\ ||\ i\ <\ hitboxes.size()\ ||\ i\ <\ positions.size();\ i++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&vel\ =\ velocities[i];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&cont\ =\ controllables[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&hit\ =\ hitboxes[i];}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&pos\ =\ positions[i];}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vel\ \&\&\ cont\ \&\&\ hit\ \&\&\ pos)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<GUI::Input>\ inputs\ =\ gui.getInputs();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ input\ :\ inputs)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}{GUI::Input::UP}})}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vel.value().y\ -\/=\ cont.value().speed;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}{GUI::Input::DOWN}})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vel.value().y\ +=\ cont.value().speed;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}{GUI::Input::LEFT}})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vel.value().x\ -\/=\ cont.value().speed;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}{GUI::Input::RIGHT}})}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vel.value().x\ +=\ cont.value().speed;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (input\ ==\ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}{GUI::Input::SPACE}})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e\ =\ registry.spawn\_entity();}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ registry.add\_component(e,\ \mbox{\hyperlink{classcomponent_1_1Position}{component::Position}}(pos-\/>x\ +\ hit-\/>width,\ pos-\/>y\ +\ hit-\/>height\ /\ 2));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ registry.add\_component(e,\ \mbox{\hyperlink{classcomponent_1_1Velocity}{component::Velocity}}(20,\ 0));}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ registry.add\_component(e,\ \mbox{\hyperlink{classcomponent_1_1HitBox}{component::HitBox}}(70,\ 70));}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ registry.add\_component(e,\ \mbox{\hyperlink{classcomponent_1_1Drawable}{component::Drawable}}(\textcolor{stringliteral}{"{}../assets/images/bullet.png"{}}));}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ registry.add\_component(e,\ component::BoundsLimit(0,\ 0,\ gui.get\_width(),\ gui.get\_height()));}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}

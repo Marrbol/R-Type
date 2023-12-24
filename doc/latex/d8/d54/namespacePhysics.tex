@@ -1,0 +1,55 @@
+\hypertarget{namespacePhysics}{}\doxysection{Physics Namespace Reference}
+\label{namespacePhysics}\index{Physics@{Physics}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacePhysics_a9abddb9f0ba95b1b59b81f1d16871d7b}{run}} (\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacePhysics_a9abddb9f0ba95b1b59b81f1d16871d7b}\label{namespacePhysics_a9abddb9f0ba95b1b59b81f1d16871d7b}} 
+\index{Physics@{Physics}!run@{run}}
+\index{run@{run}!Physics@{Physics}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Physics\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{auto}\ \&registry\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}{get\_registry}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ \&gui\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}{get\_gui}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{auto}\ \&positions\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Position}{component::Position}}>();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{auto}\ \&velocities\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Velocity}{component::Velocity}}>();}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{auto}\ \&controllables\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Controllable}{component::Controllable}}>();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{auto}\ \&hitboxes\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1HitBox}{component::HitBox}}>();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ ||\ i\ <\ velocities.size()\ ||\ i\ <\ controllables.size()\ ||\ i\ <\ hitboxes.size();\ i++)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&pos\ =\ positions[i];}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&vel\ =\ velocities[i];}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&cont\ =\ controllables[i];}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&hit\ =\ hitboxes[i];}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ limitX\ =\ gui.get\_width()\ -\/\ hit-\/>width;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ limitY\ =\ gui.get\_height()\ -\/\ hit-\/>height;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ \&\&\ vel)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>x\ +=\ vel-\/>x;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>y\ +=\ vel-\/>y;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cont)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos-\/>x\ <\ 0)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>x\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos-\/>y\ <\ 0)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>y\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos-\/>x\ >\ limitX)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>x\ =\ limitX;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos-\/>y\ >\ limitY)}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pos-\/>y\ =\ limitY;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vel-\/>x\ *=\ cont-\/>\mbox{\hyperlink{classcomponent_1_1Controllable_a1d969eb3424331ebb69377b8968b00fd}{slow}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vel-\/>y\ *=\ cont-\/>slow;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \}}
+
+\end{DoxyCode}

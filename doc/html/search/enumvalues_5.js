@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['left_0',['LEFT',['../d5/d9f/namespaceGUI.html#a9ca6ae9d896052e2a7e52a7242168e97a684d325a7303f52e64011467ff5c5758',1,'GUI']]]
+  ['paused_0',['Paused',['../d5/d9f/namespaceGUI.html#a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce',1,'GUI']]],
+  ['playing_1',['Playing',['../d5/d9f/namespaceGUI.html#a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539',1,'GUI']]]
 ];

@@ -1,0 +1,48 @@
+\hypertarget{classEventManager}{}\doxysection{Event\+Manager Class Reference}
+\label{classEventManager}\index{EventManager@{EventManager}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}} , typename... Args$>$ }\\void \mbox{\hyperlink{classEventManager_ac3c8b8b75e670fd3d80a168858a58dc2}{trigger}} (\mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}} type, Args \&\&... args)
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}} , typename... Args$>$ }\\void \mbox{\hyperlink{classEventManager_a5ac253d9a28a1c307e827c594c3471aa}{connect}} (\mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}} type, std\+::function$<$ void(Args...)$>$ callback)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEventManager_a5ac253d9a28a1c307e827c594c3471aa}\label{classEventManager_a5ac253d9a28a1c307e827c594c3471aa}} 
+\index{EventManager@{EventManager}!connect@{connect}}
+\index{connect@{connect}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}} , typename... Args$>$ \\
+void Event\+Manager\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}}}]{type,  }\item[{std\+::function$<$ void(Args...)$>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_callbacks.emplace\_back(type,\ callback);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classEventManager_ac3c8b8b75e670fd3d80a168858a58dc2}\label{classEventManager_ac3c8b8b75e670fd3d80a168858a58dc2}} 
+\index{EventManager@{EventManager}!trigger@{trigger}}
+\index{trigger@{trigger}!EventManager@{EventManager}}
+\doxysubsubsection{\texorpdfstring{trigger()}{trigger()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}} , typename... Args$>$ \\
+void Event\+Manager\+::trigger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{test_8cpp_ab3dc24207349ebb89f787fa5e782573c}{Event}}}]{type,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&callback\ :\ \_callbacks)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (callback.type\ ==\ type)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ callback.callback(std::forward<Args>(args)...);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/old/\mbox{\hyperlink{test_8cpp}{test.\+cpp}}\end{DoxyCompactItemize}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['none_0',['NONE',['../d5/d9f/namespaceGUI.html#a9ca6ae9d896052e2a7e52a7242168e97ab50339a10e1de285ac99d4c3990b8693',1,'GUI::NONE'],['../d5/d9f/namespaceGUI.html#ae629138f39b92d39229e5a31b54ea099ab50339a10e1de285ac99d4c3990b8693',1,'GUI::NONE'],['../d0/d8c/namespaceProgram.html#ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693',1,'Program::NONE']]]
+  ['right_0',['RIGHT',['../d5/d9f/namespaceGUI.html#a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403',1,'GUI']]],
+  ['run_1',['RUN',['../d0/d8c/namespaceProgram.html#ad49de1dac466f81486aed6d76856d42aa855520d2a5b0b1a64b939e7e30889e2a',1,'Program']]]
 ];

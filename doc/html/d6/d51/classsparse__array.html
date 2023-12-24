@@ -270,8 +270,8 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   57</span>{</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>{</div>
+<div class="line"><span class="lineno">   60</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -292,9 +292,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
-<div class="line"><span class="lineno">   63</span>    _data = other._data;</div>
-<div class="line"><span class="lineno">   64</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    _data = other._data;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -323,9 +323,9 @@ template&lt;typename Component &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    _data = std::move(other._data);</div>
-<div class="line"><span class="lineno">   70</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>{</div>
+<div class="line"><span class="lineno">   71</span>    _data = std::move(other._data);</div>
+<div class="line"><span class="lineno">   72</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -342,8 +342,8 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>{</div>
+<div class="line"><span class="lineno">   77</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -361,9 +361,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> _data.begin();</div>
-<div class="line"><span class="lineno">  107</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{</div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">return</span> _data.begin();</div>
+<div class="line"><span class="lineno">  109</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -380,9 +380,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  111</span>{</div>
-<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> _data.begin();</div>
-<div class="line"><span class="lineno">  113</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>{</div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> _data.begin();</div>
+<div class="line"><span class="lineno">  115</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,9 +399,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  117</span>{</div>
-<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> _data.cbegin();</div>
-<div class="line"><span class="lineno">  119</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">return</span> _data.cbegin();</div>
+<div class="line"><span class="lineno">  121</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -418,9 +418,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  135</span>{</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> _data.cend();</div>
-<div class="line"><span class="lineno">  137</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>{</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">return</span> _data.cend();</div>
+<div class="line"><span class="lineno">  139</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -485,10 +485,10 @@ template&lt;class... Params&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  163</span>{</div>
-<div class="line"><span class="lineno">  164</span>    _data.insert(_data.begin() + pos, std::optional&lt;Component&gt;(Component(std::forward&lt;Params&gt;(params)...)));</div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">return</span> _data[pos];</div>
-<div class="line"><span class="lineno">  166</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>{</div>
+<div class="line"><span class="lineno">  166</span>    _data.insert(_data.begin() + pos, std::optional&lt;Component&gt;(Component(std::forward&lt;Params&gt;(params)...)));</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">return</span> _data[pos];</div>
+<div class="line"><span class="lineno">  168</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -505,9 +505,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  123</span>{</div>
-<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> _data.end();</div>
-<div class="line"><span class="lineno">  125</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> _data.end();</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -524,9 +524,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  129</span>{</div>
-<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">return</span> _data.end();</div>
-<div class="line"><span class="lineno">  131</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>{</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">return</span> _data.end();</div>
+<div class="line"><span class="lineno">  133</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -547,9 +547,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  170</span>{</div>
-<div class="line"><span class="lineno">  171</span>    _data[pos] = std::nullopt;</div>
-<div class="line"><span class="lineno">  172</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
+<div class="line"><span class="lineno">  173</span>    _data[pos] = std::nullopt;</div>
+<div class="line"><span class="lineno">  174</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -570,15 +570,15 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
-<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="../../d6/d51/classsparse__array.html#af1468a11a30a58090580d1fb399e3cc0">size_type</a> i = 0; i &lt; _data.size(); i++) {</div>
-<div class="line"><span class="lineno">  178</span>        <span class="keywordflow">if</span> (std::addressof(_data[i]) == std::addressof(<a class="code hl_namespace" href="../../d4/dba/namespacecomponent.html">component</a>))</div>
-<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">return</span> i;</div>
-<div class="line"><span class="lineno">  180</span>    }</div>
-<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  182</span>}</div>
-<div class="ttc" id="aclasssparse__array_html_af1468a11a30a58090580d1fb399e3cc0"><div class="ttname"><a href="../../d6/d51/classsparse__array.html#af1468a11a30a58090580d1fb399e3cc0">sparse_array::size_type</a></div><div class="ttdeci">typename container_t::size_type size_type</div><div class="ttdef"><b>Definition:</b> SparseArray.hpp:21</div></div>
-<div class="ttc" id="anamespacecomponent_html"><div class="ttname"><a href="../../d4/dba/namespacecomponent.html">component</a></div><div class="ttdef"><b>Definition:</b> Component.hpp:12</div></div>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="../../d6/d51/classsparse__array.html#af1468a11a30a58090580d1fb399e3cc0">size_type</a> i = 0; i &lt; _data.size(); i++) {</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">if</span> (std::addressof(_data[i]) == std::addressof(<a class="code hl_namespace" href="../../d4/dba/namespacecomponent.html">component</a>))</div>
+<div class="line"><span class="lineno">  181</span>            <span class="keywordflow">return</span> i;</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  184</span>}</div>
+<div class="ttc" id="aclasssparse__array_html_af1468a11a30a58090580d1fb399e3cc0"><div class="ttname"><a href="../../d6/d51/classsparse__array.html#af1468a11a30a58090580d1fb399e3cc0">sparse_array::size_type</a></div><div class="ttdeci">typename container_t::size_type size_type</div><div class="ttdef"><b>Definition:</b> SparseArray.hpp:23</div></div>
+<div class="ttc" id="anamespacecomponent_html"><div class="ttname"><a href="../../d4/dba/namespacecomponent.html">component</a></div><div class="ttdef"><b>Definition:</b> Component.hpp:16</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -609,10 +609,10 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  154</span>{</div>
-<div class="line"><span class="lineno">  155</span>    _data.insert(_data.begin() + pos, std::optional&lt;Component&gt;(<a class="code hl_namespace" href="../../d4/dba/namespacecomponent.html">component</a>));</div>
-<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">return</span> _data[pos];</div>
-<div class="line"><span class="lineno">  157</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  156</span>{</div>
+<div class="line"><span class="lineno">  157</span>    _data.insert(_data.begin() + pos, std::optional&lt;Component&gt;(<a class="code hl_namespace" href="../../d4/dba/namespacecomponent.html">component</a>));</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">return</span> _data[pos];</div>
+<div class="line"><span class="lineno">  159</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -643,10 +643,10 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  147</span>{</div>
-<div class="line"><span class="lineno">  148</span>    _data.insert(_data.begin() + pos, std::optional&lt;Component&gt;(<a class="code hl_namespace" href="../../d4/dba/namespacecomponent.html">component</a>));</div>
-<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">return</span> _data[pos];</div>
-<div class="line"><span class="lineno">  150</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{</div>
+<div class="line"><span class="lineno">  150</span>    _data.insert(_data.begin() + pos, std::optional&lt;Component&gt;(<a class="code hl_namespace" href="../../d4/dba/namespacecomponent.html">component</a>));</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> _data[pos];</div>
+<div class="line"><span class="lineno">  152</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -675,10 +675,10 @@ template&lt;typename Component &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
-<div class="line"><span class="lineno">   87</span>    _data = std::move(other._data);</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   89</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>{</div>
+<div class="line"><span class="lineno">   89</span>    _data = std::move(other._data);</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   91</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -699,10 +699,10 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
-<div class="line"><span class="lineno">   80</span>    _data = other._data;</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   82</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>{</div>
+<div class="line"><span class="lineno">   82</span>    _data = other._data;</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   84</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -723,9 +723,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> _data[idx];</div>
-<div class="line"><span class="lineno">   95</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> _data[idx];</div>
+<div class="line"><span class="lineno">   97</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -746,9 +746,9 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">   99</span>{</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordflow">return</span> _data[idx];</div>
-<div class="line"><span class="lineno">  101</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  101</span>{</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> _data[idx];</div>
+<div class="line"><span class="lineno">  103</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -765,14 +765,14 @@ template&lt;typename Component &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><span class="lineno">  141</span>{</div>
-<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">return</span> _data.size();</div>
-<div class="line"><span class="lineno">  143</span>}</div>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> _data.size();</div>
+<div class="line"><span class="lineno">  145</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/mbonnet/TEK3/B-CPP-500-REN-5-2-rtype-oceane.krull/include/ECS/<a class="el" href="../../d9/db8/SparseArray_8hpp_source.html">SparseArray.hpp</a></li>
+<li>/home/mbonnet/TEK3/B-CPP-500-REN-5-2-rtype-oceane.krull/include/Core/<a class="el" href="../../d9/db8/SparseArray_8hpp_source.html">SparseArray.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

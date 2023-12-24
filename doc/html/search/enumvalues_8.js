@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['right_0',['RIGHT',['../d5/d9f/namespaceGUI.html#a9ca6ae9d896052e2a7e52a7242168e97a21507b40c80068eda19865706fdc2403',1,'GUI']]]
+  ['undefined_0',['Undefined',['../d5/d9f/namespaceGUI.html#a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c',1,'GUI']]],
+  ['up_1',['UP',['../d5/d9f/namespaceGUI.html#a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1',1,'GUI']]]
 ];

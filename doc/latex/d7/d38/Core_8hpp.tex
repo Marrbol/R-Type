@@ -1,0 +1,88 @@
+\hypertarget{Core_8hpp}{}\doxysection{/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.krull/include/\+Core.hpp File Reference}
+\label{Core_8hpp}\index{/home/mbonnet/TEK3/B-\/CPP-\/500-\/REN-\/5-\/2-\/rtype-\/oceane.krull/include/Core.hpp@{/home/mbonnet/TEK3/B-\/CPP-\/500-\/REN-\/5-\/2-\/rtype-\/oceane.krull/include/Core.hpp}}
+{\ttfamily \#include \char`\"{}Core/\+Registry.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Core/\+Component.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}GUI.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+Include dependency graph for Core.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d1d/Core_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d56/Core_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classECS_1_1RuntimeException}{ECS\+::\+Runtime\+Exception}}
+\item 
+class \mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}}
+\item 
+class \mbox{\hyperlink{classECS_1_1SystemHandler}{ECS\+::\+System\+Handler}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceECS}{ECS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Core_8hpp_ac1f75828a4f5a9abd8080b9a3c60187f}{LIB\+\_\+\+HANDLE}}~void $\ast$
+\item 
+\#define \mbox{\hyperlink{Core_8hpp_a28b7a5b76f6186b222c89ecbc342e43e}{LIB\+\_\+\+LOAD}}(path)~dlopen(path, RTLD\+\_\+\+LAZY)
+\item 
+\#define \mbox{\hyperlink{Core_8hpp_ad3682120fbbf9b94cbe0881153e8076a}{LIB\+\_\+\+GETSYM}}(handle,  name)~dlsym(handle, name)
+\item 
+\#define \mbox{\hyperlink{Core_8hpp_a5fa72bc6aed74d4590abb71d83d8cf67}{LIB\+\_\+\+CLOSE}}(handle)~dlclose(handle)
+\item 
+\#define \mbox{\hyperlink{Core_8hpp_a92606ad1b3040bbe9bcda17b6f356161}{LIB\+\_\+\+ERROR}}()~dlerror()
+\item 
+\#define \mbox{\hyperlink{Core_8hpp_a67cd30d98c359a69d822b8aefdb32eb5}{LIB\+\_\+\+EXT}}~\char`\"{}.so\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Core_8hpp_a5fa72bc6aed74d4590abb71d83d8cf67}\label{Core_8hpp_a5fa72bc6aed74d4590abb71d83d8cf67}} 
+\index{Core.hpp@{Core.hpp}!LIB\_CLOSE@{LIB\_CLOSE}}
+\index{LIB\_CLOSE@{LIB\_CLOSE}!Core.hpp@{Core.hpp}}
+\doxysubsubsection{\texorpdfstring{LIB\_CLOSE}{LIB\_CLOSE}}
+{\footnotesize\ttfamily \#define LIB\+\_\+\+CLOSE(\begin{DoxyParamCaption}\item[{}]{handle }\end{DoxyParamCaption})~dlclose(handle)}
+
+\mbox{\Hypertarget{Core_8hpp_a92606ad1b3040bbe9bcda17b6f356161}\label{Core_8hpp_a92606ad1b3040bbe9bcda17b6f356161}} 
+\index{Core.hpp@{Core.hpp}!LIB\_ERROR@{LIB\_ERROR}}
+\index{LIB\_ERROR@{LIB\_ERROR}!Core.hpp@{Core.hpp}}
+\doxysubsubsection{\texorpdfstring{LIB\_ERROR}{LIB\_ERROR}}
+{\footnotesize\ttfamily \#define LIB\+\_\+\+ERROR(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~dlerror()}
+
+\mbox{\Hypertarget{Core_8hpp_a67cd30d98c359a69d822b8aefdb32eb5}\label{Core_8hpp_a67cd30d98c359a69d822b8aefdb32eb5}} 
+\index{Core.hpp@{Core.hpp}!LIB\_EXT@{LIB\_EXT}}
+\index{LIB\_EXT@{LIB\_EXT}!Core.hpp@{Core.hpp}}
+\doxysubsubsection{\texorpdfstring{LIB\_EXT}{LIB\_EXT}}
+{\footnotesize\ttfamily \#define LIB\+\_\+\+EXT~\char`\"{}.so\char`\"{}}
+
+\mbox{\Hypertarget{Core_8hpp_ad3682120fbbf9b94cbe0881153e8076a}\label{Core_8hpp_ad3682120fbbf9b94cbe0881153e8076a}} 
+\index{Core.hpp@{Core.hpp}!LIB\_GETSYM@{LIB\_GETSYM}}
+\index{LIB\_GETSYM@{LIB\_GETSYM}!Core.hpp@{Core.hpp}}
+\doxysubsubsection{\texorpdfstring{LIB\_GETSYM}{LIB\_GETSYM}}
+{\footnotesize\ttfamily \#define LIB\+\_\+\+GETSYM(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{name }\end{DoxyParamCaption})~dlsym(handle, name)}
+
+\mbox{\Hypertarget{Core_8hpp_ac1f75828a4f5a9abd8080b9a3c60187f}\label{Core_8hpp_ac1f75828a4f5a9abd8080b9a3c60187f}} 
+\index{Core.hpp@{Core.hpp}!LIB\_HANDLE@{LIB\_HANDLE}}
+\index{LIB\_HANDLE@{LIB\_HANDLE}!Core.hpp@{Core.hpp}}
+\doxysubsubsection{\texorpdfstring{LIB\_HANDLE}{LIB\_HANDLE}}
+{\footnotesize\ttfamily \#define LIB\+\_\+\+HANDLE~void $\ast$}
+
+\mbox{\Hypertarget{Core_8hpp_a28b7a5b76f6186b222c89ecbc342e43e}\label{Core_8hpp_a28b7a5b76f6186b222c89ecbc342e43e}} 
+\index{Core.hpp@{Core.hpp}!LIB\_LOAD@{LIB\_LOAD}}
+\index{LIB\_LOAD@{LIB\_LOAD}!Core.hpp@{Core.hpp}}
+\doxysubsubsection{\texorpdfstring{LIB\_LOAD}{LIB\_LOAD}}
+{\footnotesize\ttfamily \#define LIB\+\_\+\+LOAD(\begin{DoxyParamCaption}\item[{}]{path }\end{DoxyParamCaption})~dlopen(path, RTLD\+\_\+\+LAZY)}
+

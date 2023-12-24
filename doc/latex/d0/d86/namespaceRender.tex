@@ -1,0 +1,59 @@
+\hypertarget{namespaceRender}{}\doxysection{Render Namespace Reference}
+\label{namespaceRender}\index{Render@{Render}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceRender_adcde78f0e0c80b31ab7c20e4699665dc}{run}} (\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceRender_adcde78f0e0c80b31ab7c20e4699665dc}\label{namespaceRender_adcde78f0e0c80b31ab7c20e4699665dc}} 
+\index{Render@{Render}!run@{run}}
+\index{run@{run}!Render@{Render}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Render\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{auto}\ \&registry\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}{get\_registry}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{auto}\ \&gui\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}{get\_gui}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{auto}\ \&positions\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Position}{component::Position}}>();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{auto}\ \&drawables\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Drawable}{component::Drawable}}>();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{auto}\ \&hitboxes\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1HitBox}{component::HitBox}}>();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<std::shared\_ptr<Sprite>>\ sprites;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ gui.clear();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ ||\ i\ <\ drawables.size()\ ||\ i\ <\ hitboxes.size();\ ++i)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&pos\ =\ positions[i];}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&draw\ =\ drawables[i];}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&hit\ =\ hitboxes[i];}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pos\ \&\&\ draw)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ std::shared\_ptr<Sprite>\ sprite\ =\ std::make\_shared<Sprite>();}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ sprite-\/>sprite\ =\ *draw-\/>sprite;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ sprite-\/>x\ =\ pos-\/>x;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ sprite-\/>y\ =\ pos-\/>y;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ sprite-\/>width\ =\ hit-\/>width;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ sprite-\/>height\ =\ hit-\/>height;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ sprite-\/>draw\_order\ =\ draw-\/>draw\_order;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ sprites.push\_back(sprite);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ std::sort(sprites.begin(),\ sprites.end(),\ [](\textcolor{keyword}{const}\ std::shared\_ptr<Sprite>\ \&a,\ \textcolor{keyword}{const}\ std::shared\_ptr<Sprite>\ \&b)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ return\ a-\/>draw\_order\ <\ b-\/>draw\_order;}
+\DoxyCodeLine{00054\ \ \ \ \ \});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ sprite\ :\ sprites)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ gui.draw(sprite-\/>sprite,\ sprite-\/>x,\ sprite-\/>y,\ sprite-\/>width,\ sprite-\/>height);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ gui.display();}
+\DoxyCodeLine{00061\ \}}
+
+\end{DoxyCode}

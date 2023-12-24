@@ -1,12 +1,21 @@
 var searchData=
 [
-  ['params_0',['Params',['../d6/dcc/classProgram_1_1Params.html#a861199e73f77f69bee6e2eb7ec45354e',1,'Program::Params::Params()'],['../d6/dcc/classProgram_1_1Params.html',1,'Program::Params']]],
-  ['path_1',['path',['../df/dbf/structGUI_1_1SpriteData.html#a7b00d77a18af1ab1588eb7266ca3f434',1,'GUI::SpriteData']]],
-  ['player_5fidle_2',['PLAYER_IDLE',['../d5/d9f/namespaceGUI.html#ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6',1,'GUI']]],
-  ['player_5fshoot_3',['PLAYER_SHOOT',['../d5/d9f/namespaceGUI.html#ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a',1,'GUI']]],
-  ['port_4',['port',['../d6/dcc/classProgram_1_1Params.html#a0a5697ece05920b383001faa741c93ac',1,'Program::Params']]],
-  ['position_5',['Position',['../d3/d8c/structcomponent_1_1Position.html',1,'component']]],
-  ['position_5fsystem_6',['position_system',['../d9/d90/SystemHandler_8cpp.html#a59625c1927c92e786902726d117d3440',1,'SystemHandler.cpp']]],
-  ['program_7',['Program',['../d0/d8c/namespaceProgram.html',1,'']]],
-  ['program_2ehpp_8',['Program.hpp',['../da/d0f/Program_8hpp.html',1,'']]]
+  ['r_2dtype_0',['R-Type',['../d9/d1a/md__2home_2mbonnet_2TEK3_2B-CPP-500-REN-5-2-rtype-oceane_8krull_2README.html',1,'']]],
+  ['readme_2emd_1',['README.md',['../da/ddd/README_8md.html',1,'']]],
+  ['reference_5ftype_2',['reference_type',['../d6/d51/classsparse__array.html#ae00c5b30838e89f0d368d55e0ba6a54d',1,'sparse_array']]],
+  ['register_5fcomponent_3',['register_component',['../db/d0d/classRegistry.html#a5397b38d1643c5dee4114d20190baf50',1,'Registry']]],
+  ['registry_4',['Registry',['../db/d0d/classRegistry.html',1,'Registry'],['../db/d0d/classRegistry.html#acb15d8aa051bf36ea92a86ee6c00bc3c',1,'Registry::Registry()']]],
+  ['registry_2ecpp_5',['Registry.cpp',['../d6/d4f/Registry_8cpp.html',1,'']]],
+  ['registry_2ehpp_6',['Registry.hpp',['../db/dd1/Registry_8hpp.html',1,'']]],
+  ['remove_5fcomponent_7',['remove_component',['../db/d0d/classRegistry.html#a8d01930a8523759d8fc0bb844519d264',1,'Registry']]],
+  ['render_8',['Render',['../d0/d86/namespaceRender.html',1,'']]],
+  ['rendermodule_2ecpp_9',['RenderModule.cpp',['../df/dcb/RenderModule_8cpp.html',1,'']]],
+  ['rendermodule_2ehpp_10',['RenderModule.hpp',['../d6/df2/RenderModule_8hpp.html',1,'']]],
+  ['respawnable_11',['Respawnable',['../dd/dd9/classcomponent_1_1Respawnable.html',1,'component::Respawnable'],['../dd/dd9/classcomponent_1_1Respawnable.html#a889cdd3f74d748b5cd9ebf213bd9446b',1,'component::Respawnable::Respawnable()']]],
+  ['right_12',['RIGHT',['../d5/d9f/namespaceGUI.html#a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403',1,'GUI']]],
+  ['run_13',['run',['../db/d6b/classECS_1_1SystemHandler.html#a9c4ac720dff5d338bcff03cf5cce0ce4',1,'ECS::SystemHandler::run()'],['../dd/d13/namespaceControl.html#a3803eea2d90d0995de4709737bb94269',1,'Control::run()'],['../d6/d2a/namespaceDestroyOutOfBounds.html#ada7eff2c5ec1080c951a7f8748636742',1,'DestroyOutOfBounds::run()'],['../d8/d54/namespacePhysics.html#a9abddb9f0ba95b1b59b81f1d16871d7b',1,'Physics::run()'],['../d0/d86/namespaceRender.html#adcde78f0e0c80b31ab7c20e4699665dc',1,'Render::run()']]],
+  ['run_14',['RUN',['../d0/d8c/namespaceProgram.html#ad49de1dac466f81486aed6d76856d42aa855520d2a5b0b1a64b939e7e30889e2a',1,'Program']]],
+  ['runmode_15',['runMode',['../d6/dcc/classProgram_1_1Params.html#ad6f2f458ccede3d61dd1e17e804158b5',1,'Program::Params']]],
+  ['runmode_16',['RunMode',['../d0/d8c/namespaceProgram.html#ad49de1dac466f81486aed6d76856d42a',1,'Program']]],
+  ['runtimeexception_17',['RuntimeException',['../de/d59/classECS_1_1RuntimeException.html',1,'ECS::RuntimeException'],['../de/d59/classECS_1_1RuntimeException.html#a421d931fcfd8b401c20b7bb13056b788',1,'ECS::RuntimeException::RuntimeException()']]]
 ];

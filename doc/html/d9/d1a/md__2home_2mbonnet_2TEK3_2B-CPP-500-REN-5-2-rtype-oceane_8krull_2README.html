@@ -72,27 +72,54 @@ $(function() {
   <div class="headertitle"><div class="title">R-Type </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> This is an Epitech project made by students of the 2026 promotion. This project aims at creating a network game engine and a game using this engine.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 How to compile the project</h1>
 <p>Navigate to the root of the project and run the following commands:</p>
 <div class="fragment"><div class="line">mkdir build</div>
 <div class="line">cd build</div>
 <div class="line">cmake ..</div>
-<div class="line">cmake --build .</div>
+<div class="line">make</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
 How to run the project</h1>
 <p>Navigate to the root of the project and run the following commands:</p>
-<div class="fragment"><div class="line">./build/bin/r-type_server [-h/--help | -c/--client | -s/--server] [--ip &lt;ip&gt;] [-p/--port &lt;port&gt;]</div>
+<div class="fragment"><div class="line">./build/bin/r-type [-h/--help]</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Options</h2>
-<p>-p, &ndash;port Set the port to listen on (default: 4242) &ndash;ip Set the ip to connect to (default: 127.0.0.1) - client only</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Modes</h2>
-<p>-h, &ndash;help Display the help menu -c, &ndash;client Run as client -s, &ndash;server Run as server</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<p>-h, &ndash;help Display the help menu</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Notes : current state of the project</h1>
-<p>Right now you need to have SFML and Boost installed on your computer to compile the project. Windows compatibility has not been tested yet. The only way to stop the game engine is to kill the process (Ctrl+C). </p>
+<p>Project is currently in development. The engine is not finished yet, and the game is not started. The Network module is not present yet.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+License</h2>
+<p>See the [LICENSE](LICENSE) file for license rights.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Troubleshooting</h2>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Compilation errors</h1>
+<ul>
+<li>If you are having trouble compiling the project, make sure you have the following dependencies installed:<ul>
+<li>CMake 3.10 or higher</li>
+<li>C++ build tool</li>
+</ul>
+</li>
+<li>If you are having trouble running the project, make sure you are running the executable from a build directory under the root of the project. See above for more details.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Textures not loading, or not loading properly (white squares)</h1>
+<p>If you have a problem with the textures, make sure you are running CMake from the build directory under the root of the project. If you are running CMake from the root of the project or elsewhere, the textures will not be loaded properly.</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Documentation</h1>
+<p><a href="https://app.gitbook.com/o/zJbvl7clfpSsXLZnLPmj/s/YUsbJ3dVld8mFFYihmst/"><img src="https://img.shields.io/badge/documentation-GitBook-blue" alt="Documentation" class="inline"/></a></p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Contributors</h2>
+<ul>
+<li>www.github.com/awisemanoncesaid</li>
+<li>www.github.com/mbonnet2</li>
+<li>www.github.com/Marrbol</li>
+<li>www.github.com/Oce78</li>
+<li>www.github.com/AmalfitanoJV </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

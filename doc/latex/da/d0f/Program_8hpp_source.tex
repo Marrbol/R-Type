@@ -6,8 +6,8 @@
 \DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2023}}
 \DoxyCodeLine{00003\ \textcolor{comment}{**\ RType\ -\/\ ECS}}
 \DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
-\DoxyCodeLine{00005\ \textcolor{comment}{**\ Program\ namespace\ -\/\ manage\ everything\ related\ to\ the\ program\ separately\ from}}
-\DoxyCodeLine{00006\ \textcolor{comment}{**\ the\ ECS.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Program}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ Manage\ everything\ related\ to\ the\ program\ separately\ from\ the\ ECS.}}
 \DoxyCodeLine{00007\ \textcolor{comment}{*/}}
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -16,48 +16,46 @@
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ using\ namespace\ std;}}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceProgram}{Program}}\ \{}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceProgram_a5b3b79e20fa705217ec54cf5d268e976}{exitSuccess}}\ =\ 0;}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceProgram_a1ac3ff1d63b995ac95434e34d0ae6600}{exitError}}\ =\ 84;}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespaceProgram_a8692605b125e9510539555009a174154}{help}}\ =}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}USAGE:\ ./r-\/type\_server\ [-\/h/-\/-\/help\ |\ -\/c/-\/-\/client\ |\ -\/s/-\/-\/server]\ [-\/p/-\/-\/port\ <port>]\(\backslash\)n"{}}}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DESCRIPTION:\(\backslash\)n"{}}}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)t-\/h/-\/-\/help\(\backslash\)tdisplay\ this\ help\ and\ exit\(\backslash\)n"{}}}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)t-\/c/-\/-\/client\(\backslash\)trun\ as\ a\ client\(\backslash\)n"{}}}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)t-\/s/-\/-\/server\(\backslash\)trun\ as\ a\ server\(\backslash\)n"{}}}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)tport\(\backslash\)tport\ to\ connect\ with\ (1024\ <\ port\ <\ 65535)\ -\/\ 4242\ by\ default\(\backslash\)n"{}};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42a}{RunMode}}\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa4fc963e213bba362778f5c175eb4d5ff}{HELP}}\ =\ 0,}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa3d27c95bfdbea691b250894d96852844}{SERVER}}\ =\ 1,}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aaef10c650df47bffd6399e5e78da2a9b1}{CLIENT}}\ =\ 2,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{NONE}}\ =\ 3}
-\DoxyCodeLine{00035\ \ \ \ \ \};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProgram_1_1Params}{Params}}\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params}{Params}}(\textcolor{keyword}{const}\ vector<string>\ args);}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_aeb17d9a109b4945a5e45348e6c8120f5}{\string~Params}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42a}{RunMode}}\ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}};}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{classProgram_1_1Params_a0a5697ece05920b383001faa741c93ac}{port}}\ =\ 4242;}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classProgram_1_1Params_ad18c50e680f47c5f228b6d1afd9ada56}{ip}}\ =\ \textcolor{stringliteral}{"{}127.0.0.1"{}};}
-\DoxyCodeLine{00045\ \ \ \ \ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProgram_1_1InvalidParamsException}{InvalidParamsException}}\ :\ \textcolor{keyword}{public}\ exception\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1InvalidParamsException_acd02174e07dc0721035252fb592728bd}{InvalidParamsException}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&message)\ :\ \_message(message)\ \{\}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1InvalidParamsException_a0cd10b283ad19a3e5c6e2e1ce100b7e5}{\string~InvalidParamsException}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceProgram}{Program}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceProgram_a5b3b79e20fa705217ec54cf5d268e976}{exitSuccess}}\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceProgram_a1ac3ff1d63b995ac95434e34d0ae6600}{exitError}}\ =\ 84;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{namespaceProgram_a8692605b125e9510539555009a174154}{help}}\ =}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}USAGE:\ ./r-\/type\ [-\/h/-\/-\/help]\(\backslash\)n"{}}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DESCRIPTION:\(\backslash\)n"{}}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}\(\backslash\)t-\/h/-\/-\/help\(\backslash\)tdisplay\ this\ help\ and\ exit\(\backslash\)n"{}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42a}{RunMode}}}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa4fc963e213bba362778f5c175eb4d5ff}{HELP}}\ =\ 0,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aa855520d2a5b0b1a64b939e7e30889e2a}{RUN}}\ =\ 1,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{NONE}}\ =\ 2}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProgram_1_1Params}{Params}}}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params}{Params}}(\textcolor{keyword}{const}\ std::vector<std::string>\ args);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1Params_aeb17d9a109b4945a5e45348e6c8120f5}{\string~Params}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42a}{RunMode}}\ \mbox{\hyperlink{classProgram_1_1Params_ad6f2f458ccede3d61dd1e17e804158b5}{runMode}}\ =\ \mbox{\hyperlink{namespaceProgram_ad49de1dac466f81486aed6d76856d42aab50339a10e1de285ac99d4c3990b8693}{RunMode::NONE}};}
+\DoxyCodeLine{00042\ \ \ \ \ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classProgram_1_1InvalidParamsException}{InvalidParamsException}}\ :\ \textcolor{keyword}{public}\ std::exception}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1InvalidParamsException_a2983e4c7e0fd9ee0254f585ade476313}{InvalidParamsException}}(\textcolor{keyword}{const}\ std::string\ \&message)\ :\ \_message(message)\ \{\}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classProgram_1_1InvalidParamsException_a0cd10b283ad19a3e5c6e2e1ce100b7e5}{\string~InvalidParamsException}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classProgram_1_1InvalidParamsException_a764e077efa9d6ce1a8d9dfca3b7ae2af}{what}}()\ const\ noexcept\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \_message.c\_str();\ \}}
 \DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classProgram_1_1InvalidParamsException_a764e077efa9d6ce1a8d9dfca3b7ae2af}{what}}()\ const\ noexcept\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \_message.c\_str();\ \}}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \_message;}
-\DoxyCodeLine{00056\ \ \ \ \ \};}
-\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::string\ \_message;}
+\DoxyCodeLine{00054\ \ \ \ \ \};}
+\DoxyCodeLine{00055\ \}}
 
 \end{DoxyCode}

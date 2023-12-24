@@ -1,4 +1,4 @@
 <map id="GUI::IGUI" name="GUI::IGUI">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,88,31"/>
-<area shape="rect" id="node2" href="$d5/d82/classGUI_1_1GUI.html" title=" " alt="" coords="7,79,86,104"/>
+<area shape="rect" id="node1" title=" " alt="" coords="18,5,101,31"/>
+<area shape="rect" id="node2" href="$da/d8d/classGUI_1_1SfmlGUI.html" title=" " alt="" coords="5,79,113,104"/>
 </map>

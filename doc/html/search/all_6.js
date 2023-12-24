@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['get_5fcomponents_0',['get_components',['../db/d0d/classRegistry.html#a9bd59de84cb86995d3dddf31f706938b',1,'Registry::get_components()'],['../db/d0d/classRegistry.html#a1f50b10ce2be1e45a8657bd7eb7bae63',1,'Registry::get_components() const'],['../db/d0d/classRegistry.html#a1f50b10ce2be1e45a8657bd7eb7bae63',1,'Registry::get_components() const']]],
-  ['get_5findex_1',['get_index',['../d6/d51/classsparse__array.html#a64abb8128f69fb5ac76e225edbc67406',1,'sparse_array']]],
-  ['getinputs_2',['getInputs',['../d2/da9/classGUI_1_1IGUI.html#a268e1a73d264446b54471e95f8c4de3e',1,'GUI::IGUI::getInputs()'],['../d5/d82/classGUI_1_1GUI.html#a3f0b06802a30938107d1402323c2664b',1,'GUI::GUI::getInputs()']]],
-  ['gui_3',['GUI',['../d5/d9f/namespaceGUI.html',1,'GUI'],['../d5/d82/classGUI_1_1GUI.html#a4302a202f6ac35e748d04ce652baff04',1,'GUI::GUI::GUI()'],['../d5/d82/classGUI_1_1GUI.html',1,'GUI::GUI']]],
-  ['gui_2ecpp_4',['GUI.cpp',['../d8/d7b/GUI_8cpp.html',1,'']]],
-  ['gui_2ehpp_5',['GUI.hpp',['../d1/d6f/GUI_8hpp.html',1,'']]]
+  ['height_0',['height',['../da/dd5/classcomponent_1_1HitBox.html#abd857f78534a381cb81a4075203f5203',1,'component::HitBox::height'],['../da/d3a/structSprite.html#ad0788e579221e1a41c10062f326bebbe',1,'Sprite::height']]],
+  ['help_1',['HELP',['../d0/d8c/namespaceProgram.html#ad49de1dac466f81486aed6d76856d42aa4fc963e213bba362778f5c175eb4d5ff',1,'Program']]],
+  ['help_2',['help',['../d0/d8c/namespaceProgram.html#a8692605b125e9510539555009a174154',1,'Program']]],
+  ['hitbox_3',['HitBox',['../da/dd5/classcomponent_1_1HitBox.html',1,'component::HitBox'],['../da/dd5/classcomponent_1_1HitBox.html#ade9d202a6c34ad701efe3c57e42744a5',1,'component::HitBox::HitBox()']]]
 ];
