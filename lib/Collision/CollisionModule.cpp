@@ -21,9 +21,9 @@ void Collision::run(ECS::Core &c)
         for (size_t j = i + 1; j < positions.size() || j < hitboxes.size(); j++) {
             auto &pos2 = positions[j];
             auto &hit2 = hitboxes[j];
-            if (pos->x + hit->width >= pos2->x && pos->x <= pos2->x + hit2->width &&
-                pos->y + hit->height >= pos2->y && pos->y <= pos2->y + hit2->height)
+            if (pos->x + hit->width >= pos2->x && pos->x <= pos2->x + hit2->width && pos->y + hit->height >= pos2->y && pos->y <= pos2->y + hit2->height) {
                 std::cout << "Collision !" << std::endl;
+            }
         }
     }
 }
