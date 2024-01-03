@@ -22,6 +22,11 @@ Collaboration diagram for Network\+::Client\+:\nopagebreak
 \includegraphics[width=188pt]{d7/dbc/classNetwork_1_1Client__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\using \mbox{\hyperlink{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}{Callback}} = std\+::function$<$ void(Args...)$>$
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,6 +35,12 @@ Collaboration diagram for Network\+::Client\+:\nopagebreak
 \mbox{\hyperlink{classNetwork_1_1Client_a4e8e5fe86070c5996e49e02bea3abd02}{$\sim$\+Client}} ()
 \item 
 void \mbox{\hyperlink{classNetwork_1_1Client_aa71486f3ef1e60542448331fa035f72d}{run}} ()
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classNetwork_1_1Client_adb9f71c5e3c25a2d96681479f795fd9e}{send}} (\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}} type, Args... args)
+\item 
+void \mbox{\hyperlink{classNetwork_1_1Client_a2711db0541b2fa6a9e1165120089f2d9}{send}} (\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}} type)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classNetwork_1_1Client_a2515709e0d3cfa6ba82c5dbd4b382c13}{connect}} (\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}} type, \mbox{\hyperlink{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}{Callback}}$<$ Args... $>$ callback)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classNetwork_1_1INetwork}{Network\+::\+INetwork}}}
 \begin{DoxyCompactItemize}
@@ -38,6 +49,16 @@ virtual \mbox{\hyperlink{classNetwork_1_1INetwork_ae88c1a3764d9a078d5bf8ebc248d8
 \item 
 virtual void \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad448309bf}{run}} ()=0
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}\label{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}} 
+\index{Network::Client@{Network::Client}!Callback@{Callback}}
+\index{Callback@{Callback}!Network::Client@{Network::Client}}
+\doxysubsubsection{\texorpdfstring{Callback}{Callback}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+using \mbox{\hyperlink{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}{Network\+::\+Client\+::\+Callback}} =  std\+::function$<$void(Args...)$>$}
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -49,12 +70,13 @@ virtual void \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00013\ \ \ \ \ :\ m\_socket(m\_io\_context,\ udp::endpoint(udp::v4(),\ 0))}
-\DoxyCodeLine{00014\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ udp::resolver\ resolver(m\_io\_context);}
-\DoxyCodeLine{00016\ \ \ \ \ udp::resolver::query\ query(udp::v4(),\ ip,\ std::to\_string(port));}
-\DoxyCodeLine{00017\ \ \ \ \ m\_sender\_endpoint\ =\ *resolver.resolve(query);}
-\DoxyCodeLine{00018\ \}}
+\DoxyCodeLine{00015\ \ \ \ \ :\ \_socket(\_io\_context)}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ udp::resolver\ resolver(\_io\_context);}
+\DoxyCodeLine{00018\ \ \ \ \ udp::resolver::query\ query(udp::v4(),\ ip,\ std::to\_string(port));}
+\DoxyCodeLine{00019\ \ \ \ \ \_sender\_endpoint\ =\ *resolver.resolve(query);}
+\DoxyCodeLine{00020\ \ \ \ \ \_socket.open(\_sender\_endpoint.protocol());}
+\DoxyCodeLine{00021\ \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{classNetwork_1_1Client_a4e8e5fe86070c5996e49e02bea3abd02}\label{classNetwork_1_1Client_a4e8e5fe86070c5996e49e02bea3abd02}} 
@@ -65,13 +87,27 @@ virtual void \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00060\ \{}
-\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \}}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNetwork_1_1Client_a2515709e0d3cfa6ba82c5dbd4b382c13}\label{classNetwork_1_1Client_a2515709e0d3cfa6ba82c5dbd4b382c13}} 
+\index{Network::Client@{Network::Client}!connect@{connect}}
+\index{connect@{connect}!Network::Client@{Network::Client}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void Network\+::\+Client\+::connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}}]{type,  }\item[{\mbox{\hyperlink{classNetwork_1_1Client_a0c47366c6ee6784d5efea814ac966baf}{Callback}}$<$ Args... $>$}]{callback }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \_callbacks[type].push\_back(callback);}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{classNetwork_1_1Client_aa71486f3ef1e60542448331fa035f72d}\label{classNetwork_1_1Client_aa71486f3ef1e60542448331fa035f72d}} 
 \index{Network::Client@{Network::Client}!run@{run}}
 \index{run@{run}!Network::Client@{Network::Client}}
@@ -84,18 +120,52 @@ Implements \mbox{\hyperlink{classNetwork_1_1INetwork_ae986b31a921364be235a33ad44
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00051\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ do\_receive();}
-\DoxyCodeLine{00053\ \ \ \ \ std::thread\ t([\textcolor{keyword}{this}]()\ \{}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ m\_io\_context.run();}
-\DoxyCodeLine{00055\ \ \ \ \ \});}
-\DoxyCodeLine{00056\ \ \ \ \ t.join();}
-\DoxyCodeLine{00057\ \}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Client\ running"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00055\ \ \ \ \ startReceiving();}
+\DoxyCodeLine{00056\ \ \ \ \ std::thread\ t([\textcolor{keyword}{this}]()\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_io\_context.run();}
+\DoxyCodeLine{00058\ \ \ \ \ \});}
+\DoxyCodeLine{00059\ \ \ \ \ t.join();}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNetwork_1_1Client_a2711db0541b2fa6a9e1165120089f2d9}\label{classNetwork_1_1Client_a2711db0541b2fa6a9e1165120089f2d9}} 
+\index{Network::Client@{Network::Client}!send@{send}}
+\index{send@{send}!Network::Client@{Network::Client}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Network\+::\+Client\+::send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}}]{type }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \_socket.send\_to(buffer(\&type,\ \textcolor{keyword}{sizeof}(type)),\ \_sender\_endpoint);}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNetwork_1_1Client_adb9f71c5e3c25a2d96681479f795fd9e}\label{classNetwork_1_1Client_adb9f71c5e3c25a2d96681479f795fd9e}} 
+\index{Network::Client@{Network::Client}!send@{send}}
+\index{send@{send}!Network::Client@{Network::Client}}
+\doxysubsubsection{\texorpdfstring{send()}{send()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+void Network\+::\+Client\+::send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceNetwork_ab53423bd977e70cc63b4b940372fa7db}{Event}}}]{type,  }\item[{Args...}]{args }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \_socket.send\_to(buffer(\&type,\ \textcolor{keyword}{sizeof}(type)),\ \_sender\_endpoint);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ arg\ :\ \{args...\})\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ std::stringstream\ ss;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ ss\ <<\ arg;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::string\ data\ =\ ss.str();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_socket.send\_to(buffer(data.c\_str(),\ data.size()),\ \_sender\_endpoint);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \}}
 
 \end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{Network_8hpp}{Network.\+hpp}}\item 
-/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+Network/\mbox{\hyperlink{Client_8cpp}{Client.\+cpp}}\end{DoxyCompactItemize}
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/old/\mbox{\hyperlink{Network_8hpp}{Network.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/old/\+Network/\mbox{\hyperlink{Client_8cpp}{Client.\+cpp}}\end{DoxyCompactItemize}

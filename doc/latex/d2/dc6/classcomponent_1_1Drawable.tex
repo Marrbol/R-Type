@@ -1,0 +1,73 @@
+\hypertarget{classcomponent_1_1Drawable}{}\doxysection{component\+::Drawable Class Reference}
+\label{classcomponent_1_1Drawable}\index{component::Drawable@{component::Drawable}}
+
+
+{\ttfamily \#include $<$Component.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcomponent_1_1Drawable_af886b9b8371881c35463e72705d9b347}{Drawable}} (const std\+::string \&\mbox{\hyperlink{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}{path}}, size\+\_\+t \mbox{\hyperlink{classcomponent_1_1Drawable_ac7e455993c776371610f5889c62e2140}{draw\+\_\+order}}=0)
+\item 
+\mbox{\hyperlink{classcomponent_1_1Drawable_aecd956bf970c8cafb059d2a9cdd8c5f3}{$\sim$\+Drawable}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}{path}}
+\item 
+std\+::shared\+\_\+ptr$<$ sf\+::\+Sprite $>$ \mbox{\hyperlink{classcomponent_1_1Drawable_a640cc8c07121ffda4826642807bbd1bd}{sprite}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classcomponent_1_1Drawable_ac7e455993c776371610f5889c62e2140}{draw\+\_\+order}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcomponent_1_1Drawable_af886b9b8371881c35463e72705d9b347}\label{classcomponent_1_1Drawable_af886b9b8371881c35463e72705d9b347}} 
+\index{component::Drawable@{component::Drawable}!Drawable@{Drawable}}
+\index{Drawable@{Drawable}!component::Drawable@{component::Drawable}}
+\doxysubsubsection{\texorpdfstring{Drawable()}{Drawable()}}
+{\footnotesize\ttfamily component\+::\+Drawable\+::\+Drawable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{size\+\_\+t}]{draw\+\_\+order = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}{path}}(\mbox{\hyperlink{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}{path}}),\ \mbox{\hyperlink{classcomponent_1_1Drawable_ac7e455993c776371610f5889c62e2140}{draw\_order}}(\mbox{\hyperlink{classcomponent_1_1Drawable_ac7e455993c776371610f5889c62e2140}{draw\_order}})\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ texture\ =\ std::make\_shared<sf::Texture>();}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ texture-\/>loadFromFile(\mbox{\hyperlink{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}{path}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcomponent_1_1Drawable_a640cc8c07121ffda4826642807bbd1bd}{sprite}}\ =\ std::make\_shared<sf::Sprite>();}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcomponent_1_1Drawable_a640cc8c07121ffda4826642807bbd1bd}{sprite}}-\/>setTexture(*texture);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classcomponent_1_1Drawable_aecd956bf970c8cafb059d2a9cdd8c5f3}\label{classcomponent_1_1Drawable_aecd956bf970c8cafb059d2a9cdd8c5f3}} 
+\index{component::Drawable@{component::Drawable}!````~Drawable@{$\sim$Drawable}}
+\index{````~Drawable@{$\sim$Drawable}!component::Drawable@{component::Drawable}}
+\doxysubsubsection{\texorpdfstring{$\sim$Drawable()}{~Drawable()}}
+{\footnotesize\ttfamily component\+::\+Drawable\+::$\sim$\+Drawable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcomponent_1_1Drawable_ac7e455993c776371610f5889c62e2140}\label{classcomponent_1_1Drawable_ac7e455993c776371610f5889c62e2140}} 
+\index{component::Drawable@{component::Drawable}!draw\_order@{draw\_order}}
+\index{draw\_order@{draw\_order}!component::Drawable@{component::Drawable}}
+\doxysubsubsection{\texorpdfstring{draw\_order}{draw\_order}}
+{\footnotesize\ttfamily size\+\_\+t component\+::\+Drawable\+::draw\+\_\+order}
+
+\mbox{\Hypertarget{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}\label{classcomponent_1_1Drawable_a46b8880052db692fae00905b3c729ffc}} 
+\index{component::Drawable@{component::Drawable}!path@{path}}
+\index{path@{path}!component::Drawable@{component::Drawable}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::string component\+::\+Drawable\+::path}
+
+\mbox{\Hypertarget{classcomponent_1_1Drawable_a640cc8c07121ffda4826642807bbd1bd}\label{classcomponent_1_1Drawable_a640cc8c07121ffda4826642807bbd1bd}} 
+\index{component::Drawable@{component::Drawable}!sprite@{sprite}}
+\index{sprite@{sprite}!component::Drawable@{component::Drawable}}
+\doxysubsubsection{\texorpdfstring{sprite}{sprite}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$sf\+::\+Sprite$>$ component\+::\+Drawable\+::sprite}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\+Core/\mbox{\hyperlink{Component_8hpp}{Component.\+hpp}}\end{DoxyCompactItemize}

@@ -53,8 +53,13 @@ If you have a problem with the textures, make sure you are running CMake from th
 build directory under the root of the project. If you are running CMake from the
 root of the project or elsewhere, the textures will not be loaded properly.
 
+## Documentation
+[![Documentation](https://img.shields.io/badge/documentation-GitBook-blue)](https://oceanes-organization.gitbook.io/r-type-documentation/)
+
 ### Contributors
 
 - www.github.com/awisemanoncesaid
 - www.github.com/mbonnet2
 - www.github.com/Marrbol
+- www.github.com/Oce78
+- www.github.com/AmalfitanoJV

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['client_0',['Client',['../d7/d28/classNetwork_1_1Client.html',1,'Network']]],
-  ['controllable_1',['Controllable',['../d6/d62/structcomponent_1_1Controllable.html',1,'component']]]
+  ['controllable_0',['Controllable',['../d3/d33/classcomponent_1_1Controllable.html',1,'component']]],
+  ['core_1',['Core',['../da/d9f/classECS_1_1Core.html',1,'ECS']]]
 ];

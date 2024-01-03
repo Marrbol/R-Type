@@ -17,7 +17,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-FetchContent_Declare(SFML GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 2.5.1)
+FetchContent_Declare(SFML GIT_REPOSITORY https://github.com/SFML/SFML.git GIT_TAG 2.6.0)
 FetchContent_MakeAvailable(SFML)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
@@ -49,7 +49,6 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/Collision)
 
 
 # Link libraries
-target_link_libraries(r-type PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
 if (UNIX)
     target_link_libraries(r-type PRIVATE dl)
 endif (UNIX)
@@ -59,3 +58,8 @@ target_link_libraries(r-type PRIVATE RenderModule)
 target_link_libraries(r-type PRIVATE ControlModule)
 target_link_libraries(r-type PRIVATE DestroyOutOfBoundsModule)
 target_link_libraries(r-type PRIVATE CollisionModule)
+
+target_link_libraries(r-type PRIVATE sfml-graphics)
+target_link_libraries(r-type PRIVATE sfml-window)
+target_link_libraries(r-type PRIVATE sfml-system)
+target_link_libraries(r-type PRIVATE sfml-audio)

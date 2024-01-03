@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['player_5fidle_0',['PLAYER_IDLE',['../d5/d9f/namespaceGUI.html#ae629138f39b92d39229e5a31b54ea099ad9a2fab73326cf8d9494837e121d82e6',1,'GUI']]],
-  ['player_5fshoot_1',['PLAYER_SHOOT',['../d5/d9f/namespaceGUI.html#ae629138f39b92d39229e5a31b54ea099afe4988a800f011ba5a87de48d5b3747a',1,'GUI']]]
+  ['space_0',['SPACE',['../d5/d9f/namespaceGUI.html#a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57',1,'GUI']]],
+  ['stopped_1',['Stopped',['../d5/d9f/namespaceGUI.html#a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378',1,'GUI']]]
 ];

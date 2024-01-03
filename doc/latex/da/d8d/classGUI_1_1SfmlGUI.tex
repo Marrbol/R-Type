@@ -1,0 +1,449 @@
+\hypertarget{classGUI_1_1SfmlGUI}{}\doxysection{GUI\+::Sfml\+GUI Class Reference}
+\label{classGUI_1_1SfmlGUI}\index{GUI::SfmlGUI@{GUI::SfmlGUI}}
+
+
+{\ttfamily \#include $<$GUI.\+hpp$>$}
+
+
+
+Inheritance diagram for GUI\+::Sfml\+GUI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{d2/db7/classGUI_1_1SfmlGUI__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for GUI\+::Sfml\+GUI\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{d7/d58/classGUI_1_1SfmlGUI__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1SfmlGUI_aa8455576d5345914fae9399fe886a3b8}{Sfml\+GUI}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_a7fd0b0e32c43c3411538b0495277acf6}{clear}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_a050ef9c5fdb28c64978b5b57e75036c9}{draw}} (sf\+::\+Sprite \&sprite, float x, float y, float width, float height)
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_a4f93729d8072d3ed6fb16af6a3ca876e}{display}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{Input}} $>$ \mbox{\hyperlink{classGUI_1_1SfmlGUI_a1c234d1ad067c26e72fa475b9aa918f9}{get\+Inputs}} ()
+\item 
+bool \mbox{\hyperlink{classGUI_1_1SfmlGUI_aea31b84d0962d3b10e3550521e4c24a3}{is\+Open}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classGUI_1_1SfmlGUI_a4768edb3def0863a96ae812ae616c94d}{get\+\_\+width}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classGUI_1_1SfmlGUI_ad0ff36e7b31b089fe447b4f230468aa4}{get\+\_\+height}} () const
+\item 
+\mbox{\hyperlink{classGUI_1_1SfmlGUI_a3c961033c771e5cc1c525816140447af}{$\sim$\+Sfml\+GUI}} ()
+\item 
+bool \mbox{\hyperlink{classGUI_1_1SfmlGUI_a67d6d0b48c71f37ae134341b75ba637b}{open\+From\+File}} (const std\+::string \&filename)
+\item 
+bool \mbox{\hyperlink{classGUI_1_1SfmlGUI_a4c17df0decd8354680f87bdbb18011bb}{get\+Loop}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_ae036d739b365116e19f09772be19864e}{set\+Loop}} (bool loop)
+\item 
+float \mbox{\hyperlink{classGUI_1_1SfmlGUI_a5861d20a420312ee5b015aeb04eeec82}{get\+Attenuation}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_aa8b6e1239297d360efe591368dd4fb0a}{set\+Attenuation}} (float attenuation)
+\item 
+float \mbox{\hyperlink{classGUI_1_1SfmlGUI_af7cf49f04a71a054a7553086d157bc9f}{get\+Pitch}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_ac5149c591930169d0aecd3b0d0dc95b0}{set\+Pitch}} (float pitch)
+\item 
+float \mbox{\hyperlink{classGUI_1_1SfmlGUI_aef6622a691c38e0b0b9f8a9f57fd845e}{get\+Volume}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_aa86e0dfe81ad19c4288eb63bf30f2e20}{set\+Volume}} (float volume)
+\item 
+\mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{state}} \mbox{\hyperlink{classGUI_1_1SfmlGUI_a1e065e09352be936af3e91d01da09e53}{get\+Status}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_a0730d40af13964347ac38ce834579e05}{pause}} ()
+\item 
+void \mbox{\hyperlink{classGUI_1_1SfmlGUI_a77b682eb675e6f634a527207bffdbf78}{play}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{$\sim$\+IGUI}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a390c9a96a2e41f5133418fca9a42f1bb}{clear}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_ac8e48424c162c6a8a9ac71af803913df}{draw}} (sf\+::\+Sprite \&sprite, float x, float y, float width, float height)=0
+\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{display}} ()=0
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{Input}} $>$ \mbox{\hyperlink{classGUI_1_1IGUI_a268e1a73d264446b54471e95f8c4de3e}{get\+Inputs}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classGUI_1_1IGUI_a0bf40dfb4c7170e8e223fba8d47e257c}{is\+Open}} ()=0
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classGUI_1_1IGUI_a30e247f686c383806e2b9480f8adfe2a}{get\+\_\+width}} () const =0
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classGUI_1_1IGUI_a386c91fe1bd86da107a630c30578447f}{get\+\_\+height}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_aa8455576d5345914fae9399fe886a3b8}\label{classGUI_1_1SfmlGUI_aa8455576d5345914fae9399fe886a3b8}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!SfmlGUI@{SfmlGUI}}
+\index{SfmlGUI@{SfmlGUI}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{SfmlGUI()}{SfmlGUI()}}
+{\footnotesize\ttfamily GUI\+::\+Sfml\+GUI\+::\+Sfml\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :}
+\DoxyCodeLine{00016\ \ \ \ \ \_window(\{800,\ 600\},\ \textcolor{stringliteral}{"{}R-\/Type"{}})}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \_window.setFramerateLimit(60);}
+\DoxyCodeLine{00019\ \ \ \ \ \_window.setKeyRepeatEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00020\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a3c961033c771e5cc1c525816140447af}\label{classGUI_1_1SfmlGUI_a3c961033c771e5cc1c525816140447af}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!````~SfmlGUI@{$\sim$SfmlGUI}}
+\index{````~SfmlGUI@{$\sim$SfmlGUI}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{$\sim$SfmlGUI()}{~SfmlGUI()}}
+{\footnotesize\ttfamily GUI\+::\+Sfml\+GUI\+::$\sim$\+Sfml\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a7fd0b0e32c43c3411538b0495277acf6}\label{classGUI_1_1SfmlGUI_a7fd0b0e32c43c3411538b0495277acf6}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!clear@{clear}}
+\index{clear@{clear}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a390c9a96a2e41f5133418fca9a42f1bb}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \_window.clear();}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a4f93729d8072d3ed6fb16af6a3ca876e}\label{classGUI_1_1SfmlGUI_a4f93729d8072d3ed6fb16af6a3ca876e}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!display@{display}}
+\index{display@{display}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \_window.display();}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a050ef9c5fdb28c64978b5b57e75036c9}\label{classGUI_1_1SfmlGUI_a050ef9c5fdb28c64978b5b57e75036c9}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!draw@{draw}}
+\index{draw@{draw}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Sprite \&}]{sprite,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_ac8e48424c162c6a8a9ac71af803913df}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ sprite.setPosition(x,\ y);}
+\DoxyCodeLine{00031\ \ \ \ \ sprite.setScale(width\ /\ sprite.getTexture()-\/>getSize().x,\ height\ /\ sprite.getTexture()-\/>getSize().y);}
+\DoxyCodeLine{00032\ \ \ \ \ \_window.draw(sprite);}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_ad0ff36e7b31b089fe447b4f230468aa4}\label{classGUI_1_1SfmlGUI_ad0ff36e7b31b089fe447b4f230468aa4}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!get\_height@{get\_height}}
+\index{get\_height@{get\_height}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{get\_height()}{get\_height()}}
+{\footnotesize\ttfamily size\+\_\+t GUI\+::\+Sfml\+GUI\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a386c91fe1bd86da107a630c30578447f}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ \_window.getSize().y;}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a4768edb3def0863a96ae812ae616c94d}\label{classGUI_1_1SfmlGUI_a4768edb3def0863a96ae812ae616c94d}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!get\_width@{get\_width}}
+\index{get\_width@{get\_width}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{get\_width()}{get\_width()}}
+{\footnotesize\ttfamily size\+\_\+t GUI\+::\+Sfml\+GUI\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a30e247f686c383806e2b9480f8adfe2a}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ \_window.getSize().x;}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a5861d20a420312ee5b015aeb04eeec82}\label{classGUI_1_1SfmlGUI_a5861d20a420312ee5b015aeb04eeec82}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!getAttenuation@{getAttenuation}}
+\index{getAttenuation@{getAttenuation}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{getAttenuation()}{getAttenuation()}}
+{\footnotesize\ttfamily float GUI\+::\+Sfml\+GUI\+::get\+Attenuation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \_music.getAttenuation();}
+\DoxyCodeLine{00112\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a1c234d1ad067c26e72fa475b9aa918f9}\label{classGUI_1_1SfmlGUI_a1c234d1ad067c26e72fa475b9aa918f9}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!getInputs@{getInputs}}
+\index{getInputs@{getInputs}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{getInputs()}{getInputs()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5f}{GUI\+::\+Input}} $>$ GUI\+::\+Sfml\+GUI\+::get\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a268e1a73d264446b54471e95f8c4de3e}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ std::vector<Input>\ inputs;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{while}\ (\_window.pollEvent(\_event))\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_event.type\ ==\ sf::Event::Closed)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \_window.close();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\_window.hasFocus())}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_event.type\ ==\ sf::Event::KeyPressed)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\_event.key.code)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Keyboard::Up:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fafbaedde498cdead4f2780217646e9ba1}{Input::UP}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Keyboard::Down:}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fac4e0e4e3118472beeb2ae75827450f1f}{Input::DOWN}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Keyboard::Left:}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa684d325a7303f52e64011467ff5c5758}{Input::LEFT}});}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Keyboard::Right:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa21507b40c80068eda19865706fdc2403}{Input::RIGHT}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Keyboard::Space:}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inputs.push\_back(\mbox{\hyperlink{namespaceGUI_a1b58c9d3e079f456004ec2fb4bc04a5fa6506ae39fdca9845e3a6de3865183e57}{Input::SPACE}});}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{return}\ inputs;}
+\DoxyCodeLine{00087\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a4c17df0decd8354680f87bdbb18011bb}\label{classGUI_1_1SfmlGUI_a4c17df0decd8354680f87bdbb18011bb}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!getLoop@{getLoop}}
+\index{getLoop@{getLoop}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{getLoop()}{getLoop()}}
+{\footnotesize\ttfamily bool GUI\+::\+Sfml\+GUI\+::get\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{return}\ \_music.getLoop();}
+\DoxyCodeLine{00102\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_af7cf49f04a71a054a7553086d157bc9f}\label{classGUI_1_1SfmlGUI_af7cf49f04a71a054a7553086d157bc9f}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!getPitch@{getPitch}}
+\index{getPitch@{getPitch}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{getPitch()}{getPitch()}}
+{\footnotesize\ttfamily float GUI\+::\+Sfml\+GUI\+::get\+Pitch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \_music.getPitch();}
+\DoxyCodeLine{00122\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a1e065e09352be936af3e91d01da09e53}\label{classGUI_1_1SfmlGUI_a1e065e09352be936af3e91d01da09e53}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546}{GUI\+::state}} GUI\+::\+Sfml\+GUI\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ sf::Sound::Status\ res\ =\ \_music.getStatus();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{switch}\ (res)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Sound::Status::Stopped:}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546acced8f74bea747196c45ba023a5ae378}{GUI::state::Stopped}};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Sound::Status::Paused:}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a8b6dba95e3c9f11471cd8743c84473ce}{GUI::state::Paused}};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{case}\ sf::Sound::Status::Playing:}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a9235afb0a6162b0c17b25a4461ebc539}{GUI::state::Playing}};}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceGUI_a1ca0e63651d48b54bc291deb31dbc546a965623379948636fd4d7d0b661b6596c}{GUI::state::Undefined}};}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_aef6622a691c38e0b0b9f8a9f57fd845e}\label{classGUI_1_1SfmlGUI_aef6622a691c38e0b0b9f8a9f57fd845e}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!getVolume@{getVolume}}
+\index{getVolume@{getVolume}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{getVolume()}{getVolume()}}
+{\footnotesize\ttfamily float GUI\+::\+Sfml\+GUI\+::get\+Volume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \_music.getVolume();}
+\DoxyCodeLine{00132\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_aea31b84d0962d3b10e3550521e4c24a3}\label{classGUI_1_1SfmlGUI_aea31b84d0962d3b10e3550521e4c24a3}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool GUI\+::\+Sfml\+GUI\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1IGUI_a0bf40dfb4c7170e8e223fba8d47e257c}{GUI\+::\+IGUI}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ \_window.isOpen();}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a67d6d0b48c71f37ae134341b75ba637b}\label{classGUI_1_1SfmlGUI_a67d6d0b48c71f37ae134341b75ba637b}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!openFromFile@{openFromFile}}
+\index{openFromFile@{openFromFile}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{openFromFile()}{openFromFile()}}
+{\footnotesize\ttfamily bool GUI\+::\+Sfml\+GUI\+::open\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \_music.openFromFile(filename);}
+\DoxyCodeLine{00097\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a0730d40af13964347ac38ce834579e05}\label{classGUI_1_1SfmlGUI_a0730d40af13964347ac38ce834579e05}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!pause@{pause}}
+\index{pause@{pause}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \_music.pause();}
+\DoxyCodeLine{00162\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_a77b682eb675e6f634a527207bffdbf78}\label{classGUI_1_1SfmlGUI_a77b682eb675e6f634a527207bffdbf78}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!play@{play}}
+\index{play@{play}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00165\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \_music.play();}
+\DoxyCodeLine{00167\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_aa8b6e1239297d360efe591368dd4fb0a}\label{classGUI_1_1SfmlGUI_aa8b6e1239297d360efe591368dd4fb0a}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!setAttenuation@{setAttenuation}}
+\index{setAttenuation@{setAttenuation}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{setAttenuation()}{setAttenuation()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::set\+Attenuation (\begin{DoxyParamCaption}\item[{float}]{attenuation }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \_music.setAttenuation(attenuation);}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_ae036d739b365116e19f09772be19864e}\label{classGUI_1_1SfmlGUI_ae036d739b365116e19f09772be19864e}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!setLoop@{setLoop}}
+\index{setLoop@{setLoop}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{setLoop()}{setLoop()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::set\+Loop (\begin{DoxyParamCaption}\item[{bool}]{loop }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \_music.setLoop(loop);}
+\DoxyCodeLine{00107\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_ac5149c591930169d0aecd3b0d0dc95b0}\label{classGUI_1_1SfmlGUI_ac5149c591930169d0aecd3b0d0dc95b0}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!setPitch@{setPitch}}
+\index{setPitch@{setPitch}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{setPitch()}{setPitch()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::set\+Pitch (\begin{DoxyParamCaption}\item[{float}]{pitch }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \_music.setPitch(pitch);}
+\DoxyCodeLine{00127\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGUI_1_1SfmlGUI_aa86e0dfe81ad19c4288eb63bf30f2e20}\label{classGUI_1_1SfmlGUI_aa86e0dfe81ad19c4288eb63bf30f2e20}} 
+\index{GUI::SfmlGUI@{GUI::SfmlGUI}!setVolume@{setVolume}}
+\index{setVolume@{setVolume}!GUI::SfmlGUI@{GUI::SfmlGUI}}
+\doxysubsubsection{\texorpdfstring{setVolume()}{setVolume()}}
+{\footnotesize\ttfamily void GUI\+::\+Sfml\+GUI\+::set\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \_music.setVolume(volume);}
+\DoxyCodeLine{00137\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{GUI_8hpp}{GUI.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+GUI/\mbox{\hyperlink{GUI_8cpp}{GUI.\+cpp}}\end{DoxyCompactItemize}

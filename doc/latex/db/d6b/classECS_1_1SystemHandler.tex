@@ -1,0 +1,89 @@
+\hypertarget{classECS_1_1SystemHandler}{}\doxysection{ECS\+::System\+Handler Class Reference}
+\label{classECS_1_1SystemHandler}\index{ECS::SystemHandler@{ECS::SystemHandler}}
+
+
+{\ttfamily \#include $<$Core.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1SystemHandler_a6a7230801df15a5b924a66fd30a3ba93}{System\+Handler}} (\mbox{\hyperlink{classECS_1_1Core}{Core}} \&core)
+\item 
+\mbox{\hyperlink{classECS_1_1SystemHandler_aa37ed4bb5675ae74368373d31017b733}{$\sim$\+System\+Handler}} ()
+\item 
+void \mbox{\hyperlink{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}{load\+\_\+system}} (System system)
+\item 
+void \mbox{\hyperlink{classECS_1_1SystemHandler_a9c4ac720dff5d338bcff03cf5cce0ce4}{run}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classECS_1_1SystemHandler_a6a7230801df15a5b924a66fd30a3ba93}\label{classECS_1_1SystemHandler_a6a7230801df15a5b924a66fd30a3ba93}} 
+\index{ECS::SystemHandler@{ECS::SystemHandler}!SystemHandler@{SystemHandler}}
+\index{SystemHandler@{SystemHandler}!ECS::SystemHandler@{ECS::SystemHandler}}
+\doxysubsubsection{\texorpdfstring{SystemHandler()}{SystemHandler()}}
+{\footnotesize\ttfamily ECS\+::\+System\+Handler\+::\+System\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&}]{core }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_core(core)}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}{load\_system}}(\&\mbox{\hyperlink{namespaceControl_a3803eea2d90d0995de4709737bb94269}{Control::run}});}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}{load\_system}}(\&\mbox{\hyperlink{namespacePhysics_a9abddb9f0ba95b1b59b81f1d16871d7b}{Physics::run}});}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}{load\_system}}(\&\mbox{\hyperlink{namespaceRender_adcde78f0e0c80b31ab7c20e4699665dc}{Render::run}});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}{load\_system}}(\&\mbox{\hyperlink{namespaceDestroyOutOfBounds_ada7eff2c5ec1080c951a7f8748636742}{DestroyOutOfBounds::run}});}
+\DoxyCodeLine{00022\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_1_1SystemHandler_aa37ed4bb5675ae74368373d31017b733}\label{classECS_1_1SystemHandler_aa37ed4bb5675ae74368373d31017b733}} 
+\index{ECS::SystemHandler@{ECS::SystemHandler}!````~SystemHandler@{$\sim$SystemHandler}}
+\index{````~SystemHandler@{$\sim$SystemHandler}!ECS::SystemHandler@{ECS::SystemHandler}}
+\doxysubsubsection{\texorpdfstring{$\sim$SystemHandler()}{~SystemHandler()}}
+{\footnotesize\ttfamily ECS\+::\+System\+Handler\+::$\sim$\+System\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ handle\ :\ \_handles)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Core_8hpp_a5fa72bc6aed74d4590abb71d83d8cf67}{LIB\_CLOSE}}(handle);}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}\label{classECS_1_1SystemHandler_adfcf65c7db5dccadea68344987c0fb62}} 
+\index{ECS::SystemHandler@{ECS::SystemHandler}!load\_system@{load\_system}}
+\index{load\_system@{load\_system}!ECS::SystemHandler@{ECS::SystemHandler}}
+\doxysubsubsection{\texorpdfstring{load\_system()}{load\_system()}}
+{\footnotesize\ttfamily void ECS\+::\+System\+Handler\+::load\+\_\+system (\begin{DoxyParamCaption}\item[{System}]{system }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \_systems.push\_back(system);}
+\DoxyCodeLine{00043\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_1_1SystemHandler_a9c4ac720dff5d338bcff03cf5cce0ce4}\label{classECS_1_1SystemHandler_a9c4ac720dff5d338bcff03cf5cce0ce4}} 
+\index{ECS::SystemHandler@{ECS::SystemHandler}!run@{run}}
+\index{run@{run}!ECS::SystemHandler@{ECS::SystemHandler}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void ECS\+::\+System\+Handler\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ system\ :\ \_systems)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ system(\_core);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{Core_8hpp}{Core.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+Core/\mbox{\hyperlink{SystemHandler_8cpp}{System\+Handler.\+cpp}}\end{DoxyCompactItemize}

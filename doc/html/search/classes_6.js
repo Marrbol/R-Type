@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['igui_0',['IGUI',['../d2/da9/classGUI_1_1IGUI.html',1,'GUI']]],
-  ['inetwork_1',['INetwork',['../d7/d22/classNetwork_1_1INetwork.html',1,'Network']]],
-  ['invalidparamsexception_2',['InvalidParamsException',['../da/dcf/classProgram_1_1InvalidParamsException.html',1,'Program']]]
+  ['params_0',['Params',['../d6/dcc/classProgram_1_1Params.html',1,'Program']]],
+  ['position_1',['Position',['../d3/df1/classcomponent_1_1Position.html',1,'component']]]
 ];

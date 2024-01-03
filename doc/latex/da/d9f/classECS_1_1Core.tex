@@ -1,0 +1,88 @@
+\hypertarget{classECS_1_1Core}{}\doxysection{ECS\+::Core Class Reference}
+\label{classECS_1_1Core}\index{ECS::Core@{ECS::Core}}
+
+
+{\ttfamily \#include $<$Core.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classECS_1_1Core_ac4e5e0c929953b845590c0805686e42d}{Core}} (\mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}} \&gui)
+\item 
+\mbox{\hyperlink{classECS_1_1Core_a5c3b9c6ae36ceef965ad36a881a347f0}{$\sim$\+Core}} ()
+\item 
+\mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}} \& \mbox{\hyperlink{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}{get\+\_\+gui}} ()
+\item 
+\mbox{\hyperlink{classRegistry}{Registry}} \& \mbox{\hyperlink{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}{get\+\_\+registry}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classECS_1_1Core_ac4e5e0c929953b845590c0805686e42d}\label{classECS_1_1Core_ac4e5e0c929953b845590c0805686e42d}} 
+\index{ECS::Core@{ECS::Core}!Core@{Core}}
+\index{Core@{Core}!ECS::Core@{ECS::Core}}
+\doxysubsubsection{\texorpdfstring{Core()}{Core()}}
+{\footnotesize\ttfamily ECS\+::\+Core\+::\+Core (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}} \&}]{gui }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \_gui(gui)}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classRegistry}{Registry}}\ \&registry\ =\ \mbox{\hyperlink{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}{get\_registry}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classentity}{entity}}\ e\ =\ registry.\mbox{\hyperlink{classRegistry_ae170f7a8063f259454c5f32c96380009}{spawn\_entity}}();}
+\DoxyCodeLine{00018\ \ \ \ \ registry.\mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{classcomponent_1_1Position}{component::Position}}(0,\ 0));}
+\DoxyCodeLine{00019\ \ \ \ \ registry.\mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{classcomponent_1_1Velocity}{component::Velocity}}(0,\ 0));}
+\DoxyCodeLine{00020\ \ \ \ \ registry.\mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{classcomponent_1_1Drawable}{component::Drawable}}(\textcolor{stringliteral}{"{}../assets/images/player\_idle.png"{}}));}
+\DoxyCodeLine{00021\ \ \ \ \ registry.\mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{classcomponent_1_1Controllable}{component::Controllable}}(10,\ 0.9));}
+\DoxyCodeLine{00022\ \ \ \ \ registry.\mbox{\hyperlink{classRegistry_a76ce4d63ec014e2c90f7c1dfdc92fd7a}{add\_component}}(e,\ \mbox{\hyperlink{classcomponent_1_1HitBox}{component::HitBox}}(100,\ 100));}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_1_1Core_a5c3b9c6ae36ceef965ad36a881a347f0}\label{classECS_1_1Core_a5c3b9c6ae36ceef965ad36a881a347f0}} 
+\index{ECS::Core@{ECS::Core}!````~Core@{$\sim$Core}}
+\index{````~Core@{$\sim$Core}!ECS::Core@{ECS::Core}}
+\doxysubsubsection{\texorpdfstring{$\sim$Core()}{~Core()}}
+{\footnotesize\ttfamily ECS\+::\+Core\+::$\sim$\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}\label{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}} 
+\index{ECS::Core@{ECS::Core}!get\_gui@{get\_gui}}
+\index{get\_gui@{get\_gui}!ECS::Core@{ECS::Core}}
+\doxysubsubsection{\texorpdfstring{get\_gui()}{get\_gui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}} \& ECS\+::\+Core\+::get\+\_\+gui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \_gui;}
+\DoxyCodeLine{00034\ \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}\label{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}} 
+\index{ECS::Core@{ECS::Core}!get\_registry@{get\_registry}}
+\index{get\_registry@{get\_registry}!ECS::Core@{ECS::Core}}
+\doxysubsubsection{\texorpdfstring{get\_registry()}{get\_registry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRegistry}{Registry}} \& ECS\+::\+Core\+::get\+\_\+registry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \_registry;}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/include/\mbox{\hyperlink{Core_8hpp}{Core.\+hpp}}\item 
+/home/mbonnet/\+TEK3/\+B-\/\+CPP-\/500-\/\+REN-\/5-\/2-\/rtype-\/oceane.\+krull/src/\+Core/\mbox{\hyperlink{Core_8cpp}{Core.\+cpp}}\end{DoxyCompactItemize}

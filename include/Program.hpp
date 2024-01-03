@@ -12,9 +12,10 @@
 #include <vector>
 #include <string>
 
-using namespace std;
+// using namespace std;
 
-namespace Program {
+namespace Program
+{
 
     inline const int exitSuccess = 0;
     inline const int exitError = 84;
@@ -24,28 +25,31 @@ namespace Program {
         "DESCRIPTION:\n"
         "\t-h/--help\tdisplay this help and exit\n";
 
-    enum class RunMode {
+    enum class RunMode
+    {
         HELP = 0,
         RUN = 1,
         NONE = 2
     };
 
-    class Params {
+    class Params
+    {
     public:
-        Params(const vector<string> args);
+        Params(const std::vector<std::string> args);
         ~Params() = default;
 
         RunMode runMode = RunMode::NONE;
     };
 
-    class InvalidParamsException : public exception {
+    class InvalidParamsException : public std::exception
+    {
     public:
-        InvalidParamsException(const string &message) : _message(message) {}
+        InvalidParamsException(const std::string &message) : _message(message) {}
         ~InvalidParamsException() = default;
 
         const char *what() const noexcept override { return _message.c_str(); }
 
     private:
-        string _message;
+        std::string _message;
     };
 }

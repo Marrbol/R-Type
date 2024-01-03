@@ -13,7 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
-
+#include <SFML/Audio.hpp>
 #include <unordered_map>
 
 namespace GUI {
@@ -32,6 +32,13 @@ namespace GUI {
         RIGHT,
         SPACE,
         COUNT
+    };
+
+    enum state {
+        Stopped,
+        Paused,
+        Playing,
+        Undefined
     };
 
     class IGUI {
@@ -57,9 +64,23 @@ namespace GUI {
         size_t get_width() const;
         size_t get_height() const;
         ~SfmlGUI();
+        bool openFromFile(const std::string &filename);
+        bool getLoop();
+        void setLoop(bool loop);
+        float getAttenuation();
+        void setAttenuation(float attenuation);
+        float getPitch();
+        void setPitch(float pitch);
+        float getVolume();
+        void setVolume(float volume);
+        state getStatus();
+        void pause();
+        void play();
+
     private:
         sf::RenderWindow _window;
         sf::Event _event;
+        sf::Music _music;
     };
 
 }

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['audio_0',['Audio',['../de/d9a/classGUI_1_1Audio.html',1,'GUI']]]
+  ['boundslimit_0',['BoundsLimit',['../d2/d8f/classcomponent_1_1BoundsLimit.html',1,'component']]]
 ];

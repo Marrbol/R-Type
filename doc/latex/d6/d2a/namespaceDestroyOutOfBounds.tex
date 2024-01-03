@@ -1,0 +1,38 @@
+\hypertarget{namespaceDestroyOutOfBounds}{}\doxysection{Destroy\+Out\+Of\+Bounds Namespace Reference}
+\label{namespaceDestroyOutOfBounds}\index{DestroyOutOfBounds@{DestroyOutOfBounds}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceDestroyOutOfBounds_ada7eff2c5ec1080c951a7f8748636742}{run}} (\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceDestroyOutOfBounds_ada7eff2c5ec1080c951a7f8748636742}\label{namespaceDestroyOutOfBounds_ada7eff2c5ec1080c951a7f8748636742}} 
+\index{DestroyOutOfBounds@{DestroyOutOfBounds}!run@{run}}
+\index{run@{run}!DestroyOutOfBounds@{DestroyOutOfBounds}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Destroy\+Out\+Of\+Bounds\+::run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classECS_1_1Core}{ECS\+::\+Core}} \&}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{auto}\ \&registry\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a6e8009fc68b35e930ab36b4005d9b10d}{get\_registry}}();}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{auto}\ \&gui\ =\ c.\mbox{\hyperlink{classECS_1_1Core_a60ed44008cde25eff78ab4c023f100ba}{get\_gui}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{auto}\ \&positions\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1Position}{component::Position}}>();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{auto}\ \&bounds\ =\ registry.get\_components<\mbox{\hyperlink{classcomponent_1_1BoundsLimit}{component::BoundsLimit}}>();}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ positions.size()\ ||\ i\ <\ bounds.size();\ i++)\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&pos\ =\ positions[i];}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \&bound\ =\ bounds[i];}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*if\ (pos\ \&\&\ bound)\ \{}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ if\ (pos-\/>x\ <\ 0\ ||\ pos-\/>y\ <\ 0\ ||\ pos-\/>x\ >\ gui.get\_width()\ ||\ pos-\/>y\ >\ gui.get\_height())\ \{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ registry.kill\_entity(registry.entity\_from\_index(i));}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}*/}}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00028\ \}}
+
+\end{DoxyCode}

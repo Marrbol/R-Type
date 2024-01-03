@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['up_0',['UP',['../d5/d9f/namespaceGUI.html#a9ca6ae9d896052e2a7e52a7242168e97afbaedde498cdead4f2780217646e9ba1',1,'GUI']]]
+  ['value_5ftype_0',['value_type',['../d6/d51/classsparse__array.html#ab7403a6f935fa66034cce5bdcf49a9fc',1,'sparse_array']]],
+  ['velocity_1',['Velocity',['../d5/db0/classcomponent_1_1Velocity.html',1,'component::Velocity'],['../d5/db0/classcomponent_1_1Velocity.html#ad127746a1a010fbde0deb655c9deec71',1,'component::Velocity::Velocity()']]]
 ];

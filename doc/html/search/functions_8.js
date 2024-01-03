@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../d5/de0/Main_8cpp.html#ad53223b8779f25caeddb70a3b9172967',1,'Main.cpp']]]
+  ['kill_5fentity_0',['kill_entity',['../db/d0d/classRegistry.html#a292cb005f5a50e8ea901754d0fd1d37b',1,'Registry']]]
 ];
