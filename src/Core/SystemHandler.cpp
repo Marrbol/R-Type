@@ -9,6 +9,7 @@
 #include "Render/RenderModule.hpp"
 #include "Control/ControlModule.hpp"
 #include "DestroyOutOfBounds/DestroyOutOfBoundsModule.hpp"
+#include "Collision/CollisionModule.hpp"
 
 // Constructors ---------------------------------------------------------------
 
@@ -19,6 +20,7 @@ ECS::SystemHandler::SystemHandler(ECS::Core &core): _core(core)
     load_system(&Physics::run);
     load_system(&Render::run);
     load_system(&DestroyOutOfBounds::run);
+    load_system(&Collision::run);
 }
 
 ECS::SystemHandler::~SystemHandler()
