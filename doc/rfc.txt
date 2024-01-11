@@ -17,16 +17,18 @@ Status of this Memo
 Table of Contents
 
    1.   Introduction . . . . . . . . . . . . . . . . . . . . . . . . . 1
-   2.   R-Type architecture  . . . . . . . . . . . . . . . . . . . . . 2
-   3.   R-Type TCP Protocol  . . . . . . . . . . . . . . . . . . . . . 2
+   2.   R-Type architecture  . . . . . . . . . . . . . . . . . . . . . 1
+   3.   R-Type UDP Protocol  . . . . . . . . . . . . . . . . . . . . . 2
    3a.   Payload . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
    3b.   Server connection . . . . . . . . . . . . . . . . . . . . . . 3
-   3c.   Lobby connection  . . . . . . . . . . . . . . . . . . . . . . 3
-   3d.   Game start  . . . . . . . . . . . . . . . . . . . . . . . . . 5
-   4.   R-Type UDP Protocol  . . . . . . . . . . . . . . . . . . . . . 6
-   4a.   Player events . . . . . . . . . . . . . . . . . . . . . . . . 7
-
-
+   3c.   Lobby connection. . . . . . . . . . . . . . . . . . . . . . . 3
+   3d.   Game start. . . . . . . . . . . . . . . . . . . . . . . . . . 3
+   3e.   Player events . . . . . . . . . . . . . . . . . . . . . . . . 3
+   4.    Extra informations. . . . . . . . . . . . . . . . . . . . . . 4
+   4.a    Delete event . . . . . . . . . . . . . . . . . . . . . . . . 4
+   4.b    New and Edit event . . . . . . . . . . . . . . . . . . . . . 4
+   4.c    Components . . . . . . . . . . . . . . . . . . . . . . . . . 4
+   4.e    Exemple. . . . . . . . . . . . . . . . . . . . . . . . . . . 4
 
 1.  Introduction
    
@@ -50,13 +52,13 @@ Krull                           Standards Track                  [Page 1]
 RFC 0001                    R-Type Protocols                 Janvier 2024
 
 
-3.  R-Type TCP Protocol
+3.  R-Type UDP Protocol
 
    3a.  Payload
 
       Every transmission MUST transmit a payload containing this 4 datas:
 
-         u_int64_t TimeStamp (since the Epoch see https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html#tag_04_16);
+         u_int64_t TimeStamp;
          u_int64_t Entity_ID;
          Event event;
          u_int64_t nbComp;
@@ -107,51 +109,67 @@ RFC 0001                    R-Type Protocols                 Janvier 2024
       If a new client decide to connect to the server he will join the
       game started.
 
-4.  R-Type UDP Protocol
+   3e.  Player events
 
-   4a.  Player events
-
-      The player, on the client-side, can execute several actions. On
-      each player action, the client MUST send to the server a specific
-      event payload containing informations about the action. This
-      payload MUST begins with an element (on 4 bytes) from the EVENT
-      enumeration, described below:
-
-         enum EVENT {
-            MOVE,
-            SHOOT,
-            QUIT
-         };
-
-         The MOVE event:
-
-            The player wants to move (to the left, right, up or down).
-            The client MUST add to the payload an element (on 4 bytes)
-            of the DIRECTION enumeration (described below) right after
-            the EVENT element. Thus, if the player wants to move, the
-            payload MUST be 8 bytes long.
-
-            enum DIRECTION {
-               LEFT,
-               RIGHT,
-               UP,
-               DOWN
-            };
-
-         The SHOOT event:
-
-            The player wants to shoot. In this case, the payload MUST be
-            only 4 bytes long.
-
-         The QUIT event:
-
-            The player wants to quit the game. The client MUST warn the
-            server with this 4 bytes long payload before quitting. The
-            client MAY exit without any response from the server.
+      The player, on the client-side, udpdate the Entity_ID on his side
+      by sending informations to the server with the playload and
+      extra informations (see below).
 
 
+Krull                        Standards Track                     [Page 3]
+
 
+4. Extra informations
 
+   4.a Delete event
+      
+      When an Entity have to be delete the client or the server will
+      specifie in the payload in the event enum to inform other players
+      to delete the Entity.
 
-Krull                        Standards Track                     [Page 6]
+   4.b New and Edit event
+
+      When a client decide to modif an Entity the client MUST put the
+      event to Edit.
+      When the server decide to create an Entity he MUST put the event
+      to New.
+
+      If the event is set to New or Edit, the variable nbComp MUST be < 0.
+      
+      Follow by the type of the component's entity with his
+      parameters follow.
+
+      It will be repeat nbComp times.
+
+   4.c Components
+
+      There is 7 Components needing several parameters : 
+         
+         - Position : float x, float y
+         - Velocity : float x, float y
+         - Drawable : std::size_t draw_order, u_int64_t frameDelay,
+         int nbPath, std::vector<std::string> paths 
+         - Controllable : u_int64_t lastShoot,
+         u_int64_t shootDelay, float slow, float speed
+         - HitBox : float height, float width
+         - BoundLimit : float minX, float minY, float maxX, float maxY
+         - Respawnable : float x, float y
+
+   4.e Exemple
+
+      Here exemple of the form of the message send to the client :
+
+      1704728157|42| |3| |2| |0| |3.463|  |10.357| |1| |4.389.8| ==> recieve
+      ----------|--| |-| |-| |-| |---------------| |-| |-------|
+           A    |B | |C| |D| |E| |      F        | |G| |   H   | ==> interpretation
+
+      A: Time Stamp (since 1970)
+      B: Entity ID (ID of the entity)
+      C: Event (New, Edit, Delete)
+      D: Nb Comp (1 to max comp)
+      E: Type of comp with id equal 0
+      F: Param of the comp with id equal 0
+      G: Type of comp with id equal 1
+
+Krull                        Standards Track                     [Page 4]
 
