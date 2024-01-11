@@ -24,8 +24,7 @@ Table of Contents
    3c.   Lobby connection  . . . . . . . . . . . . . . . . . . . . . . 3
    3d.   Game start  . . . . . . . . . . . . . . . . . . . . . . . . . 5
    4.   R-Type UDP Protocol  . . . . . . . . . . . . . . . . . . . . . 6
-   4a.   Frames transmission . . . . . . . . . . . . . . . . . . . . . 6
-   4b.   Player events . . . . . . . . . . . . . . . . . . . . . . . . 7
+   4a.   Player events . . . . . . . . . . . . . . . . . . . . . . . . 7
 
 
 
@@ -93,226 +92,24 @@ RFC 0001                    R-Type Protocols                 Janvier 2024
       To connect to the server, the client MUST send to the server a
       payload containing:
 
-         ACTION_NAME = CONNECT
-         BODY_SIZE = PLAYER_NAME's length
-         BODY = PLAYER_NAME (chosen by the client's user)
-
-      On success, the server MUST send to the client a response payload
-      containing:
-
-         ACTION_NAME = OK
-
-         The server MAY add a BODY data to the response payload,
-	 containing additionnal informations.
-
-      On failure, the server MUST send to the client a response payload
-      containing:
-
-         ACTION_NAME = KO
-
-         The server MAY add a BODY data to the response payload,
-         containing additionnal informations about the failure.
+         //??ACTION_NAME = CONNECT
+         //??BODY_SIZE = PLAYER_NAME's length
+         //??BODY = PLAYER_NAME (chosen by the client's user)
 
    3c.  Lobby connection
 
-      Once connected to the server, the client can connect to a lobby.
-      The client can (as described in details below) create a new lobby,
-      list the existing lobbies or join an already created lobby.
-
-      To create a new game lobby, the client MUST send to the server a
-      payload containing:
-
-            ACTION_NAME = CREATE
-            BODY_SIZE = LOBBY_NAME's length
-            BODY = LOBBY_NAME (chosen by the client's user)
-
-         On success, the server MUST send to the client a response
-         payload containing:
-
-            ACTION_NAME = OK
-
-            The server MAY add a BODY data to the response payload,
-            containing additionnal informations.
-
-         On failure, the server MUST send to the client a response
-         payload containing:
-
-            ACTION_NAME = KO
-
-            The server MAY add a BODY data to the response payload,
-            containing additionnal informations about the failure.
-
-Krull                        Standards Track                     [Page 3]
-
-RFC 0001                    R-Type Protocols                 Janvier 2024
-
-
-      To list existing game lobbies, the client MUST send to the server
-      a payload containing:
-
-            ACTION_NAME = LIST
-
-         On success, the server MUST send to the client a response
-         payload containing:
-
-            ACTION_NAME = OK
-            BODY_SIZE = LOBBIES's length
-            BODY = LOBBIES_INFO
-
-            Where LOBBIES_INFO is a list of LOBBY_INFO separated by
-            a ';' character (ASCII: 0x3B)
-            LOBBY_INFO is the name of the lobby and its current number
-            of players separated by a ',' character (ASCII: 0x2C)
-
-            Example:
-
-                  /--------------------------------------\
-                  |    lobby name    | Number of players |
-                  |------------------|-------------------|
-                  |    lobby_01      |         2         |
-                  |    nice_lobby    |         1         |
-                  |    LobbyRType    |         4         |
-                  \--------------------------------------/
-
-            LOBBIES_INFO = "lobby_01,2;nice_lobby,1;LobbyRType,4"
-
-         On failure, the server MUST send to the client a response
-         payload containing:
-
-            ACTION_NAME = KO
-
-            The server MAY add a BODY data to the response payload,
-            containing additionnal informations about the failure.
-
-      To join an already existing game lobby, the client MUST send to
-      the server a payload containing:
-
-            ACTION_NAME = JOIN
-            BODY_SIZE = LOBBY_NAME's length
-            BODY = LOBBY_NAME (the name of the lobby to join)
-
-
-
-Krull                        Standards Track                     [Page 4]
-
-RFC 0001                    R-Type Protocols                 Janvier 2024
-
-
-         On success, the server MUST respond to the client who joined
-         with a payload containing:
-
-            ACTION_NAME = OK
-            BODY_SIZE = PLAYER_NAMES's length
-            BODY = PLAYER_NAMES
-
-            Where PLAYER_NAMES is a list of the names of the players
-            already connected to the joined lobby, separated by a ';'
-            character (ASCII: 0x3B)
-
-            In addition, on success the server MUST say to the other
-            clients connected to the lobby that a new player joined
-            them. Thus the server MUST send to every other clients
-            connected to the lobby a payload containing:
-
-               ACTION_NAME = JOINED
-               BODY_SIZE = PLAYER_NAME's length
-               BODY = PLAYER_NAME (the name of the new player)
-
-
-         On failure, the server MUST send to the client a response
-         payload containing:
-
-            ACTION_NAME = KO
-
-            The server MAY add a BODY data to the response payload,
-            containing additionnal informations about the failure.
+      Once connected to the server is launched, the client to the server
+      to join the game hosted by the server.
 
    3d.  Game start
 
-      In order to start a game, the client MUST be in a lobby.
-      It MAY NOT be the creator of the lobby. To start the game, the
-      client MUST first send to the server a payload containing:
-
-         ACTION_NAME = READY
-
-      On success, to start the game, the server MUST send to ALL the
-      clients connected to the game lobby a payload containing:
-
-         ACTION_NAME = START
-
-         The server MAY add a BODY data to the response payload,
-         containing additionnal informations.
-
-      On failure, the server MUST send to the client a response
-      payload containing:
-
-         ACTION_NAME = KO
-
-         The server MAY add a BODY data to the response payload,
-         containing additionnal informations about the failure.
-
-
-Krull                        Standards Track                     [Page 5]
-
-RFC 0001                    R-Type Protocols                 Janvier 2024
-
+      Once the sever is launched, the game start.
+      If a new client decide to connect to the server he will join the
+      game started.
 
 4.  R-Type UDP Protocol
 
-   Once the game is launched, the client-server communications are done
-   by using this R-Type UDP Protocol.
-
-   4a.  Frames transmission
-
-      The first purpose of the R-Type UDP Protocol is to send all the
-      frames to display (in the client) from the server to the
-      client.
-
-      The payload to send MUST contain all the elements to display in a
-      single frame, grouped in a SPRITE_LIST.
-
-      A SPRITE_LIST is a succession of SPRITE.
-
-      A SPRITE is a succession of 7 numbers representing a sprite to
-      display and its position. Each one of these numbers MUST be coded
-      on 4 bytes. Thus, a SPRITE MUST be 28 bytes long, and a
-      SPRITE_LIST of (n) SPRITE MUST be (n * 28) bytes long.
-
-      The SPRITE composition MUST be the following:
-
-         1st number = the index of the sprite's spritesheet
-
-         2nd number = X coordinate (in pixels) of the sprite's top left
-                      corner in its spritesheet
-
-         3rd number = Y coordinate (in pixels) of the sprite's top left
-                      corner in its spritesheet
-
-         4th number = the sprite's width (in pixels)
-
-         5th number = the sprite's height (in pixels)
-
-         6th number = X coordinate (in pixels) of the sprite's top left
-                      corner in the game window
-
-         7th number = Y coordinate (in pixels) of the sprite's top left
-                      corner in the game window
-
-   The order of the SPRITE elements in SPRITE_LIST MUST be the final
-   order of displaying (in the game, every SPRITE will be displayed over
-   the previous ones).
-
-   The client MUST NOT respond to the server when a payload has been
-   received.
-
-
-
-Krull                        Standards Track                     [Page 6]
-
-RFC 0001                    R-Type Protocols                 Janvier 2024
-
-
-   4b.  Player events
+   4a.  Player events
 
       The player, on the client-side, can execute several actions. On
       each player action, the client MUST send to the server a specific
