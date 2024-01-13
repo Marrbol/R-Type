@@ -35,10 +35,6 @@ Table of Contents
    The purpose of the project R-Type is to create a multiplayer online
    game engine and running an existing game name R-Type release in 1987
 
-//   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-//   "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this
-//   document are to be interpreted as described in RFC 2119.
-
 2.  R-Type architecture
 
    The architecture of this project is a classic client-server game
