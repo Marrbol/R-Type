@@ -1,0 +1,167 @@
+Epitech Rennes                                                  O. Krull
+Request for Comments: 0001                                   M. Boucault
+Category: Standards Track                                      M. Bonnet
+                                                          N. Deschaseaux
+                                                           J. Amalfitano
+                                                                 Epitech
+                                                            Janvier 2024
+
+                            R-Type Protocols
+
+Status of this Memo
+
+   This memo is the official specification of the R-Type Protocols.
+   The R-Type is a third year project from EPITECH. Distribution of this
+   memo is unlimited.
+
+Table of Contents
+
+   1.   Introduction . . . . . . . . . . . . . . . . . . . . . . . . . 1
+   2.   R-Type architecture  . . . . . . . . . . . . . . . . . . . . . 1
+   3.   R-Type UDP Protocol  . . . . . . . . . . . . . . . . . . . . . 2
+   3a.   Payload . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+   3b.   Server connection . . . . . . . . . . . . . . . . . . . . . . 3
+   3c.   Lobby connection. . . . . . . . . . . . . . . . . . . . . . . 3
+   3d.   Game start. . . . . . . . . . . . . . . . . . . . . . . . . . 3
+   3e.   Player events . . . . . . . . . . . . . . . . . . . . . . . . 3
+   4.    Extra informations. . . . . . . . . . . . . . . . . . . . . . 4
+   4.a    Delete event . . . . . . . . . . . . . . . . . . . . . . . . 4
+   4.b    New and Edit event . . . . . . . . . . . . . . . . . . . . . 4
+   4.c    Components . . . . . . . . . . . . . . . . . . . . . . . . . 4
+   4.e    Exemple. . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+
+1.  Introduction
+   
+   The purpose of the project R-Type is to create a multiplayer online
+   game engine and running an existing game name R-Type release in 1987
+
+2.  R-Type architecture
+
+   The architecture of this project is a classic client-server game
+   architecture.
+   Each game engine can be server or client. A client connect to a server
+   by configuring his configuration file.
+   Multiple clients can connect to the server at the same time.
+
+Krull                           Standards Track                  [Page 1]
+
+RFC 0001                    R-Type Protocols                 Janvier 2024
+
+
+3.  R-Type UDP Protocol
+
+   3a.  Payload
+
+      Every transmission MUST transmit a payload containing this 4 datas:
+
+         u_int64_t TimeStamp;
+         u_int64_t Entity_ID;
+         Event event;
+         u_int64_t nbComp;
+
+      Where TimeStamp is the time reference since the Epoch base on the
+      year 1970 see:
+      https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap04.html#tag_04_16
+
+      The Entity_ID is the ID given to an Entity that will be use for the
+      gameEngine.
+
+      The Event enumeration:
+
+         enum Event : int {
+            New,
+            Edit,
+            Delete
+         };
+      
+      The nbComp is the number of Component the Entity_ID is composed 
+
+      To send a payload, each data MUST be written on the UDP socket in
+      this order: TimeStamp, Entity_ID, Event, nbComp.
+
+
+Krull                        Standards Track                     [Page 2]
+
+RFC 0001                    R-Type Protocols                 Janvier 2024
+
+
+   3b.  Server connection
+
+      To connect to the server, the client MUST configure the
+      configuration file
+
+   3c.  Lobby connection
+
+      Once connected to the server is launched, the client to the server
+      to join the game hosted by the server.
+
+   3d.  Game start
+
+      Once the sever is launched, the game start.
+      If a new client decide to connect to the server he will join the
+      game started.
+
+   3e.  Player events
+
+      The player, on the client-side, udpdate the Entity_ID on his side
+      by sending informations to the server with the playload and
+      extra informations (see below).
+
+
+Krull                        Standards Track                     [Page 3]
+
+
+4. Extra informations
+
+   4.a Delete event
+      
+      When an Entity have to be delete the client or the server will
+      specifie in the payload in the event enum to inform other players
+      to delete the Entity.
+
+   4.b New and Edit event
+
+      When a client decide to modif an Entity the client MUST put the
+      event to Edit.
+      When the server decide to create an Entity he MUST put the event
+      to New.
+
+      If the event is set to New or Edit, the variable nbComp MUST be < 0.
+      
+      Follow by the type of the component's entity with his
+      parameters follow.
+
+      It will be repeat nbComp times.
+
+   4.c Components
+
+      There is 7 Components needing several parameters : 
+         
+         - Position : float x, float y
+         - Velocity : float x, float y
+         - Drawable : std::size_t draw_order, u_int64_t frameDelay,
+         int nbPath, std::vector<std::string> paths 
+         - Controllable : u_int64_t lastShoot,
+         u_int64_t shootDelay, float slow, float speed
+         - HitBox : float height, float width
+         - BoundLimit : float minX, float minY, float maxX, float maxY
+         - Respawnable : float x, float y
+
+   4.e Exemple
+
+      Here exemple of the form of the message send to the client :
+
+      1704728157|42| |3| |2| |0| |3.463|  |10.357| |1| |4.389.8| ==> recieve
+      ----------|--| |-| |-| |-| |---------------| |-| |-------|
+           A    |B | |C| |D| |E| |      F        | |G| |   H   | ==> interpretation
+
+      A: Time Stamp (since 1970)
+      B: Entity ID (ID of the entity)
+      C: Event (New, Edit, Delete)
+      D: Nb Comp (1 to max comp)
+      E: Type of comp with id equal 0
+      F: Param of the comp with id equal 0
+      G: Type of comp with id equal 1
+
+Krull                        Standards Track                     [Page 4]
+
