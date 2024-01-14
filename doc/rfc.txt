@@ -39,8 +39,8 @@ Table of Contents
 
    The architecture of this project is a classic client-server game
    architecture.
-   ??Each game engine can be server or client. A client connect to a server
-   ??by configuring his configuration file.
+   Each game engine can be server or client. A client connect to a server
+   by configuring his configuration file.
    Multiple clients can connect to the server at the same time.
 
 Krull                           Standards Track                  [Page 1]
@@ -87,12 +87,8 @@ RFC 0001                    R-Type Protocols                 Janvier 2024
 
    3b.  Server connection
 
-      To connect to the server, the client MUST send to the server a
-      payload containing:
-
-         //??ACTION_NAME = CONNECT
-         //??BODY_SIZE = PLAYER_NAME's length
-         //??BODY = PLAYER_NAME (chosen by the client's user)
+      To connect to the server, the client MUST configure the
+      configuration file
 
    3c.  Lobby connection
 
